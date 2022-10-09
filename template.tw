@@ -435,16 +435,35 @@ $(document.head).find('#style-ui-bar').remove();
 
 // MAKE MAP FUNCTION
 
-setup.generateDirectionsMap = function (latorg, longorg, latdest, longdest){
+setup.generateDirectionsMap = function (origin, dest){
 const iFrame = document.createElement("iframe")
 iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${latorg},${longorg}&zoom=17&origin=${latorg},${longorg}&destination=${latdest},${longdest}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
 const mount = document.getElementById("mapMount")
+console.log(iFrame)
 return iFrame
+// this.mapMount.appendChild(iFrame)
 }
+
+// MAKE MAP WITH WAYPOINTS FUNCTION
+
+setup.generateDirectionsMapWP = function (origin, dest, wayp){
+const iFrame = document.createElement("iframe")
+iFrame.classList.add("map")
+iFrame.setAttribute("loading", "lazy")
+iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
+// iFrame.setAttribute("allowfullscreen")
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
+const mount = document.getElementById("mapMount")
+console.log(iFrame)
+return iFrame
+// this.mapMount.appendChild(iFrame)
+}
+
+// <<set $map = setup.generateDirectionsMap([], [])>>
 
 //Get random 5 letter word
 
@@ -509,9 +528,8 @@ Undercover with Moll Cutpurse</header>
 
 
 :: lost {"position":"100,975","size":"100,100"}
-<<set $passage to "lost">><<include "header">>
+<<set $passage to "lost">>
 <main>
-Sorry to hear that you're lost! 
 You have two options:
 
 <<button "Begin the adventure again">><<goto "landing">><</button>>
@@ -523,30 +541,23 @@ You have two options:
 
 :: landing {"position":"450,50","size":"100,100"}
 <<set $passage to "landing">>
-<<include "header">>
+
 <main>
 
 <<button "start">><<set $prevpass to $passage>><<goto "UMC05">><</button>>
 
-
 </main>
-<<include "footer">>
+
 
 
 :: UMC05 {"position":"450,225","size":"100,100"}
-<<set $passage to "UMC05">><<audio ":all" stop>><<audio "UMC_05.1" play>><<set $nextpassage to "UMC05">>
-<<include "header">>
+<<set $passage to "UMC05">><<audio ":all" stop>><<audio "UMC_05.1" play>><<set $nextpassage to "UMC05">><<set $map1 = setup.generateDirectionsMap([51.51413718960546, -0.10337970170302], [51.515038546716255, -0.10329387101122263])>>
 <main>
-
-/*Sound effects */
-
-Oi. You. What are you doing? Yeah, you. I’m talking to you. With that no-good look on your face. You don’t look like you’re from around here, and there’s nothing I don’t like more than something I don’t recognise. Scram.
+CONSTABLE: Oi. You. What are you doing? Yeah, you. I’m talking to you. With that no-good look on your face. You don’t look like you’re from around here, and there’s nothing I don’t like more than something I don’t recognise. Scram.
 
 Wait. Actually. Hang on a second. Maybe you can do me a favour. I’m the constable round these parts, see, and I’ve been tasked with sniffing out troublemakers. Like yourself. No offence. Or not much. But since you’re standing around like a spare part, maybe you can help me out. 
 
 I’m looking for someone. A criminal. Yeah? Goes by the name of Moll Cutpurse. I’ll be honest with you, she’s a freak. Dresses up in men’s clothes, robs them, even smokes a bloody pipe, for God’s sake.
-
-/*A shout breaks out from the other end of the street — a fight is breaking out.*/
 
 What’s that? A fight? Christ.
 
@@ -554,14 +565,13 @@ Listen. If you see her...send her my way, alright? She’s a pain in my arse, to
 
 Hey! Bobby! Stop that! Put down the cleaver! 
  
-/*The Constable’s voice recedes into the background.
-From around the corner, another voice.*/ 
 
+MOLL CUTPURSE:
 Psst. Psst. Hey. Over here.
 What were you talking to the Constable for? You’re not a sneak, are you? Come to Limeburner Lane.
 Quickly.
 
-/*MAP NEEDED?*/
+$map1
 
 <<button "We're here">>
   <<audio ":all" stop>><<audio "UMC_05.2" play>>	
@@ -589,9 +599,10 @@ Quickly.
 
 :: UMC06 {"position":"450,375","size":"100,100"}
 <<set $passage to "UMC06">><<audio ":all" stop>><<audio "UMC_06" play>><<set $nextpassage to "UMC07">>
-<<include "header">>
+
 <main>
 
+MOLL CUTPURSE:
 Hmm. He and I go way back. We’ve been doing this dance for years, ever since I was a nipper. You’ve caught on, haven’t you? I’m Moll Cutpurse. I can tell you’re the kinda person who likes to walk on the wild side. I can see it in your eyes...that little glint. You can’t fool me. I’m bringing you onto my team. 
 Welcome. First things first: we’ve gotta get you a new name. A pseudonym, if you will. You think Moll Cutpurse is my real name? Nah. It’s actually (she gags a little bit) Mary Frithat. Ugh. Can you imagine? Do I seem like a Mary? The answer is no, before you say anything you might regret.
 Pseudonyms are important for criminals. They stop the constables from being able to track you down so easily. So what’s yours? If you shorten your first name and then use a verb for the first half of your surname, and some kind of word for money for the second half — then that’ll be that. So something like...Soph Grabcoin, or Al Takecash. Tell me when you’ve come up with them.
@@ -600,30 +611,23 @@ Pseudonyms are important for criminals. They stop the constables from being able
 <<button "We've all come up with names.">><<set $prevpass to $passage>><<goto "UMC07">><</button>>
 
 
-
-
-
-
-
 </main>
 <<include "footer">>
 
 
 :: UMC07 {"position":"450,525","size":"100,100"}
-<<set $passage to "UMC07">><<audio ":all" stop>><<audio "UMC_07" play>><<set $nextpassage to "UMC08">>
-<<include "header">>
+<<set $passage to "UMC07">><<audio ":all" stop>><<audio "UMC_07" play>><<set $nextpassage to "UMC08">><<set $map2 = setup.generateDirectionsMap([51.515038546716255, -0.10329387101122263], [51.5157662961102, -0.10186693576009163])>>
+
 <main>
 
 You done? Excellent. Let’s hear them. Say them out loud. Proudly!
-
-/*Time to say names*/
 
 What a merry band of ne’er-do-wells. Now come on. Let’s get moving. Rule number one — never stand in the same place for too long. Draws attention to yourself. That’s what got you in trouble with the Constable in the first place.
 
 Here’s rule number two — whenever we cross a main road, I’m gonna need you to move quickly — but carefully! I don’t want you getting mown down. Look both ways before you cross. I shouldn’t have to tell you that, but you’d be surprised at how many famous criminals seem to be lacking in basic safety skills. 
 We can slow down once we get onto the side streets. Let’s get onto Old Bailey. Find the Central Criminal Court for me, would you?
 
-/*MAP NEEDED*/
+$map2
 
 
 <<button "We're at Old Bailey.">><<set $prevpass to $passage>><<goto "UMC08">><</button>>
@@ -639,15 +643,16 @@ We can slow down once we get onto the side streets. Let’s get onto Old Bailey.
 
 
 :: UMC08 {"position":"450,650","size":"100,100"}
-<<set $passage to "UMC08">><<audio ":all" stop>><<audio "UMC_08" play>><<set $nextpassage to "UMC09">>
-<<include "header">>
+<<set $passage to "UMC08">><<audio ":all" stop>><<audio "UMC_08" play>><<set $nextpassage to "UMC09">><<set $map3 = setup.generateDirectionsMap([51.5157662961102, -0.10186693576009163], [51.51708755760078, -0.10157021389985543] )>>
+
 <main>
 
-Look at that. Huh. She scoffs. You know, I was once brought to one of these places. Not this one — wasn’t as fancy schmancy. I was tried, though, you know. In a court of law. You know why they brought me in? For wearing men’s clothes. Called me “indecent.”  Can you believe it? People spat at me on the street for it. In the end, they made me stand at St Paul’s Cross and wear a white sheet while the priest gave a sermon. I didn’t care much, though. Got a good breeze around the nether regions.
+MOLL CUTPURSE
+Look at that. Huh.  You know, I was once brought to one of these places. Not this one — wasn’t as fancy schmancy. I was tried, though, you know. In a court of law. You know why they brought me in? For wearing men’s clothes. Called me “indecent.”  Can you believe it? People spat at me on the street for it. In the end, they made me stand at St Paul’s Cross and wear a white sheet while the priest gave a sermon. I didn’t care much, though. Got a good breeze around the nether regions.
 
 Come on. I don’t want to hang around here too long. Smell of the law gives me the creeps. Let’s head up Giltspur Street. Remember, be quick and careful on main roads.
 
-/*MAP NEEDED*/
+$map3
 
 
 <<button "Let's go">><<set $prevpass to $passage>><<goto "UMC09">><</button>>
@@ -663,13 +668,14 @@ Come on. I don’t want to hang around here too long. Smell of the law gives me 
 
 
 :: UMC09 {"position":"450,775","size":"100,100"}
-<<set $passage to "UMC09">><<audio ":all" stop>><<audio "UMC_09" play>><<set $nextpassage to "UMC10">>
-<<include "header">>
+<<set $passage to "UMC09">><<audio ":all" stop>><<audio "UMC_09" play>><<set $nextpassage to "UMC10">><<set $map4 = setup.generateDirectionsMap([51.51708755760078, -0.10157021389985543], [51.51732021674314, -0.10239925659000866] )>>
+
 <main>
 
+MOLL CUTPURSE
 Rule number three of becoming the best criminal in the City — stay out of sight as much as possible. That means moving out of the way of any crowds — sticking to the sides of the pavements, avoiding eye contact with big groups — that kind of thing. Make sure you’re doing that as you’re walking. Now, what was I saying? Oh right. The thing is, those lawmen were trying to tell me it was unnatural to wear men’s clothes and smoke a pipe and drink in taverns or whatever else. Unwomanly, or whatever. But it didn’t feel unnatural to me. It just felt...I dunno. I just feel comfortable in men’s stuff. Always have. When I was a kid I’d cut the hem of my dresses so I could move better. Just didn’t feel good in all that fabric. It gets in the way. I can’t run, jump, climb. I was always trying to go and play with the boys, cos the girls didn’t like me much. Every time my aunt tried to get me to sit down and sew, I’d be off like a racehorse. Running and tumbling. The boys didn’t want me near them, though. Even when I’d be locked inside with my threading needle, I’d watch them out the window. Wishing my needle was a dagger. Here, turn onto Cock Lane when you get a chance. And don’t laugh. Or, well, you can laugh.
 
-/*MAP NEEDED*/
+$map4
 
 <<button "Ok, we turned.">><<set $prevpass to $passage>><<goto "UMC10">><</button>>
 
@@ -684,45 +690,48 @@ Rule number three of becoming the best criminal in the City — stay out of sigh
 
 
 :: UMC10 {"position":"450,900","size":"100,100"}
-<<set $passage to "UMC10">><<audio ":all" stop>><<audio "UMC_10" play>><<set $nextpassage to "UMC11">>
-<<include "header">>
-<main>
+<<set $passage to "UMC10">><<audio ":all" stop>><<audio "UMC_10" play>><<set $nextpassage to "UMC11">><<set $map5 = setup.generateDirectionsMap([51.51732021674314, -0.10239925659000866], [51.51773232763725, -0.10347906774555626] )>>
 
+<main>
+MOLL
 Hang on a second. Something feels a bit funny here.
 
-/*A shimmering sound, and then a sudden crash. */
-
+ANN DUCK
 Moll? That you? 
 
+MOLL
 Ann Duck, as I live and breathe. This is what I meant about time going funny around these parts. This is Ann Duck — notable criminal from 1742.
 
+ANN DUCK
 Notable? Is that any way to describe me? How about the most notorious, most feared, most violent criminal of the last century?
 
+MOLL
 Hmm. There’s already someone occupying that title.
 
+ANN DUCK
 Who? You, my love? Don’t make me laugh. Little miss pickpocket?
 
+MOLL
 Don’t call me that.
 
+ANN DUCK
 Who’s this lot?
 
+MOLL
 Bunch of reprobates I found hanging around Limeburner Lane. I’m showing them the ropes.
 
+ANN DUCK
 First rule of criminality. Stay out of sight.
 
+MOLL
 I’ve already told them that one.
 
+ANN DUCK
 Well, they might not be the brightest bunch. Look, you lot. If you’re gonna make it in this City, you’ve gotta be able to spot others of your ilk. What I want you to do is this — in your little groups, you need to come up with a hand gesture. Nothing rude, mind — that’s too obvious. Just something small. Maybe you’re tipping your cap to someone, or you’re tapping your palm on the back of your hand. Whatever it is, you’re gonna do it to anyone you see on our way to Smithfield Rotunda Garden. If they acknowledge you, great. They’re part of your gang. If not — then no bother. But make sure you keep count of who’s acknowledging you and who isn’t.
 Right, come on, you lot. Head onto Smithfield Street.
 
-/*MAP NEEDED*/
-
+$map5
 <<button "Ok, let's go.">><<set $prevpass to $passage>><<goto "UMC11">><</button>>
-
-
-
-
-
 
 
 </main>
@@ -730,39 +739,49 @@ Right, come on, you lot. Head onto Smithfield Street.
 
 
 :: UMC11 {"position":"450,1025","size":"100,100"}
-<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12">>
-<<include "header">>
-<main>
+<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12">><<set $map6 = setup.generateDirectionsMap( [51.51773232763725, -0.10347906774555626], [51.51804997658025, -0.10158564106698934] )>>
 
+<main>
+MOLL
 Don’t tell them what to do. That’s my job. You lot need to find Snow Hill and head up, turning right onto Smithfield Street, then right again onto Hosier Street, and then left.
 
+ANN
 Towards the Smithfield Rotunda. Got it? Go on, then. Make sure you’re doing your hand signals.
 
-/*MAP NEEDED*/
-
+$map6
+MOLL
 What are you doing here, anyway?
 
+ANN
 Hmm, dunno. Something felt a bit funny. Had a feeling you were up to no good, and wherever there’s mischief, I’ve got to follow. What have you been doing, Moll? It’s been a while. Still cutting men’s purse strings? Small fry, but someone’s got to do it, I suppose.
 
+MOLL
 Made a good amount last week, I’ll have you know.
 
+ANN
 Don’t be so small-time. You’re a glorified pickpocket at best. And you’re a fence. Even worse! People do their work through you, but you don’t get your hands dirty. Me? People are actually afraid of me. Last week I nearly cut a lad’s finger off cos he wouldn’t give me any of his gold. Week before that I beat a man with glass bottles until he cried for his mother.
 
+MOLL
 You’ll get in trouble one day, Ann Duck. Mark my words.
 
+ANN
 Nonsense. I’ve been tried 19 times and they ain’t got a thing on me. You need to hang around the ports, Moll. That’s where the good stuff is.
 
+MOLL
 Yeah, I know. But I’m not like you, Ann. I don’t want to beat anyone up. Not unless I have to. Not unless they’re coming for me. I like to keep it quiet. Steal away into the night. A ghost on the streets.
 
+ANN
 Ah, you don’t get it, Moll. Never have. This lot? The ones who swan around the ports in their furs and their horses with the sleek coats...they don’t care about us. They already rob us every single day! 
 
+MOLL
 Wouldn’t piss on us if we were on fire. Would step over our bodies and wrinkle their noses if they got our blood on their slippers. We’ve gotta make it work for us, Moll. What’s the issue if there’s a bit of violence, here or there? There’s nothing I’ve done that they wouldn’t do to us. Only difference is, they’d get their hired thugs to do it. 
 
+ANN
 Here, we’re nearly at Smithfield Rotunda Garden, and I’ve got to go. Word is there’s a fancy carriage coming down from Farringdon. See you, Moll. And you lot — don’t get into any trouble. Or not much, anyway.
 
+MOLL
 Bye, Ann!
 
-/*Ann disappears with a shimmer.*/
 
 Thank God she’s gone. Every day’s a competition with Ann Duck.
 Right. This will be a good place for a rest. Well? What are your tallies? How many other gang members did you spot?
@@ -785,9 +804,9 @@ Right. This will be a good place for a rest. Well? What are your tallies? How ma
 
 :: UMC12A {"position":"375,1150","size":"100,100"}
 <<set $passage to "UMC12A">><<audio ":all" stop>><<audio "UMC_12A" play>><<set $nextpassage to "UMC13">>
-<<include "header">>
-<main>
 
+<main>
+MOLL
 Ah, so we’re the only criminals round these parts. Good to know. We’ve got everything to choose from. 
 
 
@@ -805,9 +824,9 @@ Ah, so we’re the only criminals round these parts. Good to know. We’ve got e
 
 :: UMC12B {"position":"525,1150","size":"100,100"}
 <<set $passage to "UMC12B">><<audio ":all" stop>><<audio "UMC_12B" play>><<set $nextpassage to "UMC13">>
-<<include "header">>
-<main>
 
+<main>
+MOLL
 Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we find.
 
 
@@ -825,23 +844,30 @@ Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we
 
 :: UMC13 {"position":"450,1275","size":"100,100"}
 <<set $passage to "UMC13">><<audio ":all" stop>><<audio "UMC_13" play>><<set $nextpassage to "UMC14">>
-<<include "header">>
-<main>
 
+<main>
+MOLL
 Let’s pause here for a second. Sit down if you like. Catch your breath. Peaceful, isn’t it? Nice to see a bit of green around here. Don’t think we had this place when I was knocking about. Lucky you. Hang about, who’s this? Two men? They look a bit fancy, don’t they? Look, I can’t be recognised, so you’ll need to eavesdrop on them for me. Act natural — whatever that means to you.
 
+DEKKER
 Apparently she hangs around here. If we’re lucky, maybe she’ll cut our purse-strings.
 
+MIDDLETON
 Wouldn’t that be good? First hand experience.
 
+DEKKER
 You know, I’m still struggling with the ending. Surely she should be married off?
 
+MIDDLETON
 Moll Cutpurse? Married off? Never. She wouldn’t allow it. It would be a betrayal.
 
+DEKKER
 But the audience will be in uproar!
 
+MIDDLETON
 Don’t be so old-fashioned. As long as we have one wedding in there, we’ll be safe.
 
+DEKKER
 Hey! I can’t hear. Who’re they talking about?
 
 <div class= "menu-wrapper">
@@ -861,9 +887,9 @@ Hey! I can’t hear. Who’re they talking about?
 
 :: UMC14 {"position":"450,1400","size":"100,100"}
 <<set $passage to "UMC14">><<audio ":all" stop>><<audio "UMC_14" play>><<set $nextpassage to "UMC15">>
-<<include "header">>
-<main>
 
+<main>
+MOLL
 Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Report back to me after they’re gone!
 
 
@@ -884,9 +910,9 @@ Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Repo
 
 :: UMC15 {"position":"450,1525","size":"100,100"}
 <<set $passage to "UMC15">><<audio ":all" stop>><<audio "UMC_15" play>><<set $nextpassage to "UMC16">>
-<<include "header">>
-<main>
 
+<main>
+MIDDLETON
 Oh. Hello. Can I help you?
 
 
@@ -904,15 +930,18 @@ Oh. Hello. Can I help you?
 
 :: UMC16 {"position":"450,1650","size":"100,100"}
 <<set $passage to "UMC16">><<audio ":all" stop>><<audio "UMC_16" play>><<set $nextpassage to "UMC17">>
-<<include "header">>
-<main>
 
+<main>
+DEKKER
 Why? Do you know her?
 
+MIDDLETON
 I don’t believe we’ve had the pleasure of meeting. I’m Thomas Middleton, and this is my writing partner, Thomas Dekker.
 
+DEKKER
 Charmed.
 
+MIDDLETON
 We’re playwrights, you see. We’re writing a play called The Roaring Girl. It’s based on her life. She’s a rather famous pickpocket around the City. I take it that you know her?
 
 <div class= "menu-wrapper">
@@ -930,17 +959,19 @@ We’re playwrights, you see. We’re writing a play called The Roaring Girl. It
 
 :: UMC17 {"position":"450,1775","size":"100,100"}
 <<set $passage to "UMC17">><<audio ":all" stop>><<audio "UMC_17" play>><<set $nextpassage to "UMC18">>
-<<include "header">>
-<main>
 
+<main>
+<div id="mount"></div>
+DEKKER
 I’m sure.
 
+MIDDLETON
 Obviously, she’s most famous — or should I say, infamous — for cross-dressing. Dressing up like a man.
 
+DEKKER
 Somewhat unnatural, I feel. But who are we to judge?
 
-What are you going to say about her?
-
+<<button "What are you going to say about her?">><<replace "#mount">>MIDDLETON
 Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometimes we need to offer moral guidance to our audiences, but it would be erroneous to suggest that Moll is some strange, unwell woman. Though I do hope, wherever she is, that she will consider taking a life of honesty and goodness, as opposed to petty thievery...Something more befitting of a lady, perhaps.
 
 <div class= "menu-wrapper">
@@ -948,6 +979,8 @@ Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometim
 
   <<button "I thought you weren’t supposed to pass judgement.">><<set $prevpass to $passage>><<goto "UMC18">><</button>>
 </div>
+
+<</replace>><</button>>
 
 
 
@@ -958,13 +991,15 @@ Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometim
 
 :: UMC18 {"position":"450,1900","size":"100,100"}
 <<set $passage to "UMC18">><<audio ":all" stop>><<audio "UMC_18" play>><<set $nextpassage to "UMC19">>
-<<include "header">>
-<main>
 
+<main>
+MIDDLETON
 Anyway, I do hope you’ll come and see it. And maybe you can bring your...friend. Moll Cutpurse. We’d welcome her critiques with open arms. If she buys a ticket, of course.
 
+MOLL
 They’re gone? Looks like I lost that lawman. Come on. Let’s get a move on. Go down Little Britain, past the William Wallace memorial.
 
+MOLL
 So? Go on then. What were they saying about me?
 
 <div class= "menu-wrapper">
@@ -982,9 +1017,9 @@ So? Go on then. What were they saying about me?
 
 :: UMC19 {"position":"450,2025","size":"100,100"}
 <<set $passage to "UMC19">><<audio ":all" stop>><<audio "UMC_19" play>><<set $nextpassage to "UMC20">>
-<<include "header">>
-<main>
 
+<main>
+MOLL
 Huh? They’re writing about me? Wow. I wonder...people will put on that play in a hundred years, I bet. More! Two hundred! Three hundred! I wonder if they’ll put in that story about the time I rode from Charing Cross to Shoreditch dressed as a man, blowing a trumpet and holding a banner, and nearly got torn to death by a mob. That was pretty dramatic, if you ask me. What else did they say?
 
 <div class= "menu-wrapper">
@@ -1008,7 +1043,7 @@ Huh? They’re writing about me? Wow. I wonder...people will put on that play in
 
 :: UMC20 {"position":"450,2150","size":"100,100"}
 <<set $passage to "UMC19">><<set $nextpassage to "UMC21">>
-<<include "header">>
+
 <main>
 
 <<if $whatdidtheysay is "thief">>
@@ -1040,23 +1075,19 @@ Though I s’pose...people will watch the play. Hundreds of people. And then if 
 
 
 :: UMC21 {"position":"450,2275","size":"100,100"}
-<<set $passage to "UMC21">><<audio ":all" stop>><<audio "UMC_21" play>><<set $nextpassage to "UMC22">>
-<<include "header">>
+<<set $passage to "UMC21">><<audio ":all" stop>><<audio "UMC_21" play>><<set $nextpassage to "UMC22">><<set $map7 = setup.generateDirectionsMap( [51.51804997658025, -0.10158564106698934], [51.516887154679715, -0.09771500182371771] )>>
+
 <main>
 
 Hmm.
 
 Well. Let me know when you’re outside Postman’s Park.
 
-/*MAP NEEDED*/
+$map7
 
 <<button "We're here.">>
   <<set $prevpass to $passage>><<goto "UMC22">>
 <</button>>
-
-
-
-
 
 
 </main>
@@ -1065,18 +1096,14 @@ Well. Let me know when you’re outside Postman’s Park.
 
 :: UMC22 {"position":"450,2400","size":"100,100"}
 <<set $passage to "UMC22">><<audio ":all" stop>><<audio "UMC_22" play>><<set $nextpassage to "end">>
-<<include "header">>
+
 <main>
-
+MOLL
 Hey. Rule number 4 of being a criminal in the City...sometimes, you can stop and smell the roses. Take in your surroundings properly, make sure you can spot your nearest exit route in case the lawmen come calling...but enjoy yourself, too.
-
-/*beat*/
 
 I’ve thought about it, and...I think I’d want to be remembered as someone who lived truthfully. Who did the best she could with what she had. Who was loyal, and good to her friends, and helped those who needed it, and took from those who didn’t. 
 
 You know, I’ve nothing to be ashamed of. Nothing at all. They can write what they want. I know who I am.
-
-/*beat*/
 
 What would you want to be remembered for? In two, three, five hundred years? Maybe think about it. Walk around this place for a little while. Take it in. Talk to your friends, your family. There’s no rush. The air is shimmering now. It’s time for me to go. But you can take your time.
 
@@ -1087,12 +1114,12 @@ What would you want to be remembered for? In two, three, five hundred years? May
 
 
 :: end {"position":"100,850","size":"100,100"}
-<<set $passage to "end">><<audio ":all" stop>>
-<<include "header">>
+<<set $passage to "end">><<audio ":all" stop>><<set $endmap = setup.generateDirectionsMap( [51.516887154679715, -0.09771500182371771], [51.516887154679715, -0.09771500182371771] )>>
+
 <main>
 
 
-/*End map needed*/
+$endmap
 
 
 </main>
