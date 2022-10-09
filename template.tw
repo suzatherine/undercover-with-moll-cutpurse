@@ -962,7 +962,7 @@ We’re playwrights, you see. We’re writing a play called The Roaring Girl. It
 
 <main>
 <div id="mount"></div>
-DEKKER
+<<timed 0.5s>><<replace "#mount">>DEKKER
 I’m sure.
 
 MIDDLETON
@@ -971,7 +971,8 @@ Obviously, she’s most famous — or should I say, infamous — for cross-dress
 DEKKER
 Somewhat unnatural, I feel. But who are we to judge?
 
-<<button "What are you going to say about her?">><<replace "#mount">>MIDDLETON
+<<button "What are you going to say about her?">><<replace "#mount">><<audio ":all" stop>><<audio "UMC_17.5" play>>
+MIDDLETON
 Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometimes we need to offer moral guidance to our audiences, but it would be erroneous to suggest that Moll is some strange, unwell woman. Though I do hope, wherever she is, that she will consider taking a life of honesty and goodness, as opposed to petty thievery...Something more befitting of a lady, perhaps.
 
 <div class= "menu-wrapper">
@@ -981,7 +982,7 @@ Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometim
 </div>
 
 <</replace>><</button>>
-
+<</replace>><</timed>>
 
 
 
