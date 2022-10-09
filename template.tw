@@ -467,13 +467,36 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<cacheaudio "UMC_05.1" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_05.1.mp3">>
+<<cacheaudio "UMC_05.2" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_05.2.mp3">>
+<<cacheaudio "UMC_06" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_06.mp3">>
+<<cacheaudio "UMC_07" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_07.mp3">>
+<<cacheaudio "UMC_08" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_08.mp3">>
+<<cacheaudio "UMC_09" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_09.mp3">>
+<<cacheaudio "UMC_10" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_10.mp3">>
+<<cacheaudio "UMC_11" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_11.mp3">>
+<<cacheaudio "UMC_12A" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_12A.mp3">>
+<<cacheaudio "UMC_12B" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_12B.mp3">>
+<<cacheaudio "UMC_13" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_13.mp3">>
+<<cacheaudio "UMC_14" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_14.mp3">>
+<<cacheaudio "UMC_15" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_15.mp3">>
+<<cacheaudio "UMC_16" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_16.mp3">>
+<<cacheaudio "UMC_17" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_17.mp3">>
+<<cacheaudio "UMC_17.5" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_17.5.mp3">>
+<<cacheaudio "UMC_18" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_18.mp3">>
+<<cacheaudio "UMC_19" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_19.mp3">>
+<<cacheaudio "UMC_20A" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_20A.mp3">>
+<<cacheaudio "UMC_20B" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_20B.mp3">>
+<<cacheaudio "UMC_21" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_21.mp3">>
+<<cacheaudio "UMC_22" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_22.mp3">>
+
+
 <<waitforaudio>>
 
 
 :: header {"position":"100,225","size":"100,100"}
 <header>Adventure Functionality /
- Structure Template</header>
+Undercover with Moll Cutpurse</header>
 
 
 :: footer {"position":"100,350","size":"100,100"}
@@ -502,8 +525,6 @@ You have two options:
 <<set $passage to "landing">>
 <<include "header">>
 <main>
-  menu
-
 
 <<button "start">><<set $prevpass to $passage>><<goto "UMC05">><</button>>
 
@@ -513,7 +534,7 @@ You have two options:
 
 
 :: UMC05 {"position":"450,225","size":"100,100"}
-<<set $passage to "UMC05">><<set $nextpassage to "UMC05">>
+<<set $passage to "UMC05">><<audio ":all" stop>><<audio "UMC_05.1" play>><<set $nextpassage to "UMC05">>
 <<include "header">>
 <main>
 
@@ -542,14 +563,22 @@ Quickly.
 
 /*MAP NEEDED?*/
 
-Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’m from. You look a little too clean and pristine to be from the 17th century, I reckon. Get your bearings quickly, cos I need your help. What did the Constable ask you?
+<<button "We're here">>
+  <<audio ":all" stop>><<audio "UMC_05.2" play>>	
+  <<replace ".secondhalf">>
+  Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’m from. You look a little too clean and pristine to be from the 17th century, I reckon. Get your bearings quickly, cos I need your help. What did the Constable ask you?
 
-<div class= "menu-wrapper">
-<<button "He wanted me to help him catch a criminal.">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
+  <div class= "menu-wrapper">
+  <<button "He wanted me to help him catch a criminal.">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
 
-<<button "He was acting kinda weird.">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
+  <<button "He was acting kinda weird.">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
+  </div>
+  <</replace>>
+<</button>>
+
+<div class = "secondhalf">
+
 </div>
-
 
 
 
@@ -559,7 +588,7 @@ Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’
 
 
 :: UMC06 {"position":"450,375","size":"100,100"}
-<<set $passage to "UMC06">><<set $nextpassage to "UMC07">>
+<<set $passage to "UMC06">><<audio ":all" stop>><<audio "UMC_06" play>><<set $nextpassage to "UMC07">>
 <<include "header">>
 <main>
 
@@ -581,7 +610,7 @@ Pseudonyms are important for criminals. They stop the constables from being able
 
 
 :: UMC07 {"position":"450,525","size":"100,100"}
-<<set $passage to "UMC07">><<set $nextpassage to "UMC08">>
+<<set $passage to "UMC07">><<audio ":all" stop>><<audio "UMC_07" play>><<set $nextpassage to "UMC08">>
 <<include "header">>
 <main>
 
@@ -610,7 +639,7 @@ We can slow down once we get onto the side streets. Let’s get onto Old Bailey.
 
 
 :: UMC08 {"position":"450,650","size":"100,100"}
-<<set $passage to "UMC08">><<set $nextpassage to "UMC09">>
+<<set $passage to "UMC08">><<audio ":all" stop>><<audio "UMC_08" play>><<set $nextpassage to "UMC09">>
 <<include "header">>
 <main>
 
@@ -634,7 +663,7 @@ Come on. I don’t want to hang around here too long. Smell of the law gives me 
 
 
 :: UMC09 {"position":"450,775","size":"100,100"}
-<<set $passage to "UMC09">><<set $nextpassage to "UMC10">>
+<<set $passage to "UMC09">><<audio ":all" stop>><<audio "UMC_09" play>><<set $nextpassage to "UMC10">>
 <<include "header">>
 <main>
 
@@ -655,7 +684,7 @@ Rule number three of becoming the best criminal in the City — stay out of sigh
 
 
 :: UMC10 {"position":"450,900","size":"100,100"}
-<<set $passage to "UMC10">><<set $nextpassage to "UMC11">>
+<<set $passage to "UMC10">><<audio ":all" stop>><<audio "UMC_10" play>><<set $nextpassage to "UMC11">>
 <<include "header">>
 <main>
 
@@ -701,7 +730,7 @@ Right, come on, you lot. Head onto Smithfield Street.
 
 
 :: UMC11 {"position":"450,1025","size":"100,100"}
-<<set $passage to "UMC11">><<set $nextpassage to "UMC12">>
+<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12">>
 <<include "header">>
 <main>
 
@@ -755,7 +784,7 @@ Right. This will be a good place for a rest. Well? What are your tallies? How ma
 
 
 :: UMC12A {"position":"375,1150","size":"100,100"}
-<<set $passage to "UMC12A">><<set $nextpassage to "UMC13">>
+<<set $passage to "UMC12A">><<audio ":all" stop>><<audio "UMC_12A" play>><<set $nextpassage to "UMC13">>
 <<include "header">>
 <main>
 
@@ -775,7 +804,7 @@ Ah, so we’re the only criminals round these parts. Good to know. We’ve got e
 
 
 :: UMC12B {"position":"525,1150","size":"100,100"}
-<<set $passage to "UMC12B">><<set $nextpassage to "UMC13">>
+<<set $passage to "UMC12B">><<audio ":all" stop>><<audio "UMC_12B" play>><<set $nextpassage to "UMC13">>
 <<include "header">>
 <main>
 
@@ -795,7 +824,7 @@ Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we
 
 
 :: UMC13 {"position":"450,1275","size":"100,100"}
-<<set $passage to "UMC13">><<set $nextpassage to "UMC14">>
+<<set $passage to "UMC13">><<audio ":all" stop>><<audio "UMC_13" play>><<set $nextpassage to "UMC14">>
 <<include "header">>
 <main>
 
@@ -831,7 +860,7 @@ Hey! I can’t hear. Who’re they talking about?
 
 
 :: UMC14 {"position":"450,1400","size":"100,100"}
-<<set $passage to "UMC14">><<set $nextpassage to "UMC15">>
+<<set $passage to "UMC14">><<audio ":all" stop>><<audio "UMC_14" play>><<set $nextpassage to "UMC15">>
 <<include "header">>
 <main>
 
@@ -854,7 +883,7 @@ Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Repo
 
 
 :: UMC15 {"position":"450,1525","size":"100,100"}
-<<set $passage to "UMC15">><<set $nextpassage to "UMC16">>
+<<set $passage to "UMC15">><<audio ":all" stop>><<audio "UMC_15" play>><<set $nextpassage to "UMC16">>
 <<include "header">>
 <main>
 
@@ -874,7 +903,7 @@ Oh. Hello. Can I help you?
 
 
 :: UMC16 {"position":"450,1650","size":"100,100"}
-<<set $passage to "UMC16">><<set $nextpassage to "UMC17">>
+<<set $passage to "UMC16">><<audio ":all" stop>><<audio "UMC_16" play>><<set $nextpassage to "UMC17">>
 <<include "header">>
 <main>
 
@@ -900,7 +929,7 @@ We’re playwrights, you see. We’re writing a play called The Roaring Girl. It
 
 
 :: UMC17 {"position":"450,1775","size":"100,100"}
-<<set $passage to "UMC17">><<set $nextpassage to "UMC18">>
+<<set $passage to "UMC17">><<audio ":all" stop>><<audio "UMC_17" play>><<set $nextpassage to "UMC18">>
 <<include "header">>
 <main>
 
@@ -928,7 +957,7 @@ Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometim
 
 
 :: UMC18 {"position":"450,1900","size":"100,100"}
-<<set $passage to "UMC18">><<set $nextpassage to "UMC19">>
+<<set $passage to "UMC18">><<audio ":all" stop>><<audio "UMC_18" play>><<set $nextpassage to "UMC19">>
 <<include "header">>
 <main>
 
@@ -952,7 +981,7 @@ So? Go on then. What were they saying about me?
 
 
 :: UMC19 {"position":"450,2025","size":"100,100"}
-<<set $passage to "UMC19">><<set $nextpassage to "UMC20">>
+<<set $passage to "UMC19">><<audio ":all" stop>><<audio "UMC_19" play>><<set $nextpassage to "UMC20">>
 <<include "header">>
 <main>
 
@@ -983,8 +1012,10 @@ Huh? They’re writing about me? Wow. I wonder...people will put on that play in
 <main>
 
 <<if $whatdidtheysay is "thief">>
+<<audio ":all" stop>><<audio "UMC_20A" play>>
 Hmm...well, they’re technically not wrong.
 <<else>>
+<<audio ":all" stop>><<audio "UMC_20B" play>>
 Unnatural?
 <</if>>
 
@@ -1009,7 +1040,7 @@ Though I s’pose...people will watch the play. Hundreds of people. And then if 
 
 
 :: UMC21 {"position":"450,2275","size":"100,100"}
-<<set $passage to "UMC21">><<set $nextpassage to "UMC22">>
+<<set $passage to "UMC21">><<audio ":all" stop>><<audio "UMC_21" play>><<set $nextpassage to "UMC22">>
 <<include "header">>
 <main>
 
@@ -1033,7 +1064,7 @@ Well. Let me know when you’re outside Postman’s Park.
 
 
 :: UMC22 {"position":"450,2400","size":"100,100"}
-<<set $passage to "UMC22">><<set $nextpassage to "end">>
+<<set $passage to "UMC22">><<audio ":all" stop>><<audio "UMC_22" play>><<set $nextpassage to "end">>
 <<include "header">>
 <main>
 
@@ -1049,21 +1080,19 @@ You know, I’ve nothing to be ashamed of. Nothing at all. They can write what t
 
 What would you want to be remembered for? In two, three, five hundred years? Maybe think about it. Walk around this place for a little while. Take it in. Talk to your friends, your family. There’s no rush. The air is shimmering now. It’s time for me to go. But you can take your time.
 
-<<timed 3s>><<set $prevpass to $passage>><<goto "UMC22">><</timed>>
+<<timed 3s>><<set $prevpass to $passage>><<goto "end">><</timed>>
 
 </main>
 <<include "footer">>
 
 
 :: end {"position":"100,850","size":"100,100"}
-<<set $passage to "end">>
+<<set $passage to "end">><<audio ":all" stop>>
 <<include "header">>
 <main>
 
 
-
-
-
+/*End map needed*/
 
 
 </main>
