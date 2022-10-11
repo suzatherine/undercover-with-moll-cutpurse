@@ -338,6 +338,71 @@ width: 100%;
 }
 }
 
+/* KEY  */
+.key-wrapper{
+  width:fit-content;
+  display:flex;
+  justify-content:center;
+  padding: 2rem;
+  margin:auto
+}
+
+
+.key-wrapper > img{
+    width:100px
+}
+
+.adventure-wrapper{
+border: solid 1px white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.adv-item{
+display: flex;
+   justify-content: space-between;
+    align-items: end;
+}
+
+.adventure-title{
+  margin-block-end:0;
+  text-align:center
+}
+
+.glowing {
+  /* width: 100px;
+  height: 100px; */
+  border-radius:50%;
+  background-color: transparent;
+  -webkit-animation: glowing 3s ease-in-out infinite alternate;
+  -moz-animation: glowing 3s ease-in-out infinite alternate;
+  animation: glowing 3s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glowing {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f0f, 0 0 40px #0ff, 0 0 50px #DAA520, 0 0 60px #DAA520, 0 0 70px #DAA520;
+  }
+  to {
+    box-shadow: 0 0 20px #fff, 0 0 30px #FAFAD2, 0 0 40px #FAFAD2, 0 0 50px #FAFAD2, 0 0 60px #FAFAD2, 0 0 70px #FAFAD26, 0 0 80px #FAFAD2;
+  }
+}
+
+@media screen and (min-width: 450px) {
+.choices{
+  display:flex;
+  justify-content: space-between;
+  
+}
+
+.adventure-wrapper{
+  padding: 2rem
+}
+
+}
+
 /* SPECIFICS */
 
 .dropdown-wrapper{
@@ -1391,9 +1456,17 @@ But you can take your time.<</type>><</replace>><</timed>>
 </main>
 <<include "footer">>
 
+:: end {"position":"520,2113","size":"100,100"}
+<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.516800988162046, -0.09771286982617827], [51.516800988162046, -0.09771286982617827])>><main>
+<h2>End Location</h2>
+$map
+<<button "More Info">><<set $prevpass to $passage>><<goto "SRS-23">><</button>>
+</main>
+<<include "footerlost">>
+
 
 :: SRS-23 {"position":"520,2113","size":"100,100"}
-<<set $passage to "SRS-23">><<set $nextpassage to "SRS-24">>
+<<set $passage to "SRS-23">><<set $nextpassage to "SRS-24">><<audio ":all" stop>>
 /* <<audio ":all" stop>><<audio "SRS_32" play>> */
 <main>
 <div id="mount"></div>
@@ -1405,41 +1478,43 @@ Now, head into the centre of Postman's Park, and I'll hand you over to an associ
 
 Keep your headphones on, or if you need spares, ask the dragons under the Gazebo.
 
-You’ll need to show them this <<button "key">><<goto "SRS-24">><</button>>.
+You’ll need to show them this <<button "key">><<set $prevpass to $passage>><<goto "SRS-24">><</button>>
 
 </main>
 <<include "footer">>
 
 :: SRS-24 {"position":"520,2113","size":"100,100"}
-<<set $passage to "SRS-24">>/* <<audio ":all" stop>><<audio "SRS_33" play>> */<main>
+<<set $passage to "SRS-24">><<audio ":all" stop>>/* <<audio ":all" stop>><<audio "SRS_33" play>> */<main>
 <div class="key-wrapper glowing"><img src="./assets/keys-34.png"></div>
 
 
 
 Start a new adventure...
 
-<div class="adventure-wrapper"><h2 class="adventure-title">Ghost Hunting with Brian</h2><div class="adv-item"><div>6 min walk away</div><<button "Show Map">><<goto "UMC_25A">><</button>></div></div>
-
-<div class="adventure-wrapper"><h2 class="adventure-title">The Smashing Rock Sisters</h2><div class="adv-item"><div>Family Focused
-5 min walk away</div><<button "Show Map">><<goto "UMC_25B">><</button>></div></div>
+<div class="choices">
+  <div class="adventure-wrapper"><h2 class="adventure-title">Ghost Hunting with Brian</h2><div class="adv-item"><div>6 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "UMC_25A">><</button>></div></div>
+  
+  <div class="adventure-wrapper"><h2 class="adventure-title">The Smashing Rock Sisters</h2><div class="adv-item"><div>Family Focused
+  5 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "UMC_25B">><</button>></div></div>
+</div>
 
 </main>
 
 :: UMC_25A {"position":"520,2113","size":"100,100"}
-<<set $passage to "UMC_25A">><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.51698173499748, -0.092720160117932])>><main>
+<<set $passage to "UMC_25A">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.51698173499748, -0.092720160117932])>><main>
 <h2>Ghost Hunting with Brian</h2>
 $map
 
 </main>
-<<include "footerend">>
+<<include "footerlost">>
 
 :: UMC_25B {"position":"520,2113","size":"100,100"}
-<<set $passage to "UMC_25B">><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.5199856714077, -0.09708782798778638])>><main>
+<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.5199856714077, -0.09708782798778638])>><main>
 <h2>The Smashing Rock Sisters</h2>
 $map
 
 </main>
-<<include "footerend">>
+<<include "footerlost">>
 
 
 :: footersimple {"position":"100,475","size":"100,100"}
@@ -1448,6 +1523,7 @@ $map
 
 :: footerlost {"position":"100,600","size":"100,100"}
 <footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
+
 
 
 :: footerend {"position":"100,725","size":"100,100"}
