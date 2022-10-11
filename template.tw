@@ -544,54 +544,169 @@ You have two options:
 
 <main>
 
-<<button "start">><<set $prevpass to $passage>><<goto "UMC05">><</button>>
+<<button "start">><<set $prevpass to $passage>><<goto "UMC01">><</button>>
 
 </main>
+
+:: UMC01 {"position":"449,226","size":"100,100"}
+<<set $passage to "UMC01">><<set $nextpassage to "UMC02B">>
+/* <<audio ":all" stop>><<audio "UMC01" play>> */
+<main>
+<div id="mount"></div> 
+Felix, keeper of the Maze, and small dragon, here at your service.
+
+
+I’m opening up the City to you, a City you’ve never experienced before, and its secrets too. For the City is full of treasure. Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+
+You’re now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I’ve been alive. 
+
+You’ve opened up door #5 into the maze of adventures. 
+
+
+You’ll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+
+If you follow them all the way along their adventure, I’ll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
+
+What kind of amazing experience? Well, it’s a surprise. Otherwise this wouldn’t be an adventure.
+
+Now are you playing this adventure solo or with a group?
+
+ 
+<div class="menu-wrapper">
+  <<button "Solo">><<set $prevpass to $passage>><<goto "UMC02A">><</button>>
+  
+  <<button "Group">><<set $prevpass to $passage>><<goto "UMC02B">><</button>></div>
+</main>
+<<include "footer">>
+
+:: UMC02A {"position":"448,476","size":"100,100"}
+<<set $passage to "UMC02A">><<set $nextpassage to "UMC03">>
+/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<main>
+<div id="mount"></div> 
+ The adventure may sometimes refer to a group of people but don’t worry, you by yourself are plenty for a group.
+<<button "Next">><<set $prevpass to $passage>><<goto "UMC03">><</button>>
+ 
+</main>
+<<include "footer">>
+
+:: UMC02B {"position":"448,476","size":"100,100"}
+<<set $passage to "UMC02B">><<set $nextpassage to "UMC03">>
+/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<main>
+<div id="mount"></div> 
+ This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync.  
+
+<<button "Next">><<set $prevpass to $passage>><<goto "UMC03">><</button>>
+ 
+ 
+</main>
+<<include "footer">>
+
+:: UMC03 {"position":"448,476","size":"100,100"}
+<<set $passage to "UMC03.1">><<set $nextpassage to "UMC04">>
+/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<main>
+<div id="mount"></div> 
+You can always use the arrows or the replay button if you need to hear or read anything again. 
+
+I’ll provide maps when needed.
+
+And the "Take me to the end" button will skip the adventure and show you how to get to the surprise at the end.
+
+Are you ready?
+
+<<button "Yes!">><<set $prevpass to $passage>><<goto "UMC04">><</button>>
+ 
+ 
+</main>
+<<include "footer">>
+
+:: UMC04 {"position":"448,476","size":"100,100"}
+<<set $passage to "UMC04">><<set $nextpassage to "UMC05">><<audio ":all" stop>><main>
+My friend Moll will be here soon to guide you, connecting from the year 1603.
+
+Moll should be around here somewhere…
+
+Oh, that’s not Moll… who’s that?
+
+<<timed 8s>><<set $prevpass to $passage>><<goto "UMC05">><</timed>>
+
+</main>
+<<include "footer">>
 
 
 
 :: UMC05 {"position":"450,225","size":"100,100"}
-<<set $passage to "UMC05">><<audio ":all" stop>><<audio "UMC_05.1" play>><<set $nextpassage to "UMC05">><<set $map1 = setup.generateDirectionsMap([51.51413718960546, -0.10337970170302], [51.515038546716255, -0.10329387101122263])>>
+<<set $passage to "UMC05">><<audio ":all" stop>><<audio "UMC_05.1" play>><<set $nextpassage to "UMC-05map">>
 <main>
-CONSTABLE: Oi. You. What are you doing? Yeah, you. I’m talking to you. With that no-good look on your face. You don’t look like you’re from around here, and there’s nothing I don’t like more than something I don’t recognise. Scram.
+<div id="mount"></div>
+<<timed 0.5s>><<replace "#mount">><<type 50ms>>[connecting...]<</type>><</replace>><</timed>>   
+<<timed 3.5s>><<replace "#mount">><<type 50ms>>[connecting...]<</type>><</replace>><</timed>>  
+<<timed 7s>><<replace "#mount">><<type 50ms>>[connecting...]<</type>><</replace>><</timed>>  
+<<timed 13s>><<replace "#mount">><<type 50ms>>Oi! You! 
 
-Wait. Actually. Hang on a second. Maybe you can do me a favour. I’m the constable round these parts, see, and I’ve been tasked with sniffing out troublemakers. Like yourself. No offence. Or not much. But since you’re standing around like a spare part, maybe you can help me out. 
+What are you doing?<</type>><</replace>><</timed>>   
+<<timed 17s>><<replace "#mount">><<type 50ms>>Yeah, you! I'm talking to you, with that no good look on your face! 
 
-I’m looking for someone. A criminal. Yeah? Goes by the name of Moll Cutpurse. I’ll be honest with you, she’s a freak. Dresses up in men’s clothes, robs them, even smokes a bloody pipe, for God’s sake.
+You don't look like you're from around here. And there's nothing I don't like more than something I don't recognize. 
 
-What’s that? A fight? Christ.
+Scram!<</type>><</replace>><</timed>>   
+<<timed 35s>><<replace "#mount">><<type 50ms>>Wait, wait! Actually hang on a second. 
 
-Listen. If you see her...send her my way, alright? She’s a pain in my arse, to be honest, and it’d do the City a whole bunch of good to have her behind bars once and for all. I’ll compensate you nicely, if you know what I mean. Or maybe I just won’t send you to the nick. Haven’t decided yet. 
+Maybe you can do me a favor.<</type>><</replace>><</timed>>   
+<<timed 45s>><<replace "#mount">><<type 55ms>>I'm the constable around these parts, see, and I've been tasked with sniffing out troublemakers. Like yourself. No offence! Or not much! 
 
-Hey! Bobby! Stop that! Put down the cleaver! 
- 
+But since you're standing around like a spare part maybe you can help me out.<</type>><</replace>><</timed>>    
+<<timed 60s>><<replace "#mount">><<type 55ms>>I'm looking for someone. A criminal, yeah. 
 
-MOLL CUTPURSE:
-Psst. Psst. Hey. Over here.
-What were you talking to the Constable for? You’re not a sneak, are you? Come to Limeburner Lane.
-Quickly.
+Goes by the name of Moll Cutpurse. 
+
+I'll be honest with you, she's a freak -dresses up in men's clothes, robs them even smokes a bloody pipe for God's sake.<</type>><</replace>><</timed>>   
+<<timed 80s>><<replace "#mount">><<type 57ms>>What's that? A fight? Christ. 
+
+Listen, if you see her, send her my way, all right. She's a pain in my arse, to be honest. 
+
+And it would do the city a whole bunch of good to have her behind bars, once and for all.<</type>><</replace>><</timed>>    
+<<timed 95s>><<replace "#mount">><<type 50ms>>I'll compensate you nicely if you know what I mean. 
+
+Or maybe I just won't send you to the nick? Haven't decided yet!<</type>><</replace>><</timed>>   
+<<timed 106s>><<replace "#mount">><<type 50ms>>Hey! Bobby, stop that! Put down the cleaver<</type>><</replace>><</timed>> 
+<<timed 112s>><<replace "#mount">><<type 50ms>>Woman: Psst psst, hey! Over here. 
+
+What were you talking to the constable for? You're not a sneak are you? Come to Limeburner Lane. Quickly!
+  
+ <<button "Show map">><<set $prevpass to $passage>><<goto "UMC-05map">><</button>>
+ <</type>><</replace>><</timed>> 
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC-05map {"position":"1400,400","size":"100,200"}
+<<set $passage to "UMC-05map">><<audio ":all" stop>><<set $map1 = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.51489913970774, -0.10347005492166371])>><<set $nextpassage to "UMC-05.2">><main>
+
+Head up Limeburner Lane away from the main road, just enough to get out of ear shot.
+
+<<button "We're here">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
 
 $map1
 
-<<button "We're here">>
-  <<audio ":all" stop>><<audio "UMC_05.2" play>>	
-  <<replace ".secondhalf">>
-  Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’m from. You look a little too clean and pristine to be from the 17th century, I reckon. Get your bearings quickly, cos I need your help. What did the Constable ask you?
+</main>
+<<include "footer">>
 
-  <div class= "menu-wrapper">
+:: UMC-05.2 {"position":"1400,400","size":"100,200"}
+<<set $passage to "UMC-05.2">><<audio ":all" stop>><<set $nextpassage to "UMC06">><main>
+/* TODO NEEDS CAPTIONING */
+Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’m from. You look a little too clean and pristine to be from the 17th century, I reckon. Get your bearings quickly, cos I need your help. What did the Constable ask you?
+
+<div class= "menu-wrapper"> 
   <<button "He wanted me to help him catch a criminal.">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
 
   <<button "He was acting kinda weird.">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
-  </div>
-  <</replace>>
-<</button>>
-
-<div class = "secondhalf">
-
-</div>
-
-
-
+ </div>
 
 </main>
 <<include "footer">>
@@ -601,14 +716,33 @@ $map1
 <<set $passage to "UMC06">><<audio ":all" stop>><<audio "UMC_06" play>><<set $nextpassage to "UMC07">>
 
 <main>
+<div id="mount"></div>
 
-MOLL CUTPURSE:
-Hmm. He and I go way back. We’ve been doing this dance for years, ever since I was a nipper. You’ve caught on, haven’t you? I’m Moll Cutpurse. I can tell you’re the kinda person who likes to walk on the wild side. I can see it in your eyes...that little glint. You can’t fool me. I’m bringing you onto my team. 
-Welcome. First things first: we’ve gotta get you a new name. A pseudonym, if you will. You think Moll Cutpurse is my real name? Nah. It’s actually (she gags a little bit) Mary Frithat. Ugh. Can you imagine? Do I seem like a Mary? The answer is no, before you say anything you might regret.
-Pseudonyms are important for criminals. They stop the constables from being able to track you down so easily. So what’s yours? If you shorten your first name and then use a verb for the first half of your surname, and some kind of word for money for the second half — then that’ll be that. So something like...Soph Grabcoin, or Al Takecash. Tell me when you’ve come up with them.
+<<timed 0s>><<replace "#mount">><<type 50ms>>Hmm, he and I go way back. 
 
+We've been doing this dance for years, ever since I was a nipper. 
 
-<<button "We've all come up with names.">><<set $prevpass to $passage>><<goto "UMC07">><</button>>
+You've caught on, haven't you?<</type>><</replace>><</timed>>    
+<<timed 9s>><<replace "#mount">><<type 50ms>>I'm Moll Cutpurse. 
+
+I can tell you're the kind of person who likes to walk on the wild side. I can see it in your eyes. That little glint. You can't fool me! 
+
+I'm bringing you onto my team. Welcome!<</type>><</replace>><</timed>>    
+<<timed 24s>><<replace "#mount">><<type 50ms>>First things first, we've got to get you a new name. 
+
+A pseudonym, if you will. You think Moll Cutpurse is my real name? Nah - it's actually Mary Frithat. 
+
+Can you imagine?<</type>><</replace>><</timed>>    
+<<timed 41s>><<replace "#mount">><<type 50ms>>Do I seem like a Mary? The answer is no, before you say anything you might regret. 
+
+Pseudonyms are important for criminals. They stop the constables from being able to track you down so easily. 
+
+So what's yours?<</type>><</replace>><</timed>>    
+<<timed 57s>><<replace "#mount">><<type 50ms>>If you shorten your first name, and then use a verb for the first half of your surname, and some kind of word for money for the second half, then that will be that. 
+
+So something like Soph Grabcoin or Al Takecash. Tell me when you've come up with them.<</type>><</replace>><</timed>> 
+
+<<timed 75s>><<replace "#mount">><<button "We've all come up with names.">><<set $prevpass to $passage>><<goto "UMC07">><</button>><</replace>><</timed>>
 
 
 </main>
@@ -616,25 +750,45 @@ Pseudonyms are important for criminals. They stop the constables from being able
 
 
 :: UMC07 {"position":"450,525","size":"100,100"}
-<<set $passage to "UMC07">><<audio ":all" stop>><<audio "UMC_07" play>><<set $nextpassage to "UMC08">><<set $map2 = setup.generateDirectionsMap([51.515038546716255, -0.10329387101122263], [51.5157662961102, -0.10186693576009163])>>
+<<set $passage to "UMC07">><<audio ":all" stop>><<audio "UMC_07" play>><<set $nextpassage to "UMC07map">>
 
 <main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 60ms>>You done? Excellent! Let's hear them.  
 
-You done? Excellent. Let’s hear them. Say them out loud. Proudly!
+Say them loud, proudly! What a merry band of ne'er do wells. 
 
-What a merry band of ne’er-do-wells. Now come on. Let’s get moving. Rule number one — never stand in the same place for too long. Draws attention to yourself. That’s what got you in trouble with the Constable in the first place.
+Now come on. Let's get moving.<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 50ms>>Rule number one: never stand in the same place for too long, draws attention to yourself. 
 
-Here’s rule number two — whenever we cross a main road, I’m gonna need you to move quickly — but carefully! I don’t want you getting mown down. Look both ways before you cross. I shouldn’t have to tell you that, but you’d be surprised at how many famous criminals seem to be lacking in basic safety skills. 
-We can slow down once we get onto the side streets. Let’s get onto Old Bailey. Find the Central Criminal Court for me, would you?
+That's what's got you in trouble with the constable in the first place.<</type>><</replace>><</timed>>    
+<<timed 26s>><<replace "#mount">><<type 50ms>>Here's rule number two: 
 
+Whenever we cross a main road, I'm going to need you to move quickly, but carefully. I don't want you getting mown down.<</type>><</replace>><</timed>>    
+<<timed 36s>><<replace "#mount">><<type 50ms>>Look both ways before you cross. 
+
+I shouldn't have to tell you that, but you'd be surprised at how many famous criminals seem to be lacking in basic safety skills!<</type>><</replace>><</timed>>    
+<<timed 46s>><<replace "#mount">><<type 50ms>>We can slow down once we get onto the side streets. Let's get onto Old Bailey. Find the central Criminal Court for me would you?
+
+<<button "Show map">><<set $prevpass to $passage>><<goto "UMC07map">><</button>> <</type>><</replace>><</timed>>
+
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+:: UMC07map {"position":"450,525","size":"100,100"}
+<<set $passage to "UMC07map">><<audio ":all" stop>><<set $nextpassage to "UMC08">><<set $map2 = setup.generateDirectionsMap([51.51475789867116, -0.10344983059506083], [51.51551164528041, -0.10200042137345718])>>
+
+<main>
+Continue up Limeburner Ln. It will curve to meet Old Bailey Street and directly in front of you, the Central Criminal Court.
 $map2
-
-
 <<button "We're at Old Bailey.">><<set $prevpass to $passage>><<goto "UMC08">><</button>>
-
-
-
-
 
 
 
@@ -643,24 +797,36 @@ $map2
 
 
 :: UMC08 {"position":"450,650","size":"100,100"}
-<<set $passage to "UMC08">><<audio ":all" stop>><<audio "UMC_08" play>><<set $nextpassage to "UMC09">><<set $map3 = setup.generateDirectionsMap([51.5157662961102, -0.10186693576009163], [51.51708755760078, -0.10157021389985543] )>>
-
+<<set $passage to "UMC08">><<audio ":all" stop>><<audio "UMC_08" play>><<set $nextpassage to "UMC08map">>
 <main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 57ms>>Look at that. Pah! You know, I was brought to one of these places. 
 
-MOLL CUTPURSE
-Look at that. Huh.  You know, I was once brought to one of these places. Not this one — wasn’t as fancy schmancy. I was tried, though, you know. In a court of law. You know why they brought me in? For wearing men’s clothes. Called me “indecent.”  Can you believe it? People spat at me on the street for it. In the end, they made me stand at St Paul’s Cross and wear a white sheet while the priest gave a sermon. I didn’t care much, though. Got a good breeze around the nether regions.
+Not this one. Wasn't this fancy schmancy. I was tried though, you know, in a court of law?<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 53ms>>You know why they brought me in? For wearing men's clothes? 
 
-Come on. I don’t want to hang around here too long. Smell of the law gives me the creeps. Let’s head up Giltspur Street. Remember, be quick and careful on main roads.
+Called me indecent! Can you believe it? People spat me on the street for it.<</type>><</replace>><</timed>>    
+<<timed 27s>><<replace "#mount">><<type 50ms>>In the end, they made me stand at St. Paul's Cross and wear a white sheet while the priests gave a sermon, but I didn't care much, got a good breeze around the nether regions!<</type>><</replace>><</timed>>    
+<<timed 37s>><<replace "#mount">><<type 50ms>>Come on. I don't want to hang around here for too long. Smell of the law gives me the creeps. Let's head up Giltspur Street. Remember, be quick and careful on main roads.
 
+
+<<button "Show map">><<set $prevpass to $passage>><<goto "UMC08map">><</button>><</type>>
+
+<</replace>><</timed>> 
+
+
+</main>
+<<include "footer">>
+
+:: UMC08map {"position":"450,650","size":"100,100"}
+<<set $passage to "UMC08map">><<audio ":all" stop>><<set $nextpassage to "UMC09">><<set $map3 = setup.generateDirectionsMap([51.51551164528041, -0.10200042137345718], [51.516661119815495, -0.10164312514555553] )>>
+<main>
+From the direction you came, turn left uphill. 
+After you cross the main road, the street will change name to Guiltspur Street.
 $map3
 
-
-<<button "Let's go">><<set $prevpass to $passage>><<goto "UMC09">><</button>>
-
-
-
-
-
+<<button "I'm here">><<set $prevpass to $passage>><<goto "UMC09">><</button>>
 
 
 </main>
@@ -668,18 +834,52 @@ $map3
 
 
 :: UMC09 {"position":"450,775","size":"100,100"}
-<<set $passage to "UMC09">><<audio ":all" stop>><<audio "UMC_09" play>><<set $nextpassage to "UMC10">><<set $map4 = setup.generateDirectionsMap([51.51708755760078, -0.10157021389985543], [51.51732021674314, -0.10239925659000866] )>>
+<<set $passage to "UMC09map">><<audio ":all" stop>><<audio "UMC_09" play>><<set $nextpassage to "UMC09map">>
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 45ms>>Rule number three of becoming the best criminal in the city: 
+
+Stay out of sight as much as possible.<</type>><</replace>><</timed>>    
+<<timed 6s>><<replace "#mount">><<type 50ms>>That means moving out of the way of any crowds, sticking to the sides of the pavements, avoiding eye contact with big groups, that kind of thing. 
+
+Make sure you're doing that as you're walking.<</type>><</replace>><</timed>>    
+<<timed 18s>><<replace "#mount">><<type 50ms>>Now, what was I saying? 
+
+Oh, right. The thing is, those law men were trying to tell me it was unnatural to wear men's clothes, and smoke a pipe, and drink in taverns, or whatever else. 
+
+Unwomanly or whatever.<</type>><</replace>><</timed>>   
+<<timed 32s>><<replace "#mount">><<type 55ms>> But it didn't feel unnatural to me. 
+
+It just felt - i dunno, I just feel comfortable in men's stuff. Always have. 
+
+When I was a kid, I'll cut the hem off my dresses. So I could move better.<</type>><</replace>><</timed>>    
+<<timed 47s>><<replace "#mount">><<type 50ms>>Just didn't feel good in all that fabric. Gets inthe way. 
+
+I can't run, jump, climb. I was always trying to go and play with the boys, because the girls didn't like me much.<</type>><</replace>><</timed>>    
+<<timed 59s>><<replace "#mount">><<type 48ms>>Every time my aunt tried to get me to sit down and sew, I'd be off like a racehorse. 
+
+Running and tumbling. The boys didn't want me near them though.<</type>><</replace>><</timed>>    
+<<timed 67s>><<replace "#mount">><<type 50ms>>Even when I'd be locked inside with my threading needle, I'd watch them out the window. 
+
+Wishing my needle was a dagger.<</type>><</replace>><</timed>>    
+<<timed 76s>><<replace "#mount">><<type 50ms>>Here turn on to Cock Lane when you get a chance. Don't laugh. Oh - well, you can laugh.<</type>>
+$map4
+<<button "Ok, we turned.">><<set $prevpass to $passage>><<goto "UMC09map">><</button>>
+<</replace>><</timed>> 
+
+</main>
+<<include "footer">>
+
+:: UMC09map {"position":"450,775","size":"100,100"}
+<<set $passage to "UMC09map">><<audio ":all" stop>><<set $nextpassage to "UMC10">><<set $map4 = setup.generateDirectionsMap([51.516661119815495, -0.10164312514555553], [51.51732515412257, -0.1026497257358336] )>>
 
 <main>
+On the left hand side of the road you’ll find Cock Lane. 
+You’ll see on the corner the Golden Boy of Pye corner. Put there in memory of the sins of the city. 
 
-MOLL CUTPURSE
-Rule number three of becoming the best criminal in the City — stay out of sight as much as possible. That means moving out of the way of any crowds — sticking to the sides of the pavements, avoiding eye contact with big groups — that kind of thing. Make sure you’re doing that as you’re walking. Now, what was I saying? Oh right. The thing is, those lawmen were trying to tell me it was unnatural to wear men’s clothes and smoke a pipe and drink in taverns or whatever else. Unwomanly, or whatever. But it didn’t feel unnatural to me. It just felt...I dunno. I just feel comfortable in men’s stuff. Always have. When I was a kid I’d cut the hem of my dresses so I could move better. Just didn’t feel good in all that fabric. It gets in the way. I can’t run, jump, climb. I was always trying to go and play with the boys, cos the girls didn’t like me much. Every time my aunt tried to get me to sit down and sew, I’d be off like a racehorse. Running and tumbling. The boys didn’t want me near them, though. Even when I’d be locked inside with my threading needle, I’d watch them out the window. Wishing my needle was a dagger. Here, turn onto Cock Lane when you get a chance. And don’t laugh. Or, well, you can laugh.
+<<button "Ok, we're here">><<set $prevpass to $passage>><<goto "UMC10">><</button>>
 
 $map4
-
-<<button "Ok, we turned.">><<set $prevpass to $passage>><<goto "UMC10">><</button>>
-
-
 
 
 
@@ -690,127 +890,150 @@ $map4
 
 
 :: UMC10 {"position":"450,900","size":"100,100"}
-<<set $passage to "UMC10">><<audio ":all" stop>><<audio "UMC_10" play>><<set $nextpassage to "UMC11">><<set $map5 = setup.generateDirectionsMap([51.51732021674314, -0.10239925659000866], [51.51773232763725, -0.10347906774555626] )>>
-
+<<set $passage to "UMC10">><<audio ":all" stop>><<audio "UMC_10" play>><<set $nextpassage to "UMC10map">>
 <main>
-MOLL
-Hang on a second. Something feels a bit funny here.
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Hang on a second. Something feels a bit funny here. <</type>><</replace>><</timed>>    
+ 
+<<timed 7s>><<replace "#mount">><<type 50ms>>ANN: Moll? Is that you? 
 
-ANN DUCK
-Moll? That you? 
+MOLL: Ann Duck! As I live and breathe! This is what I meant about time going funny around these parts.<</type>><</replace>><</timed>>    
+<<timed 16s>><<replace "#mount">><<type 57ms>>M: This is Ann Duck, notable criminal from 1742. 
 
-MOLL
-Ann Duck, as I live and breathe. This is what I meant about time going funny around these parts. This is Ann Duck — notable criminal from 1742.
+ANN: Notable! Is that any way to describe me? How about, the most notorious, most feared, most violent criminal of the last century?<</type>><</replace>><</timed>>    
+<<timed 37s>><<replace "#mount">><<type 55ms>>M: hmm there's already someone occupying that title. 
 
-ANN DUCK
-Notable? Is that any way to describe me? How about the most notorious, most feared, most violent criminal of the last century?
+A: Who? You my love? Oh don't make me laugh! Little Miss Pickpocket? 
 
-MOLL
-Hmm. There’s already someone occupying that title.
+M: Don't call me that! 
 
-ANN DUCK
-Who? You, my love? Don’t make me laugh. Little miss pickpocket?
+A: Who's this lot?<</type>><</replace>><</timed>>    
+<<timed 52s>><<replace "#mount">><<type 53ms>>M: Bunch of reprobates I found hanging around Limeburner Lane. 
+I'm showing them the ropes! 
 
-MOLL
-Don’t call me that.
+ANN: First rule of criminality stay out of sight. 
 
-ANN DUCK
-Who’s this lot?
+MOLL: I've already told them that one.<</type>><</replace>><</timed>>    
+<<timed 64s>><<replace "#mount">><<type 54ms>>A: Well, they might not be the brightest bunch. 
+Look, you lot, if you're gonna make it in this city, you got to be able to spot others of your ilk.<</type>><</replace>><</timed>>    
+<<timed 76s>><<replace "#mount">><<type 55ms>>A: What I want you to do is this - in your little groups, you need to come up with a hand gesture. 
+Nothing rude, mind, that's too obvious. 
+Just something small.<</type>><</replace>><</timed>>    
+<<timed 90s>><<replace "#mount">><<type 55ms>>A: Maybe you're tipping your cap to someone, or you're tapping your palm on the back of your hand. 
+Whatever it is, you're gonna do it to anyone you see on our way to Smithfield Rotunda Garden.<</type>><</replace>><</timed>>    
+<<timed 106s>><<replace "#mount">><<type 57ms>>A:If they acknowledge you, great they're part of your gang. 
+If not, ain't no bother. But make sure you keep count of who's acknowledging you and who isn't. 
+Right, come on you lot, head on to Smithfield Street.<</type>>
+$map5
+<<button "Ok, let's go.">><<set $prevpass to $passage>><<goto "UMC10map">><</button>><</replace>><</timed>> 
 
-MOLL
-Bunch of reprobates I found hanging around Limeburner Lane. I’m showing them the ropes.
 
-ANN DUCK
-First rule of criminality. Stay out of sight.
+</main>
+<<include "footer">>
 
-MOLL
-I’ve already told them that one.
-
-ANN DUCK
-Well, they might not be the brightest bunch. Look, you lot. If you’re gonna make it in this City, you’ve gotta be able to spot others of your ilk. What I want you to do is this — in your little groups, you need to come up with a hand gesture. Nothing rude, mind — that’s too obvious. Just something small. Maybe you’re tipping your cap to someone, or you’re tapping your palm on the back of your hand. Whatever it is, you’re gonna do it to anyone you see on our way to Smithfield Rotunda Garden. If they acknowledge you, great. They’re part of your gang. If not — then no bother. But make sure you keep count of who’s acknowledging you and who isn’t.
-Right, come on, you lot. Head onto Smithfield Street.
+:: UMC10map {"position":"450,900","size":"100,100"}
+<<set $passage to "UMC10map">><<audio ":all" stop>><<set $nextpassage to "UMC11">><<set $map5 = setup.generateDirectionsMap([51.51732515412257, -0.1026497257358336], [51.51757406544449, -0.1035285800709999] )>>
+<main>
 
 $map5
-<<button "Ok, let's go.">><<set $prevpass to $passage>><<goto "UMC11">><</button>>
-
+<<button "I'm here">><<set $prevpass to $passage>><<goto "UMC11">><</button>>
 
 </main>
 <<include "footer">>
 
 
 :: UMC11 {"position":"450,1025","size":"100,100"}
-<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12">><<set $map6 = setup.generateDirectionsMap( [51.51773232763725, -0.10347906774555626], [51.51804997658025, -0.10158564106698934] )>>
+<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12B">><<set $map6 = setup.generateDirectionsMap( [51.51823523214685, -0.10303930182366541], [51.51850995393808, -0.1011746183572291] )>><main>$map6
 
-<main>
-MOLL
-Don’t tell them what to do. That’s my job. You lot need to find Snow Hill and head up, turning right onto Smithfield Street, then right again onto Hosier Street, and then left.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 48ms>> MOLL: Don't tell them what to do that's my job. 
 
-ANN
-Towards the Smithfield Rotunda. Got it? Go on, then. Make sure you’re doing your hand signals.
+You need to find Snow Hill and head up turning right onto Smithfield Street.<</type>><</replace>><</timed>>   
+<<timed 10s>><<replace "#mount">><<type 58ms>>ANN: Towards the Smithfield Rotunda. Got it? 
+Go on then. Make sure you're doing your hand signals!<</type>><</replace>><</timed>>   
+<<timed 24s>><<replace "#mount">><<type 58ms>>M: What are you doing here anyway? 
 
-$map6
-MOLL
-What are you doing here, anyway?
+ANN: Hmm dunno. Something felt a bit funny. 
+I had a feeling you were up to no good. 
+And wherever there's mischief I've got to follow.<</type>><</replace>><</timed>>    
+<<timed 38s>><<replace "#mount">><<type 52ms>>A: What are you doing Moll? It's been a while. 
+Still cutting men's purse strings? Small fry but someone's got to do it, I suppose. 
 
-ANN
-Hmm, dunno. Something felt a bit funny. Had a feeling you were up to no good, and wherever there’s mischief, I’ve got to follow. What have you been doing, Moll? It’s been a while. Still cutting men’s purse strings? Small fry, but someone’s got to do it, I suppose.
+M: Made a good amount last week. I'll have you know.<</type>><</replace>><</timed>>   
+<<timed 49s>><<replace "#mount">><<type 59ms>>A: Don't be so small time! You're a glorified pickpocket at best. 
 
-MOLL
-Made a good amount last week, I’ll have you know.
+And you're a fence! Even worse. People do their work through you, but you don't get your hands dirty.<</type>><</replace>><</timed>>    
+<<timed 63s>><<replace "#mount">><<type 57ms>>A: Me? People are actually afraid of me. 
 
-ANN
-Don’t be so small-time. You’re a glorified pickpocket at best. And you’re a fence. Even worse! People do their work through you, but you don’t get your hands dirty. Me? People are actually afraid of me. Last week I nearly cut a lad’s finger off cos he wouldn’t give me any of his gold. Week before that I beat a man with glass bottles until he cried for his mother.
+Last week, I nearly cut a lad's finger off because he wouldn't give me any of his gold. 
 
-MOLL
-You’ll get in trouble one day, Ann Duck. Mark my words.
+Week before, I beat a man with glass bottles until he cried for his mother.<</type>><</replace>><</timed>>   
+<<timed 80s>><<replace "#mount">><<type 58ms>>M: You'll get in trouble one day Ann Duck, mark my words. 
 
-ANN
-Nonsense. I’ve been tried 19 times and they ain’t got a thing on me. You need to hang around the ports, Moll. That’s where the good stuff is.
+A: Nonsense! I've been tried 19 times and they still ain't got nothing on me. 
+You need to hang around the ports Moll, that's where the good stuff is.<</type>><</replace>><</timed>>    
+<<timed 96s>><<replace "#mount">><<type 54ms>>M: Yeah, I know, but I'm not like you, Ann! I don't want to beat anyone up. 
+Not unless I have to. 
+Not unless they're comin' for me. 
+I like to keep it quiet. 
+Steal away into the night. A ghost on the streets.<</type>><</replace>><</timed>>   
+<<timed 110s>><<replace "#mount">><<type 56ms>>A: Ah you don't get it, Moll! Never have! 
 
-MOLL
-Yeah, I know. But I’m not like you, Ann. I don’t want to beat anyone up. Not unless I have to. Not unless they’re coming for me. I like to keep it quiet. Steal away into the night. A ghost on the streets.
+This lot - the ones who swan around the ports in their furs and their horses with their sleek coats... they don't care about us. 
 
-ANN
-Ah, you don’t get it, Moll. Never have. This lot? The ones who swan around the ports in their furs and their horses with the sleek coats...they don’t care about us. They already rob us every single day! 
+They already rob us every single day!<</type>><</replace>><</timed>>   
+<<timed 126s>><<replace "#mount">><<type 52ms>>A: Wouldn't piss on us if we were on fire. 
 
-MOLL
-Wouldn’t piss on us if we were on fire. Would step over our bodies and wrinkle their noses if they got our blood on their slippers. We’ve gotta make it work for us, Moll. What’s the issue if there’s a bit of violence, here or there? There’s nothing I’ve done that they wouldn’t do to us. Only difference is, they’d get their hired thugs to do it. 
+Would step over our bodies and wrinkle their noses if they got our blood on their slippers. 
 
-ANN
-Here, we’re nearly at Smithfield Rotunda Garden, and I’ve got to go. Word is there’s a fancy carriage coming down from Farringdon. See you, Moll. And you lot — don’t get into any trouble. Or not much, anyway.
+We've got to make it work for us, Moll!<</type>><</replace>><</timed>>    
+<<timed 139s>><<replace "#mount">><<type 55ms>>A: What's the issue if there's a bit of violence here or there? 
 
-MOLL
-Bye, Ann!
+There's nothing I've done that they wouldn't do to us. 
 
+Only difference is they get their hired thugs to do it.<</type>><</replace>><</timed>>    
+<<timed 153s>><<replace "#mount">><<type 56ms>>A: Here, we're nearly at Smithfield Rotunda Garden and I've got to go. 
 
-Thank God she’s gone. Every day’s a competition with Ann Duck.
-Right. This will be a good place for a rest. Well? What are your tallies? How many other gang members did you spot?
+Word is there's a fancy carriage coming down from Farringdon. 
 
+See you, Moll. And you lot - don't get into any trouble! Or not much anyway.<</type>><</replace>><</timed>>   
+<<timed 172s>><<replace "#mount">><<type 70ms>>M: Bye, Ann! Thank god she's gone. 
+
+Every day is a competition with Ann Duck. Right, this will be a good place for a rest. Well. What are your tallies? How many other gang members did you spot?
 <div class= "menu-wrapper">
   <<button "0-1">><<set $prevpass to $passage>><<goto "UMC12A">><</button>>
   <<button "2">><<set $prevpass to $passage>><<goto "UMC12B">><</button>>
   <<button "3 or more">><<set $prevpass to $passage>><<goto "UMC12B">><</button>>
- </div> 
+ </div> <</type>><</replace>><</timed>> 
 
 
-
-
-
-
-
+<<button "I need more directions">><<set $prevpass to $passage>><<goto "UMC11map">><</button>>
 </main>
-<<include "footersimple">>
+<<include "footer">>
+
+:: UMC11map {"position":"450,1025","size":"100,100"}
+<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12B">><<set $map6 = setup.generateDirectionsMap( [51.51823523214685, -0.10303930182366541], [51.51850995393808, -0.1011746183572291] )>><main>
+<main>
+
+From Cock Lane, take a right on Snow Hill, going around the building and turning just before the building under construction. And then a left again.  
+Follow along until you come open area you’ll spot a round garden. Find your way inside.
+
+$map6
+
+<<button "I'm here">><<set $prevpass to $passage>><<goto "UMC12A">><</button>>
+</main>
+<<include "footer">>
 
 
 :: UMC12A {"position":"375,1150","size":"100,100"}
 <<set $passage to "UMC12A">><<audio ":all" stop>><<audio "UMC_12A" play>><<set $nextpassage to "UMC13">>
 
 <main>
-MOLL
-Ah, so we’re the only criminals round these parts. Good to know. We’ve got everything to choose from. 
+<<type 50ms>> Ah, so we’re the only criminals round these parts. Good to know. We’ve got everything to choose from. <</type>>
 
 
-<<timed 5s>><<set $prevpass to $passage>><<goto "UMC13">><</timed>>
+<<timed 9s>><<set $prevpass to $passage>><<goto "UMC13">><</timed>>
 
 
 
@@ -826,11 +1049,10 @@ Ah, so we’re the only criminals round these parts. Good to know. We’ve got e
 <<set $passage to "UMC12B">><<audio ":all" stop>><<audio "UMC_12B" play>><<set $nextpassage to "UMC13">>
 
 <main>
-MOLL
-Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we find.
+<<type 50ms>> Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we find.<</type>>
 
 
-<<timed 5s>><<set $prevpass to $passage>><<goto "UMC13">><</timed>>
+<<timed 8s>><<set $prevpass to $passage>><<goto "UMC13">><</timed>>
 
 
 
@@ -846,35 +1068,37 @@ Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we
 <<set $passage to "UMC13">><<audio ":all" stop>><<audio "UMC_13" play>><<set $nextpassage to "UMC14">>
 
 <main>
-MOLL
-Let’s pause here for a second. Sit down if you like. Catch your breath. Peaceful, isn’t it? Nice to see a bit of green around here. Don’t think we had this place when I was knocking about. Lucky you. Hang about, who’s this? Two men? They look a bit fancy, don’t they? Look, I can’t be recognised, so you’ll need to eavesdrop on them for me. Act natural — whatever that means to you.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Let's pause here for a second. 
 
-DEKKER
-Apparently she hangs around here. If we’re lucky, maybe she’ll cut our purse-strings.
+Sit down if you like, catch your breath. 
 
-MIDDLETON
-Wouldn’t that be good? First hand experience.
+Ah, peaceful, isn't it?<</type>><</replace>><</timed>>    
+<<timed 8s>><<replace "#mount">><<type 50ms>>Nice to see a bit of green around here. 
 
-DEKKER
-You know, I’m still struggling with the ending. Surely she should be married off?
+Don't think we had this place when I was knocking about. Lucky you.<</type>><</replace>><</timed>>    
+<<timed 16s>><<replace "#mount">><<type 50ms>>Hang about, who's this? Two men? 
 
-MIDDLETON
-Moll Cutpurse? Married off? Never. She wouldn’t allow it. It would be a betrayal.
+They look a bit fancy, don't they? 
 
-DEKKER
-But the audience will be in uproar!
+Look, I can't be recognized, so you'll need to eavesdrop on them for me. Act natural, whatever that means to you.<</type>><</replace>><</timed>>    
+<<timed 29s>><<replace "#mount">><<type 50ms>>1: Apparently she hangs around here. If we're lucky, maybe she'll cut our purse strings. 
 
-MIDDLETON
-Don’t be so old-fashioned. As long as we have one wedding in there, we’ll be safe.
+2: Wouldn't that be good? First hand experience!<</type>><</replace>><</timed>>    
+<<timed 38s>><<replace "#mount">><<type 50ms>>1: You know, I'm still struggling with the ending. Surely she should be married off! 
 
-DEKKER
-Hey! I can’t hear. Who’re they talking about?
+2: Moll Cutpurse, married off? Never! She wouldn't allow it. It would be a betrayal!<</type>><</replace>><</timed>>   
+<<timed 51s>><<replace "#mount">><<type 50ms>>1: But the audience will be in uproar! 
+
+2: Don't be so old fashioned. As long as we have one wedding in there we'll be safe.<</type>><</replace>><</timed>>   
+<<timed 59s>><<replace "#mount">><<type 50ms>>MOLL: Hey I can't hear. What are they talking about?
 
 <div class= "menu-wrapper">
 <<button "You, I think">><<set $prevpass to $passage>><<goto "UMC14">><</button>>
 
 <<button "Some pickpocket I’ve never heard of.">><<set $prevpass to $passage>><<goto "UMC14">><</button>>
-</div>
+</div><</type>><</replace>><</timed>> 
 
 
 
@@ -889,15 +1113,16 @@ Hey! I can’t hear. Who’re they talking about?
 <<set $passage to "UMC14">><<audio ":all" stop>><<audio "UMC_14" play>><<set $nextpassage to "UMC15">>
 
 <main>
-MOLL
+<<type 50ms>>
 Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Report back to me after they’re gone!
+<</type>>
 
-
+<<timed 8s>>
 <div class= "menu-wrapper">
 <<button "Excuse me...?">><<set $prevpass to $passage>><<goto "UMC15">><</button>>
 
 <<button "Hey! You two.">><<set $prevpass to $passage>><<goto "UMC15">><</button>>
-</div>
+</div><</timed>>
 
 
 
@@ -912,11 +1137,11 @@ Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Repo
 <<set $passage to "UMC15">><<audio ":all" stop>><<audio "UMC_15" play>><<set $nextpassage to "UMC16">>
 
 <main>
-MIDDLETON
-Oh. Hello. Can I help you?
+<div id="mount"></div>
+<<type 50ms>> MIDDLETON: Oh. Hello. Can I help you? <</type>>
 
-
-<<button "Were you talking about Moll Cutpurse?">><<set $prevpass to $passage>><<goto "UMC16">><</button>>
+<<timed 4.5s>>
+<<button "Were you talking about Moll Cutpurse?">><<set $prevpass to $passage>><<goto "UMC16">><</button>><</timed>>
 
 
 
@@ -932,23 +1157,26 @@ Oh. Hello. Can I help you?
 <<set $passage to "UMC16">><<audio ":all" stop>><<audio "UMC_16" play>><<set $nextpassage to "UMC17">>
 
 <main>
-DEKKER
-Why? Do you know her?
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 58ms>>D: Why? do you know her?
+  
+M: I don't believe we've had the pleasure of meeting. I'm Thomas Middleton, and this is my writing partner, Thomas Decker. 
 
-MIDDLETON
-I don’t believe we’ve had the pleasure of meeting. I’m Thomas Middleton, and this is my writing partner, Thomas Dekker.
+D: Charmed. <</type>><</replace>><</timed>>   
+<<timed 12s>><<replace "#mount">><<type 53ms>>M:We're playwrights you'll see. 
 
-DEKKER
-Charmed.
+We're writing a play called The Roaring Girl. It's based on her life.
 
-MIDDLETON
-We’re playwrights, you see. We’re writing a play called The Roaring Girl. It’s based on her life. She’s a rather famous pickpocket around the City. I take it that you know her?
+She's a rather famous pickpocket around the city. I take it you know her?
 
 <div class= "menu-wrapper">
 <<button "Well...">><<set $prevpass to $passage>><<goto "UMC17">><</button>>
 
 <<button "It's a long story.">><<set $prevpass to $passage>><<goto "UMC17">><</button>>
-</div>
+</div><</type>><</replace>><</timed>> 
+
+
 
 
 
@@ -962,24 +1190,26 @@ We’re playwrights, you see. We’re writing a play called The Roaring Girl. It
 
 <main>
 <div id="mount"></div>
-<<timed 0.5s>><<replace "#mount">>DEKKER
-I’m sure.
 
-MIDDLETON
-Obviously, she’s most famous — or should I say, infamous — for cross-dressing. Dressing up like a man.
+<<timed 0s>><<replace "#mount">><<type 50ms>>D: I'm sure
 
-DEKKER
-Somewhat unnatural, I feel. But who are we to judge?
-
+M: Obviously she's most famous, or should I say infamous, for cross-dressing. Dressing up like a man. <</type>><</replace>><</timed>>  
+<<timed 10s>><<replace "#mount">><<type 50ms>>D: Somewhat unnatural, I feel. But who are we to judge?<</type>>
 <<button "What are you going to say about her?">><<replace "#mount">><<audio ":all" stop>><<audio "UMC_17.5" play>>
-MIDDLETON
-Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometimes we need to offer moral guidance to our audiences, but it would be erroneous to suggest that Moll is some strange, unwell woman. Though I do hope, wherever she is, that she will consider taking a life of honesty and goodness, as opposed to petty thievery...Something more befitting of a lady, perhaps.
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>M: Well, fiction's goal is not to pass judgment, necessarily. 
+
+Of course, sometimes we need to offer moral guidance to our audiences, but it would be erroneous to suggest that Moll is some strange unwell woman.<</type>><</replace>><</timed>>    
+<<timed 15s>><<replace "#mount">><<type 50ms>>Though I do hope, wherever she is, that she will consider taking a life of honesty and goodness, as opposed to petty thievery. 
+
+Something more befitting of a lady perhaps.
 
 <div class= "menu-wrapper">
   <<button "But you said she isn’t a lady.">><<set $prevpass to $passage>><<goto "UMC18">><</button>>
 
   <<button "I thought you weren’t supposed to pass judgement.">><<set $prevpass to $passage>><<goto "UMC18">><</button>>
 </div>
+<</type>><</replace>><</timed>> 
 
 <</replace>><</button>>
 <</replace>><</timed>>
@@ -994,20 +1224,25 @@ Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometim
 <<set $passage to "UMC18">><<audio ":all" stop>><<audio "UMC_18" play>><<set $nextpassage to "UMC19">>
 
 <main>
-MIDDLETON
-Anyway, I do hope you’ll come and see it. And maybe you can bring your...friend. Moll Cutpurse. We’d welcome her critiques with open arms. If she buys a ticket, of course.
+<div id="mount"></div>
+  
+<<timed 2s>><<replace "#mount">><<type 55ms>>M: Anyway, I do hope you'll come and see it. 
 
-MOLL
-They’re gone? Looks like I lost that lawman. Come on. Let’s get a move on. Go down Little Britain, past the William Wallace memorial.
+And maybe you can bring your friend, Moll Cutpurse. 
 
-MOLL
-So? Go on then. What were they saying about me?
+We'd welcome her critiques with open arms. If she buys a ticket, of course.<</type>><</replace>><</timed>>    
+<<timed 18s>><<replace "#mount">><<type 60ms>>MOLL: Are they gone? Looks like I lost that law-man. 
 
-<div class= "menu-wrapper">
+Come on, let's get a move on. 
+
+Go down Little Britain. Past the William Wallace Memorial. 
+
+So, go on then. What were they saying about me?
+
 <<button "They’re writing a play about you.">><<set $prevpass to $passage>><<goto "UMC19">><</button>>
 
-<<button "You’re going to be famous.">><<set $prevpass to $passage>><<goto "UMC19">><</button>>
-</div>
+<<button "You’re going to be famous.">><<set $prevpass to $passage>><<goto "UMC19">><</button>><</type>><</replace>><</timed>> 
+
 
 
 
@@ -1020,20 +1255,27 @@ So? Go on then. What were they saying about me?
 <<set $passage to "UMC19">><<audio ":all" stop>><<audio "UMC_19" play>><<set $nextpassage to "UMC20">>
 
 <main>
-MOLL
-Huh? They’re writing about me? Wow. I wonder...people will put on that play in a hundred years, I bet. More! Two hundred! Three hundred! I wonder if they’ll put in that story about the time I rode from Charing Cross to Shoreditch dressed as a man, blowing a trumpet and holding a banner, and nearly got torn to death by a mob. That was pretty dramatic, if you ask me. What else did they say?
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Huh? They're writing about me? 
 
-<div class= "menu-wrapper">
+Wow. I wonder! People will put on that play in a hundred years I bet. 
+
+More - two hundred! Three hundred!<</type>><</replace>><</timed>>    
+<<timed 13s>><<replace "#mount">><<type 50ms>>I wonder if they'll put in that story about the time I rode from Charing Cross to Shoreditch dressed as a man? 
+
+Blowing a trumpet and holding a banner and nearly got torn to death by a mob.<</type>><</replace>><</timed>>    
+<<timed 24s>><<replace "#mount">><<type 50ms>>That was pretty dramatic, if you ask me. What else did they say?
+
 <<button "They said you were a petty thief.">>
   <<set $whatdidtheysay to "thief">>
   <<set $prevpass to $passage>><<goto "UMC20">>
 <</button>>
-
 <<button "They called you unnatural.">>
   <<set $whatdidtheysay to "unnatural">>
   <<set $prevpass to $passage>><<goto "UMC20">>
-<</button>>
-</div>
+<</button>><</type>><</replace>><</timed>> 
+
 
 
 
@@ -1046,17 +1288,22 @@ Huh? They’re writing about me? Wow. I wonder...people will put on that play in
 <<set $passage to "UMC19">><<set $nextpassage to "UMC21">>
 
 <main>
-
+<div id="mount"></div>
+<<timed 0.2s>><<replace "#mount">>
 <<if $whatdidtheysay is "thief">>
 <<audio ":all" stop>><<audio "UMC_20A" play>>
 Hmm...well, they’re technically not wrong.
 <<else>>
 <<audio ":all" stop>><<audio "UMC_20B" play>>
 Unnatural?
-<</if>>
+<</if>><</replace>>
+<</timed>>
+ 
+<<timed 3s>><<replace "#mount">><<type 57ms>>Well, that’s just what they think. I don’t care. 
 
-Well, that’s just what they think. I don’t care. 
-Though I s’pose...people will watch the play. Hundreds of people. And then if it goes well, people in the future will watch it too. D’you think they’ll all think the same of me?
+Though I s’pose...people will watch the play. 
+
+Hundreds of people. And then if it goes well, people in the future will watch it too. D’you think they’ll all think the same of me?
 
 <div class= "menu-wrapper">
 <<button "No.">>
@@ -1065,8 +1312,8 @@ Though I s’pose...people will watch the play. Hundreds of people. And then if 
 
 <<button "Of course not.">>
   <<set $prevpass to $passage>><<goto "UMC21">>
-<</button>>
-</div>
+<</button>></div><</type>><</replace>><</timed>>
+
 
 
 
@@ -1076,19 +1323,34 @@ Though I s’pose...people will watch the play. Hundreds of people. And then if 
 
 
 :: UMC21 {"position":"450,2275","size":"100,100"}
-<<set $passage to "UMC21">><<audio ":all" stop>><<audio "UMC_21" play>><<set $nextpassage to "UMC22">><<set $map7 = setup.generateDirectionsMap( [51.51804997658025, -0.10158564106698934], [51.516887154679715, -0.09771500182371771] )>>
-
+<<set $passage to "UMC21">><<audio ":all" stop>><<audio "UMC_21" play>><<set $nextpassage to "UMC21map">><<set $map7 = setup.generateDirectionsMap( [51.51804997658025, -0.10158564106698934], [51.516887154679715, -0.09771500182371771] )>>
 <main>
+<<type 50ms>>Hmm.
 
-Hmm.
-
-Well. Let me know when you’re outside Postman’s Park.
-
+Well. Let me know when you’re outside Postman’s Park.<</type>>
 $map7
+<<button "We're here.">>
+  <<set $prevpass to $passage>><<goto "UMC21map">>
+<</button>>
+
+
+</main>
+<<include "footer">>
+
+:: UMC21map {"position":"450,2275","size":"100,100"}
+<<set $passage to "UMC21map">><<audio ":all" stop>><<set $nextpassage to "UMC22">><<set $map7 = setup.generateDirectionsMap( [51.51849447814232, -0.10115599968176144], [51.516671009670844, -0.09847064369107725] )>>
+<main>
+Exit the park and circle to the other side to find Little Britain. You’ll see the Tutor style archway of St Barthlomews and further along a small with sign with a green bicycle.
+Head down this road until you have to turn. Take a Right. 
+Just ahead you’ll see a crossing and a gateway to a garden on the other side of the road. That is Postman’s Park.
 
 <<button "We're here.">>
   <<set $prevpass to $passage>><<goto "UMC22">>
 <</button>>
+
+$map7
+
+
 
 
 </main>
@@ -1096,32 +1358,85 @@ $map7
 
 
 :: UMC22 {"position":"450,2400","size":"100,100"}
-<<set $passage to "UMC22">><<audio ":all" stop>><<audio "UMC_22" play>><<set $nextpassage to "end">>
+<<set $passage to "UMC22">><<audio ":all" stop>><<audio "UMC_22" play>><<set $nextpassage to "SRS-23">>
 
 <main>
-MOLL
-Hey. Rule number 4 of being a criminal in the City...sometimes, you can stop and smell the roses. Take in your surroundings properly, make sure you can spot your nearest exit route in case the lawmen come calling...but enjoy yourself, too.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 55ms>>Hey. Rule number four of being a criminal in the city: 
 
-I’ve thought about it, and...I think I’d want to be remembered as someone who lived truthfully. Who did the best she could with what she had. Who was loyal, and good to her friends, and helped those who needed it, and took from those who didn’t. 
+Sometimes you can stop and smell the roses! 
+Take in your surroundings properly. Make sure you can spot your nearest exit route in case the law men come calling, but enjoy yourself too.<</type>><</replace>><</timed>>    
+<<timed 18s>><<replace "#mount">><<type 55ms>>I've thought about it, and I think I want to be remembered as someone who lived truthfully, who did the best she could with what she had. 
 
-You know, I’ve nothing to be ashamed of. Nothing at all. They can write what they want. I know who I am.
+Who was loyal and good to her friends and helped those who needed it and took from those who didn't.<</type>><</replace>><</timed>>    
+<<timed 32s>><<replace "#mount">><<type 53ms>>You know, I have nothing to be ashamed of. Nothing at all. 
 
-What would you want to be remembered for? In two, three, five hundred years? Maybe think about it. Walk around this place for a little while. Take it in. Talk to your friends, your family. There’s no rush. The air is shimmering now. It’s time for me to go. But you can take your time.
+They can write what they want. I know who I am.<</type>><</replace>><</timed>>    
+<<timed 43s>><<replace "#mount">><<type 53ms>>What would you want to be remembered for? In 2, 3, 5 hundred years. 
 
-<<timed 3s>><<set $prevpass to $passage>><<goto "end">><</timed>>
+Maybe think about that. Maybe think about it.<</type>><</replace>><</timed>>    
+<<timed 53s>><<replace "#mount">><<type 70ms>>Walk around this place for a little while. Take it in. 
+
+Talk to your friends, your family. There's no rush. 
+
+The air is shimmering now. It's time for me to go. 
+
+But you can take your time.<</type>><</replace>><</timed>> 
+
+
+
+<<timed 80s>><<set $prevpass to $passage>><<goto "SRS-23">><</timed>>
 
 </main>
 <<include "footer">>
 
 
-:: end {"position":"100,850","size":"100,100"}
-<<set $passage to "end">><<audio ":all" stop>><<set $endmap = setup.generateDirectionsMap( [51.516887154679715, -0.09771500182371771], [51.516887154679715, -0.09771500182371771] )>>
-
+:: SRS-23 {"position":"520,2113","size":"100,100"}
+<<set $passage to "SRS-23">><<set $nextpassage to "SRS-24">>
+/* <<audio ":all" stop>><<audio "SRS_32" play>> */
 <main>
+<div id="mount"></div>
+Moll poses an excellent question: what would you like to be remembered for? 
+
+Maybe you can answer that question now, or maybe you’d rather ponder it for a while.
+
+Now, head into the centre of Postman's Park, and I'll hand you over to an associate of mine. 
+
+Keep your headphones on, or if you need spares, ask the dragons under the Gazebo.
+
+You’ll need to show them this <<button "key">><<goto "SRS-24">><</button>>.
+
+</main>
+<<include "footer">>
+
+:: SRS-24 {"position":"520,2113","size":"100,100"}
+<<set $passage to "SRS-24">>/* <<audio ":all" stop>><<audio "SRS_33" play>> */<main>
+<div class="key-wrapper glowing"><img src="./assets/keys-34.png"></div>
 
 
-$endmap
 
+Start a new adventure...
+
+<div class="adventure-wrapper"><h2 class="adventure-title">Ghost Hunting with Brian</h2><div class="adv-item"><div>6 min walk away</div><<button "Show Map">><<goto "UMC_25A">><</button>></div></div>
+
+<div class="adventure-wrapper"><h2 class="adventure-title">The Smashing Rock Sisters</h2><div class="adv-item"><div>Family Focused
+5 min walk away</div><<button "Show Map">><<goto "UMC_25B">><</button>></div></div>
+
+</main>
+
+:: UMC_25A {"position":"520,2113","size":"100,100"}
+<<set $passage to "UMC_25A">><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.51698173499748, -0.092720160117932])>><main>
+<h2>Ghost Hunting with Brian</h2>
+$map
+
+</main>
+<<include "footerend">>
+
+:: UMC_25B {"position":"520,2113","size":"100,100"}
+<<set $passage to "UMC_25B">><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.5199856714077, -0.09708782798778638])>><main>
+<h2>The Smashing Rock Sisters</h2>
+$map
 
 </main>
 <<include "footerend">>

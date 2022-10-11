@@ -605,224 +605,426 @@ You have two options:
 
 &lt;main&gt;
 
-&lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC05&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC01&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-&lt;/main&gt;</tw-passagedata><tw-passagedata pid="6" name="UMC05" tags="" position="450,225" size="100,100">&lt;&lt;set $passage to &quot;UMC05&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_05.1&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC05&quot;&gt;&gt;&lt;&lt;set $map1 = setup.generateDirectionsMap([51.51413718960546, -0.10337970170302], [51.515038546716255, -0.10329387101122263])&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="6" name="UMC01" tags="" position="449,226" size="100,100">&lt;&lt;set $passage to &quot;UMC01&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC02B&quot;&gt;&gt;
+/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC01&quot; play&gt;&gt; */
 &lt;main&gt;
-CONSTABLE: Oi. You. What are you doing? Yeah, you. I’m talking to you. With that no-good look on your face. You don’t look like you’re from around here, and there’s nothing I don’t like more than something I don’t recognise. Scram.
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
+Felix, keeper of the Maze, and small dragon, here at your service.
 
-Wait. Actually. Hang on a second. Maybe you can do me a favour. I’m the constable round these parts, see, and I’ve been tasked with sniffing out troublemakers. Like yourself. No offence. Or not much. But since you’re standing around like a spare part, maybe you can help me out. 
 
-I’m looking for someone. A criminal. Yeah? Goes by the name of Moll Cutpurse. I’ll be honest with you, she’s a freak. Dresses up in men’s clothes, robs them, even smokes a bloody pipe, for God’s sake.
+I’m opening up the City to you, a City you’ve never experienced before, and its secrets too. For the City is full of treasure. Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
 
-What’s that? A fight? Christ.
+You’re now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I’ve been alive. 
 
-Listen. If you see her...send her my way, alright? She’s a pain in my arse, to be honest, and it’d do the City a whole bunch of good to have her behind bars once and for all. I’ll compensate you nicely, if you know what I mean. Or maybe I just won’t send you to the nick. Haven’t decided yet. 
+You’ve opened up door #5 into the maze of adventures. 
 
-Hey! Bobby! Stop that! Put down the cleaver! 
+
+You’ll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+
+If you follow them all the way along their adventure, I’ll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
+
+What kind of amazing experience? Well, it’s a surprise. Otherwise this wouldn’t be an adventure.
+
+Now are you playing this adventure solo or with a group?
+
  
+&lt;div class=&quot;menu-wrapper&quot;&gt;
+  &lt;&lt;button &quot;Solo&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC02A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+  
+  &lt;&lt;button &quot;Group&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC02B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="UMC02A" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC02A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC03&quot;&gt;&gt;
+/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;EI_02A&quot; play&gt;&gt; */
+&lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
+ The adventure may sometimes refer to a group of people but don’t worry, you by yourself are plenty for a group.
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC03&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+ 
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="UMC02B" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC02B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC03&quot;&gt;&gt;
+/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;EI_02A&quot; play&gt;&gt; */
+&lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
+ This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync.  
 
-MOLL CUTPURSE:
-Psst. Psst. Hey. Over here.
-What were you talking to the Constable for? You’re not a sneak, are you? Come to Limeburner Lane.
-Quickly.
+&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC03&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+ 
+ 
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="UMC03" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC03.1&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC04&quot;&gt;&gt;
+/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;EI_02A&quot; play&gt;&gt; */
+&lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
+You can always use the arrows or the replay button if you need to hear or read anything again. 
+
+I’ll provide maps when needed.
+
+And the &quot;Take me to the end&quot; button will skip the adventure and show you how to get to the surprise at the end.
+
+Are you ready?
+
+&lt;&lt;button &quot;Yes!&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC04&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+ 
+ 
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="UMC04" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC04&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC05&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;main&gt;
+My friend Moll will be here soon to guide you, connecting from the year 1603.
+
+Moll should be around here somewhere…
+
+Oh, that’s not Moll… who’s that?
+
+&lt;&lt;timed 8s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC05&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="UMC05" tags="" position="450,225" size="100,100">&lt;&lt;set $passage to &quot;UMC05&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_05.1&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC-05map&quot;&gt;&gt;
+&lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;[connecting...]&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 3.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;[connecting...]&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;  
+&lt;&lt;timed 7s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;[connecting...]&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;  
+&lt;&lt;timed 13s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Oi! You! 
+
+What are you doing?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 17s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Yeah, you! I&#39;m talking to you, with that no good look on your face! 
+
+You don&#39;t look like you&#39;re from around here. And there&#39;s nothing I don&#39;t like more than something I don&#39;t recognize. 
+
+Scram!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 35s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Wait, wait! Actually hang on a second. 
+
+Maybe you can do me a favor.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 45s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;I&#39;m the constable around these parts, see, and I&#39;ve been tasked with sniffing out troublemakers. Like yourself. No offence! Or not much! 
+
+But since you&#39;re standing around like a spare part maybe you can help me out.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 60s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;I&#39;m looking for someone. A criminal, yeah. 
+
+Goes by the name of Moll Cutpurse. 
+
+I&#39;ll be honest with you, she&#39;s a freak -dresses up in men&#39;s clothes, robs them even smokes a bloody pipe for God&#39;s sake.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 80s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 57ms&gt;&gt;What&#39;s that? A fight? Christ. 
+
+Listen, if you see her, send her my way, all right. She&#39;s a pain in my arse, to be honest. 
+
+And it would do the city a whole bunch of good to have her behind bars, once and for all.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 95s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;I&#39;ll compensate you nicely if you know what I mean. 
+
+Or maybe I just won&#39;t send you to the nick? Haven&#39;t decided yet!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 106s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Hey! Bobby, stop that! Put down the cleaver&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 112s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Woman: Psst psst, hey! Over here. 
+
+What were you talking to the constable for? You&#39;re not a sneak are you? Come to Limeburner Lane. Quickly!
+  
+ &lt;&lt;button &quot;Show map&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC-05map&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+ &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+
+
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="UMC-05map" tags="" position="1400,400" size="100,200">&lt;&lt;set $passage to &quot;UMC-05map&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $map1 = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.51489913970774, -0.10347005492166371])&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC-05.2&quot;&gt;&gt;&lt;main&gt;
+
+Head up Limeburner Lane away from the main road, just enough to get out of ear shot.
+
+&lt;&lt;button &quot;We&#39;re here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC06&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 $map1
 
-&lt;&lt;button &quot;We&#39;re here&quot;&gt;&gt;
-  &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_05.2&quot; play&gt;&gt;	
-  &lt;&lt;replace &quot;.secondhalf&quot;&gt;&gt;
-  Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’m from. You look a little too clean and pristine to be from the 17th century, I reckon. Get your bearings quickly, cos I need your help. What did the Constable ask you?
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="UMC-05.2" tags="" position="1400,400" size="100,200">&lt;&lt;set $passage to &quot;UMC-05.2&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC06&quot;&gt;&gt;&lt;main&gt;
+/* TODO NEEDS CAPTIONING */
+Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’m from. You look a little too clean and pristine to be from the 17th century, I reckon. Get your bearings quickly, cos I need your help. What did the Constable ask you?
 
-  &lt;div class= &quot;menu-wrapper&quot;&gt;
+&lt;div class= &quot;menu-wrapper&quot;&gt; 
   &lt;&lt;button &quot;He wanted me to help him catch a criminal.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC06&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
   &lt;&lt;button &quot;He was acting kinda weird.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC06&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-  &lt;/div&gt;
-  &lt;&lt;/replace&gt;&gt;
-&lt;&lt;/button&gt;&gt;
+ &lt;/div&gt;
 
-&lt;div class = &quot;secondhalf&quot;&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="UMC06" tags="" position="450,375" size="100,100">&lt;&lt;set $passage to &quot;UMC06&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_06&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC07&quot;&gt;&gt;
 
-&lt;/div&gt;
+&lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Hmm, he and I go way back. 
+
+We&#39;ve been doing this dance for years, ever since I was a nipper. 
+
+You&#39;ve caught on, haven&#39;t you?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;I&#39;m Moll Cutpurse. 
+
+I can tell you&#39;re the kind of person who likes to walk on the wild side. I can see it in your eyes. That little glint. You can&#39;t fool me! 
+
+I&#39;m bringing you onto my team. Welcome!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 24s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;First things first, we&#39;ve got to get you a new name. 
+
+A pseudonym, if you will. You think Moll Cutpurse is my real name? Nah - it&#39;s actually Mary Frithat. 
+
+Can you imagine?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 41s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Do I seem like a Mary? The answer is no, before you say anything you might regret. 
+
+Pseudonyms are important for criminals. They stop the constables from being able to track you down so easily. 
+
+So what&#39;s yours?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 57s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;If you shorten your first name, and then use a verb for the first half of your surname, and some kind of word for money for the second half, then that will be that. 
+
+So something like Soph Grabcoin or Al Takecash. Tell me when you&#39;ve come up with them.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+
+&lt;&lt;timed 75s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;button &quot;We&#39;ve all come up with names.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC07&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="UMC07" tags="" position="450,525" size="100,100">&lt;&lt;set $passage to &quot;UMC07&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_07&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC07map&quot;&gt;&gt;
+
+&lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;You done? Excellent! Let&#39;s hear them.  
+
+Say them loud, proudly! What a merry band of ne&#39;er do wells. 
+
+Now come on. Let&#39;s get moving.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 14s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Rule number one: never stand in the same place for too long, draws attention to yourself. 
+
+That&#39;s what&#39;s got you in trouble with the constable in the first place.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 26s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Here&#39;s rule number two: 
+
+Whenever we cross a main road, I&#39;m going to need you to move quickly, but carefully. I don&#39;t want you getting mown down.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 36s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Look both ways before you cross. 
+
+I shouldn&#39;t have to tell you that, but you&#39;d be surprised at how many famous criminals seem to be lacking in basic safety skills!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 46s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;We can slow down once we get onto the side streets. Let&#39;s get onto Old Bailey. Find the central Criminal Court for me would you?
+
+&lt;&lt;button &quot;Show map&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC07map&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
+
+
+
 
 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="UMC06" tags="" position="450,375" size="100,100">&lt;&lt;set $passage to &quot;UMC06&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_06&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC07&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="UMC07map" tags="" position="450,525" size="100,100">&lt;&lt;set $passage to &quot;UMC07map&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC08&quot;&gt;&gt;&lt;&lt;set $map2 = setup.generateDirectionsMap([51.51475789867116, -0.10344983059506083], [51.51551164528041, -0.10200042137345718])&gt;&gt;
 
 &lt;main&gt;
-
-MOLL CUTPURSE:
-Hmm. He and I go way back. We’ve been doing this dance for years, ever since I was a nipper. You’ve caught on, haven’t you? I’m Moll Cutpurse. I can tell you’re the kinda person who likes to walk on the wild side. I can see it in your eyes...that little glint. You can’t fool me. I’m bringing you onto my team. 
-Welcome. First things first: we’ve gotta get you a new name. A pseudonym, if you will. You think Moll Cutpurse is my real name? Nah. It’s actually (she gags a little bit) Mary Frithat. Ugh. Can you imagine? Do I seem like a Mary? The answer is no, before you say anything you might regret.
-Pseudonyms are important for criminals. They stop the constables from being able to track you down so easily. So what’s yours? If you shorten your first name and then use a verb for the first half of your surname, and some kind of word for money for the second half — then that’ll be that. So something like...Soph Grabcoin, or Al Takecash. Tell me when you’ve come up with them.
-
-
-&lt;&lt;button &quot;We&#39;ve all come up with names.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC07&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="UMC07" tags="" position="450,525" size="100,100">&lt;&lt;set $passage to &quot;UMC07&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_07&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC08&quot;&gt;&gt;&lt;&lt;set $map2 = setup.generateDirectionsMap([51.515038546716255, -0.10329387101122263], [51.5157662961102, -0.10186693576009163])&gt;&gt;
-
-&lt;main&gt;
-
-You done? Excellent. Let’s hear them. Say them out loud. Proudly!
-
-What a merry band of ne’er-do-wells. Now come on. Let’s get moving. Rule number one — never stand in the same place for too long. Draws attention to yourself. That’s what got you in trouble with the Constable in the first place.
-
-Here’s rule number two — whenever we cross a main road, I’m gonna need you to move quickly — but carefully! I don’t want you getting mown down. Look both ways before you cross. I shouldn’t have to tell you that, but you’d be surprised at how many famous criminals seem to be lacking in basic safety skills. 
-We can slow down once we get onto the side streets. Let’s get onto Old Bailey. Find the Central Criminal Court for me, would you?
-
+Continue up Limeburner Ln. It will curve to meet Old Bailey Street and directly in front of you, the Central Criminal Court.
 $map2
-
-
 &lt;&lt;button &quot;We&#39;re at Old Bailey.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC08&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 
 
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="UMC08" tags="" position="450,650" size="100,100">&lt;&lt;set $passage to &quot;UMC08&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_08&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC08map&quot;&gt;&gt;
+&lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 57ms&gt;&gt;Look at that. Pah! You know, I was brought to one of these places. 
+
+Not this one. Wasn&#39;t this fancy schmancy. I was tried though, you know, in a court of law?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 14s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 53ms&gt;&gt;You know why they brought me in? For wearing men&#39;s clothes? 
+
+Called me indecent! Can you believe it? People spat me on the street for it.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 27s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;In the end, they made me stand at St. Paul&#39;s Cross and wear a white sheet while the priests gave a sermon, but I didn&#39;t care much, got a good breeze around the nether regions!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 37s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Come on. I don&#39;t want to hang around here for too long. Smell of the law gives me the creeps. Let&#39;s head up Giltspur Street. Remember, be quick and careful on main roads.
 
 
+&lt;&lt;button &quot;Show map&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC08map&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/type&gt;&gt;
+
+&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="UMC08" tags="" position="450,650" size="100,100">&lt;&lt;set $passage to &quot;UMC08&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_08&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC09&quot;&gt;&gt;&lt;&lt;set $map3 = setup.generateDirectionsMap([51.5157662961102, -0.10186693576009163], [51.51708755760078, -0.10157021389985543] )&gt;&gt;
-
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="UMC08map" tags="" position="450,650" size="100,100">&lt;&lt;set $passage to &quot;UMC08map&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC09&quot;&gt;&gt;&lt;&lt;set $map3 = setup.generateDirectionsMap([51.51551164528041, -0.10200042137345718], [51.516661119815495, -0.10164312514555553] )&gt;&gt;
 &lt;main&gt;
-
-MOLL CUTPURSE
-Look at that. Huh.  You know, I was once brought to one of these places. Not this one — wasn’t as fancy schmancy. I was tried, though, you know. In a court of law. You know why they brought me in? For wearing men’s clothes. Called me “indecent.”  Can you believe it? People spat at me on the street for it. In the end, they made me stand at St Paul’s Cross and wear a white sheet while the priest gave a sermon. I didn’t care much, though. Got a good breeze around the nether regions.
-
-Come on. I don’t want to hang around here too long. Smell of the law gives me the creeps. Let’s head up Giltspur Street. Remember, be quick and careful on main roads.
-
+From the direction you came, turn left uphill. 
+After you cross the main road, the street will change name to Guiltspur Street.
 $map3
 
-
-&lt;&lt;button &quot;Let&#39;s go&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC09&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-
-
-
-
+&lt;&lt;button &quot;I&#39;m here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC09&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="UMC09" tags="" position="450,775" size="100,100">&lt;&lt;set $passage to &quot;UMC09&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_09&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC10&quot;&gt;&gt;&lt;&lt;set $map4 = setup.generateDirectionsMap([51.51708755760078, -0.10157021389985543], [51.51732021674314, -0.10239925659000866] )&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="UMC09" tags="" position="450,775" size="100,100">&lt;&lt;set $passage to &quot;UMC09map&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_09&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC09map&quot;&gt;&gt;
+&lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 45ms&gt;&gt;Rule number three of becoming the best criminal in the city: 
+
+Stay out of sight as much as possible.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;That means moving out of the way of any crowds, sticking to the sides of the pavements, avoiding eye contact with big groups, that kind of thing. 
+
+Make sure you&#39;re doing that as you&#39;re walking.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Now, what was I saying? 
+
+Oh, right. The thing is, those law men were trying to tell me it was unnatural to wear men&#39;s clothes, and smoke a pipe, and drink in taverns, or whatever else. 
+
+Unwomanly or whatever.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 32s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt; But it didn&#39;t feel unnatural to me. 
+
+It just felt - i dunno, I just feel comfortable in men&#39;s stuff. Always have. 
+
+When I was a kid, I&#39;ll cut the hem off my dresses. So I could move better.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 47s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Just didn&#39;t feel good in all that fabric. Gets inthe way. 
+
+I can&#39;t run, jump, climb. I was always trying to go and play with the boys, because the girls didn&#39;t like me much.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 59s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 48ms&gt;&gt;Every time my aunt tried to get me to sit down and sew, I&#39;d be off like a racehorse. 
+
+Running and tumbling. The boys didn&#39;t want me near them though.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 67s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Even when I&#39;d be locked inside with my threading needle, I&#39;d watch them out the window. 
+
+Wishing my needle was a dagger.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 76s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Here turn on to Cock Lane when you get a chance. Don&#39;t laugh. Oh - well, you can laugh.&lt;&lt;/type&gt;&gt;
+$map4
+&lt;&lt;button &quot;Ok, we turned.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC09map&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="UMC09map" tags="" position="450,775" size="100,100">&lt;&lt;set $passage to &quot;UMC09map&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC10&quot;&gt;&gt;&lt;&lt;set $map4 = setup.generateDirectionsMap([51.516661119815495, -0.10164312514555553], [51.51732515412257, -0.1026497257358336] )&gt;&gt;
 
 &lt;main&gt;
+On the left hand side of the road you’ll find Cock Lane. 
+You’ll see on the corner the Golden Boy of Pye corner. Put there in memory of the sins of the city. 
 
-MOLL CUTPURSE
-Rule number three of becoming the best criminal in the City — stay out of sight as much as possible. That means moving out of the way of any crowds — sticking to the sides of the pavements, avoiding eye contact with big groups — that kind of thing. Make sure you’re doing that as you’re walking. Now, what was I saying? Oh right. The thing is, those lawmen were trying to tell me it was unnatural to wear men’s clothes and smoke a pipe and drink in taverns or whatever else. Unwomanly, or whatever. But it didn’t feel unnatural to me. It just felt...I dunno. I just feel comfortable in men’s stuff. Always have. When I was a kid I’d cut the hem of my dresses so I could move better. Just didn’t feel good in all that fabric. It gets in the way. I can’t run, jump, climb. I was always trying to go and play with the boys, cos the girls didn’t like me much. Every time my aunt tried to get me to sit down and sew, I’d be off like a racehorse. Running and tumbling. The boys didn’t want me near them, though. Even when I’d be locked inside with my threading needle, I’d watch them out the window. Wishing my needle was a dagger. Here, turn onto Cock Lane when you get a chance. And don’t laugh. Or, well, you can laugh.
+&lt;&lt;button &quot;Ok, we&#39;re here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC10&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 $map4
 
-&lt;&lt;button &quot;Ok, we turned.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC10&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
-
-
 
 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="UMC10" tags="" position="450,900" size="100,100">&lt;&lt;set $passage to &quot;UMC10&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_10&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC11&quot;&gt;&gt;&lt;&lt;set $map5 = setup.generateDirectionsMap([51.51732021674314, -0.10239925659000866], [51.51773232763725, -0.10347906774555626] )&gt;&gt;
-
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="UMC10" tags="" position="450,900" size="100,100">&lt;&lt;set $passage to &quot;UMC10&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_10&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC10map&quot;&gt;&gt;
 &lt;main&gt;
-MOLL
-Hang on a second. Something feels a bit funny here.
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Hang on a second. Something feels a bit funny here. &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+ 
+&lt;&lt;timed 7s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;ANN: Moll? Is that you? 
 
-ANN DUCK
-Moll? That you? 
+MOLL: Ann Duck! As I live and breathe! This is what I meant about time going funny around these parts.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 16s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 57ms&gt;&gt;M: This is Ann Duck, notable criminal from 1742. 
 
-MOLL
-Ann Duck, as I live and breathe. This is what I meant about time going funny around these parts. This is Ann Duck — notable criminal from 1742.
+ANN: Notable! Is that any way to describe me? How about, the most notorious, most feared, most violent criminal of the last century?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 37s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;M: hmm there&#39;s already someone occupying that title. 
 
-ANN DUCK
-Notable? Is that any way to describe me? How about the most notorious, most feared, most violent criminal of the last century?
+A: Who? You my love? Oh don&#39;t make me laugh! Little Miss Pickpocket? 
 
-MOLL
-Hmm. There’s already someone occupying that title.
+M: Don&#39;t call me that! 
 
-ANN DUCK
-Who? You, my love? Don’t make me laugh. Little miss pickpocket?
+A: Who&#39;s this lot?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 52s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 53ms&gt;&gt;M: Bunch of reprobates I found hanging around Limeburner Lane. 
+I&#39;m showing them the ropes! 
 
-MOLL
-Don’t call me that.
+ANN: First rule of criminality stay out of sight. 
 
-ANN DUCK
-Who’s this lot?
+MOLL: I&#39;ve already told them that one.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 64s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 54ms&gt;&gt;A: Well, they might not be the brightest bunch. 
+Look, you lot, if you&#39;re gonna make it in this city, you got to be able to spot others of your ilk.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 76s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;A: What I want you to do is this - in your little groups, you need to come up with a hand gesture. 
+Nothing rude, mind, that&#39;s too obvious. 
+Just something small.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 90s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;A: Maybe you&#39;re tipping your cap to someone, or you&#39;re tapping your palm on the back of your hand. 
+Whatever it is, you&#39;re gonna do it to anyone you see on our way to Smithfield Rotunda Garden.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 106s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 57ms&gt;&gt;A:If they acknowledge you, great they&#39;re part of your gang. 
+If not, ain&#39;t no bother. But make sure you keep count of who&#39;s acknowledging you and who isn&#39;t. 
+Right, come on you lot, head on to Smithfield Street.&lt;&lt;/type&gt;&gt;
+$map5
+&lt;&lt;button &quot;Ok, let&#39;s go.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC10map&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
 
-MOLL
-Bunch of reprobates I found hanging around Limeburner Lane. I’m showing them the ropes.
 
-ANN DUCK
-First rule of criminality. Stay out of sight.
-
-MOLL
-I’ve already told them that one.
-
-ANN DUCK
-Well, they might not be the brightest bunch. Look, you lot. If you’re gonna make it in this City, you’ve gotta be able to spot others of your ilk. What I want you to do is this — in your little groups, you need to come up with a hand gesture. Nothing rude, mind — that’s too obvious. Just something small. Maybe you’re tipping your cap to someone, or you’re tapping your palm on the back of your hand. Whatever it is, you’re gonna do it to anyone you see on our way to Smithfield Rotunda Garden. If they acknowledge you, great. They’re part of your gang. If not — then no bother. But make sure you keep count of who’s acknowledging you and who isn’t.
-Right, come on, you lot. Head onto Smithfield Street.
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="UMC10map" tags="" position="450,900" size="100,100">&lt;&lt;set $passage to &quot;UMC10map&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC11&quot;&gt;&gt;&lt;&lt;set $map5 = setup.generateDirectionsMap([51.51732515412257, -0.1026497257358336], [51.51757406544449, -0.1035285800709999] )&gt;&gt;
+&lt;main&gt;
 
 $map5
-&lt;&lt;button &quot;Ok, let&#39;s go.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC11&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-
+&lt;&lt;button &quot;I&#39;m here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC11&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="UMC11" tags="" position="450,1025" size="100,100">&lt;&lt;set $passage to &quot;UMC11&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_11&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC12&quot;&gt;&gt;&lt;&lt;set $map6 = setup.generateDirectionsMap( [51.51773232763725, -0.10347906774555626], [51.51804997658025, -0.10158564106698934] )&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="UMC11" tags="" position="450,1025" size="100,100">&lt;&lt;set $passage to &quot;UMC11&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_11&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC12B&quot;&gt;&gt;&lt;&lt;set $map6 = setup.generateDirectionsMap( [51.51823523214685, -0.10303930182366541], [51.51850995393808, -0.1011746183572291] )&gt;&gt;&lt;main&gt;$map6
 
-&lt;main&gt;
-MOLL
-Don’t tell them what to do. That’s my job. You lot need to find Snow Hill and head up, turning right onto Smithfield Street, then right again onto Hosier Street, and then left.
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 48ms&gt;&gt; MOLL: Don&#39;t tell them what to do that&#39;s my job. 
 
-ANN
-Towards the Smithfield Rotunda. Got it? Go on, then. Make sure you’re doing your hand signals.
+You need to find Snow Hill and head up turning right onto Smithfield Street.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 10s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 58ms&gt;&gt;ANN: Towards the Smithfield Rotunda. Got it? 
+Go on then. Make sure you&#39;re doing your hand signals!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 24s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 58ms&gt;&gt;M: What are you doing here anyway? 
 
-$map6
-MOLL
-What are you doing here, anyway?
+ANN: Hmm dunno. Something felt a bit funny. 
+I had a feeling you were up to no good. 
+And wherever there&#39;s mischief I&#39;ve got to follow.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 38s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 52ms&gt;&gt;A: What are you doing Moll? It&#39;s been a while. 
+Still cutting men&#39;s purse strings? Small fry but someone&#39;s got to do it, I suppose. 
 
-ANN
-Hmm, dunno. Something felt a bit funny. Had a feeling you were up to no good, and wherever there’s mischief, I’ve got to follow. What have you been doing, Moll? It’s been a while. Still cutting men’s purse strings? Small fry, but someone’s got to do it, I suppose.
+M: Made a good amount last week. I&#39;ll have you know.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 49s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 59ms&gt;&gt;A: Don&#39;t be so small time! You&#39;re a glorified pickpocket at best. 
 
-MOLL
-Made a good amount last week, I’ll have you know.
+And you&#39;re a fence! Even worse. People do their work through you, but you don&#39;t get your hands dirty.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 63s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 57ms&gt;&gt;A: Me? People are actually afraid of me. 
 
-ANN
-Don’t be so small-time. You’re a glorified pickpocket at best. And you’re a fence. Even worse! People do their work through you, but you don’t get your hands dirty. Me? People are actually afraid of me. Last week I nearly cut a lad’s finger off cos he wouldn’t give me any of his gold. Week before that I beat a man with glass bottles until he cried for his mother.
+Last week, I nearly cut a lad&#39;s finger off because he wouldn&#39;t give me any of his gold. 
 
-MOLL
-You’ll get in trouble one day, Ann Duck. Mark my words.
+Week before, I beat a man with glass bottles until he cried for his mother.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 80s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 58ms&gt;&gt;M: You&#39;ll get in trouble one day Ann Duck, mark my words. 
 
-ANN
-Nonsense. I’ve been tried 19 times and they ain’t got a thing on me. You need to hang around the ports, Moll. That’s where the good stuff is.
+A: Nonsense! I&#39;ve been tried 19 times and they still ain&#39;t got nothing on me. 
+You need to hang around the ports Moll, that&#39;s where the good stuff is.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 96s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 54ms&gt;&gt;M: Yeah, I know, but I&#39;m not like you, Ann! I don&#39;t want to beat anyone up. 
+Not unless I have to. 
+Not unless they&#39;re comin&#39; for me. 
+I like to keep it quiet. 
+Steal away into the night. A ghost on the streets.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 110s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 56ms&gt;&gt;A: Ah you don&#39;t get it, Moll! Never have! 
 
-MOLL
-Yeah, I know. But I’m not like you, Ann. I don’t want to beat anyone up. Not unless I have to. Not unless they’re coming for me. I like to keep it quiet. Steal away into the night. A ghost on the streets.
+This lot - the ones who swan around the ports in their furs and their horses with their sleek coats... they don&#39;t care about us. 
 
-ANN
-Ah, you don’t get it, Moll. Never have. This lot? The ones who swan around the ports in their furs and their horses with the sleek coats...they don’t care about us. They already rob us every single day! 
+They already rob us every single day!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 126s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 52ms&gt;&gt;A: Wouldn&#39;t piss on us if we were on fire. 
 
-MOLL
-Wouldn’t piss on us if we were on fire. Would step over our bodies and wrinkle their noses if they got our blood on their slippers. We’ve gotta make it work for us, Moll. What’s the issue if there’s a bit of violence, here or there? There’s nothing I’ve done that they wouldn’t do to us. Only difference is, they’d get their hired thugs to do it. 
+Would step over our bodies and wrinkle their noses if they got our blood on their slippers. 
 
-ANN
-Here, we’re nearly at Smithfield Rotunda Garden, and I’ve got to go. Word is there’s a fancy carriage coming down from Farringdon. See you, Moll. And you lot — don’t get into any trouble. Or not much, anyway.
+We&#39;ve got to make it work for us, Moll!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 139s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;A: What&#39;s the issue if there&#39;s a bit of violence here or there? 
 
-MOLL
-Bye, Ann!
+There&#39;s nothing I&#39;ve done that they wouldn&#39;t do to us. 
 
+Only difference is they get their hired thugs to do it.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 153s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 56ms&gt;&gt;A: Here, we&#39;re nearly at Smithfield Rotunda Garden and I&#39;ve got to go. 
 
-Thank God she’s gone. Every day’s a competition with Ann Duck.
-Right. This will be a good place for a rest. Well? What are your tallies? How many other gang members did you spot?
+Word is there&#39;s a fancy carriage coming down from Farringdon. 
 
+See you, Moll. And you lot - don&#39;t get into any trouble! Or not much anyway.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 172s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 70ms&gt;&gt;M: Bye, Ann! Thank god she&#39;s gone. 
+
+Every day is a competition with Ann Duck. Right, this will be a good place for a rest. Well. What are your tallies? How many other gang members did you spot?
 &lt;div class= &quot;menu-wrapper&quot;&gt;
   &lt;&lt;button &quot;0-1&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC12A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;&lt;button &quot;2&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC12B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;&lt;button &quot;3 or more&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC12B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
- &lt;/div&gt; 
+ &lt;/div&gt; &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+
+
+&lt;&lt;button &quot;I need more directions&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC11map&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="UMC11map" tags="" position="450,1025" size="100,100">&lt;&lt;set $passage to &quot;UMC11&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_11&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC12B&quot;&gt;&gt;&lt;&lt;set $map6 = setup.generateDirectionsMap( [51.51823523214685, -0.10303930182366541], [51.51850995393808, -0.1011746183572291] )&gt;&gt;&lt;main&gt;
+&lt;main&gt;
+
+From Cock Lane, take a right on Snow Hill, going around the building and turning just before the building under construction. And then a left again.  
+Follow along until you come open area you’ll spot a round garden. Find your way inside.
+
+$map6
+
+&lt;&lt;button &quot;I&#39;m here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC12A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="UMC12A" tags="" position="375,1150" size="100,100">&lt;&lt;set $passage to &quot;UMC12A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_12A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC13&quot;&gt;&gt;
+
+&lt;main&gt;
+&lt;&lt;type 50ms&gt;&gt; Ah, so we’re the only criminals round these parts. Good to know. We’ve got everything to choose from. &lt;&lt;/type&gt;&gt;
+
+
+&lt;&lt;timed 9s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC13&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 
 
@@ -831,14 +1033,13 @@ Right. This will be a good place for a rest. Well? What are your tallies? How ma
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footersimple&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="UMC12A" tags="" position="375,1150" size="100,100">&lt;&lt;set $passage to &quot;UMC12A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_12A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC13&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="UMC12B" tags="" position="525,1150" size="100,100">&lt;&lt;set $passage to &quot;UMC12B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_12B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC13&quot;&gt;&gt;
 
 &lt;main&gt;
-MOLL
-Ah, so we’re the only criminals round these parts. Good to know. We’ve got everything to choose from. 
+&lt;&lt;type 50ms&gt;&gt; Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we find.&lt;&lt;/type&gt;&gt;
 
 
-&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC13&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 8s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC13&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 
 
@@ -847,54 +1048,40 @@ Ah, so we’re the only criminals round these parts. Good to know. We’ve got e
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="UMC12B" tags="" position="525,1150" size="100,100">&lt;&lt;set $passage to &quot;UMC12B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_12B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC13&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="UMC13" tags="" position="450,1275" size="100,100">&lt;&lt;set $passage to &quot;UMC13&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_13&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC14&quot;&gt;&gt;
 
 &lt;main&gt;
-MOLL
-Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we find.
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Let&#39;s pause here for a second. 
 
+Sit down if you like, catch your breath. 
 
-&lt;&lt;timed 5s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC13&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+Ah, peaceful, isn&#39;t it?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 8s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Nice to see a bit of green around here. 
 
+Don&#39;t think we had this place when I was knocking about. Lucky you.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 16s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Hang about, who&#39;s this? Two men? 
 
+They look a bit fancy, don&#39;t they? 
 
+Look, I can&#39;t be recognized, so you&#39;ll need to eavesdrop on them for me. Act natural, whatever that means to you.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 29s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;1: Apparently she hangs around here. If we&#39;re lucky, maybe she&#39;ll cut our purse strings. 
 
+2: Wouldn&#39;t that be good? First hand experience!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 38s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;1: You know, I&#39;m still struggling with the ending. Surely she should be married off! 
 
+2: Moll Cutpurse, married off? Never! She wouldn&#39;t allow it. It would be a betrayal!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 51s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;1: But the audience will be in uproar! 
 
-
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="UMC13" tags="" position="450,1275" size="100,100">&lt;&lt;set $passage to &quot;UMC13&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_13&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC14&quot;&gt;&gt;
-
-&lt;main&gt;
-MOLL
-Let’s pause here for a second. Sit down if you like. Catch your breath. Peaceful, isn’t it? Nice to see a bit of green around here. Don’t think we had this place when I was knocking about. Lucky you. Hang about, who’s this? Two men? They look a bit fancy, don’t they? Look, I can’t be recognised, so you’ll need to eavesdrop on them for me. Act natural — whatever that means to you.
-
-DEKKER
-Apparently she hangs around here. If we’re lucky, maybe she’ll cut our purse-strings.
-
-MIDDLETON
-Wouldn’t that be good? First hand experience.
-
-DEKKER
-You know, I’m still struggling with the ending. Surely she should be married off?
-
-MIDDLETON
-Moll Cutpurse? Married off? Never. She wouldn’t allow it. It would be a betrayal.
-
-DEKKER
-But the audience will be in uproar!
-
-MIDDLETON
-Don’t be so old-fashioned. As long as we have one wedding in there, we’ll be safe.
-
-DEKKER
-Hey! I can’t hear. Who’re they talking about?
+2: Don&#39;t be so old fashioned. As long as we have one wedding in there we&#39;ll be safe.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 59s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;MOLL: Hey I can&#39;t hear. What are they talking about?
 
 &lt;div class= &quot;menu-wrapper&quot;&gt;
 &lt;&lt;button &quot;You, I think&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC14&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;&lt;button &quot;Some pickpocket I’ve never heard of.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC14&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
 
 
 
@@ -902,18 +1089,19 @@ Hey! I can’t hear. Who’re they talking about?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="UMC14" tags="" position="450,1400" size="100,100">&lt;&lt;set $passage to &quot;UMC14&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_14&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC15&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="UMC14" tags="" position="450,1400" size="100,100">&lt;&lt;set $passage to &quot;UMC14&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_14&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC15&quot;&gt;&gt;
 
 &lt;main&gt;
-MOLL
+&lt;&lt;type 50ms&gt;&gt;
 Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Report back to me after they’re gone!
+&lt;&lt;/type&gt;&gt;
 
-
+&lt;&lt;timed 8s&gt;&gt;
 &lt;div class= &quot;menu-wrapper&quot;&gt;
 &lt;&lt;button &quot;Excuse me...?&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC15&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;&lt;button &quot;Hey! You two.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC15&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;&lt;/timed&gt;&gt;
 
 
 
@@ -921,14 +1109,14 @@ Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Repo
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="UMC15" tags="" position="450,1525" size="100,100">&lt;&lt;set $passage to &quot;UMC15&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_15&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC16&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="UMC15" tags="" position="450,1525" size="100,100">&lt;&lt;set $passage to &quot;UMC15&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_15&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC16&quot;&gt;&gt;
 
 &lt;main&gt;
-MIDDLETON
-Oh. Hello. Can I help you?
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;type 50ms&gt;&gt; MIDDLETON: Oh. Hello. Can I help you? &lt;&lt;/type&gt;&gt;
 
-
-&lt;&lt;button &quot;Were you talking about Moll Cutpurse?&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC16&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;timed 4.5s&gt;&gt;
+&lt;&lt;button &quot;Were you talking about Moll Cutpurse?&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC16&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 
 
@@ -937,53 +1125,58 @@ Oh. Hello. Can I help you?
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="UMC16" tags="" position="450,1650" size="100,100">&lt;&lt;set $passage to &quot;UMC16&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_16&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC17&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="UMC16" tags="" position="450,1650" size="100,100">&lt;&lt;set $passage to &quot;UMC16&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_16&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC17&quot;&gt;&gt;
 
 &lt;main&gt;
-DEKKER
-Why? Do you know her?
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 58ms&gt;&gt;D: Why? do you know her?
+  
+M: I don&#39;t believe we&#39;ve had the pleasure of meeting. I&#39;m Thomas Middleton, and this is my writing partner, Thomas Decker. 
 
-MIDDLETON
-I don’t believe we’ve had the pleasure of meeting. I’m Thomas Middleton, and this is my writing partner, Thomas Dekker.
+D: Charmed. &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;   
+&lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 53ms&gt;&gt;M:We&#39;re playwrights you&#39;ll see. 
 
-DEKKER
-Charmed.
+We&#39;re writing a play called The Roaring Girl. It&#39;s based on her life.
 
-MIDDLETON
-We’re playwrights, you see. We’re writing a play called The Roaring Girl. It’s based on her life. She’s a rather famous pickpocket around the City. I take it that you know her?
+She&#39;s a rather famous pickpocket around the city. I take it you know her?
 
 &lt;div class= &quot;menu-wrapper&quot;&gt;
 &lt;&lt;button &quot;Well...&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC17&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;&lt;button &quot;It&#39;s a long story.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC17&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+
+
 
 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="UMC17" tags="" position="450,1775" size="100,100">&lt;&lt;set $passage to &quot;UMC17&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_17&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC18&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="UMC17" tags="" position="450,1775" size="100,100">&lt;&lt;set $passage to &quot;UMC17&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_17&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC18&quot;&gt;&gt;
 
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;DEKKER
-I’m sure.
 
-MIDDLETON
-Obviously, she’s most famous — or should I say, infamous — for cross-dressing. Dressing up like a man.
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;D: I&#39;m sure
 
-DEKKER
-Somewhat unnatural, I feel. But who are we to judge?
-
+M: Obviously she&#39;s most famous, or should I say infamous, for cross-dressing. Dressing up like a man. &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;  
+&lt;&lt;timed 10s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;D: Somewhat unnatural, I feel. But who are we to judge?&lt;&lt;/type&gt;&gt;
 &lt;&lt;button &quot;What are you going to say about her?&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_17.5&quot; play&gt;&gt;
-MIDDLETON
-Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometimes we need to offer moral guidance to our audiences, but it would be erroneous to suggest that Moll is some strange, unwell woman. Though I do hope, wherever she is, that she will consider taking a life of honesty and goodness, as opposed to petty thievery...Something more befitting of a lady, perhaps.
+  
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;M: Well, fiction&#39;s goal is not to pass judgment, necessarily. 
+
+Of course, sometimes we need to offer moral guidance to our audiences, but it would be erroneous to suggest that Moll is some strange unwell woman.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 15s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Though I do hope, wherever she is, that she will consider taking a life of honesty and goodness, as opposed to petty thievery. 
+
+Something more befitting of a lady perhaps.
 
 &lt;div class= &quot;menu-wrapper&quot;&gt;
   &lt;&lt;button &quot;But you said she isn’t a lady.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC18&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
   &lt;&lt;button &quot;I thought you weren’t supposed to pass judgement.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC18&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;
+&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
 
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
@@ -991,64 +1184,81 @@ Well. Fiction’s goal is not to pass judgement, necessarily. Of course, sometim
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="UMC18" tags="" position="450,1900" size="100,100">&lt;&lt;set $passage to &quot;UMC18&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_18&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC19&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="UMC18" tags="" position="450,1900" size="100,100">&lt;&lt;set $passage to &quot;UMC18&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_18&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC19&quot;&gt;&gt;
 
 &lt;main&gt;
-MIDDLETON
-Anyway, I do hope you’ll come and see it. And maybe you can bring your...friend. Moll Cutpurse. We’d welcome her critiques with open arms. If she buys a ticket, of course.
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  
+&lt;&lt;timed 2s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;M: Anyway, I do hope you&#39;ll come and see it. 
 
-MOLL
-They’re gone? Looks like I lost that lawman. Come on. Let’s get a move on. Go down Little Britain, past the William Wallace memorial.
+And maybe you can bring your friend, Moll Cutpurse. 
 
-MOLL
-So? Go on then. What were they saying about me?
+We&#39;d welcome her critiques with open arms. If she buys a ticket, of course.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;MOLL: Are they gone? Looks like I lost that law-man. 
 
-&lt;div class= &quot;menu-wrapper&quot;&gt;
+Come on, let&#39;s get a move on. 
+
+Go down Little Britain. Past the William Wallace Memorial. 
+
+So, go on then. What were they saying about me?
+
 &lt;&lt;button &quot;They’re writing a play about you.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC19&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-&lt;&lt;button &quot;You’re going to be famous.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC19&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
+&lt;&lt;button &quot;You’re going to be famous.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC19&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+
 
 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="UMC19" tags="" position="450,2025" size="100,100">&lt;&lt;set $passage to &quot;UMC19&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_19&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC20&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="UMC19" tags="" position="450,2025" size="100,100">&lt;&lt;set $passage to &quot;UMC19&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_19&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC20&quot;&gt;&gt;
 
 &lt;main&gt;
-MOLL
-Huh? They’re writing about me? Wow. I wonder...people will put on that play in a hundred years, I bet. More! Two hundred! Three hundred! I wonder if they’ll put in that story about the time I rode from Charing Cross to Shoreditch dressed as a man, blowing a trumpet and holding a banner, and nearly got torn to death by a mob. That was pretty dramatic, if you ask me. What else did they say?
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Huh? They&#39;re writing about me? 
 
-&lt;div class= &quot;menu-wrapper&quot;&gt;
+Wow. I wonder! People will put on that play in a hundred years I bet. 
+
+More - two hundred! Three hundred!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 13s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;I wonder if they&#39;ll put in that story about the time I rode from Charing Cross to Shoreditch dressed as a man? 
+
+Blowing a trumpet and holding a banner and nearly got torn to death by a mob.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 24s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;That was pretty dramatic, if you ask me. What else did they say?
+
 &lt;&lt;button &quot;They said you were a petty thief.&quot;&gt;&gt;
   &lt;&lt;set $whatdidtheysay to &quot;thief&quot;&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC20&quot;&gt;&gt;
 &lt;&lt;/button&gt;&gt;
-
 &lt;&lt;button &quot;They called you unnatural.&quot;&gt;&gt;
   &lt;&lt;set $whatdidtheysay to &quot;unnatural&quot;&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC20&quot;&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
+&lt;&lt;/button&gt;&gt;&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+
 
 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="UMC20" tags="" position="450,2150" size="100,100">&lt;&lt;set $passage to &quot;UMC19&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC21&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="UMC20" tags="" position="450,2150" size="100,100">&lt;&lt;set $passage to &quot;UMC19&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC21&quot;&gt;&gt;
 
 &lt;main&gt;
-
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0.2s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
 &lt;&lt;if $whatdidtheysay is &quot;thief&quot;&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_20A&quot; play&gt;&gt;
 Hmm...well, they’re technically not wrong.
 &lt;&lt;else&gt;&gt;
 &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_20B&quot; play&gt;&gt;
 Unnatural?
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;&lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+ 
+&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 57ms&gt;&gt;Well, that’s just what they think. I don’t care. 
 
-Well, that’s just what they think. I don’t care. 
-Though I s’pose...people will watch the play. Hundreds of people. And then if it goes well, people in the future will watch it too. D’you think they’ll all think the same of me?
+Though I s’pose...people will watch the play. 
+
+Hundreds of people. And then if it goes well, people in the future will watch it too. D’you think they’ll all think the same of me?
 
 &lt;div class= &quot;menu-wrapper&quot;&gt;
 &lt;&lt;button &quot;No.&quot;&gt;&gt;
@@ -1057,54 +1267,110 @@ Though I s’pose...people will watch the play. Hundreds of people. And then if 
 
 &lt;&lt;button &quot;Of course not.&quot;&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC21&quot;&gt;&gt;
-&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
+&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
 
 
 
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="UMC21" tags="" position="450,2275" size="100,100">&lt;&lt;set $passage to &quot;UMC21&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_21&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC22&quot;&gt;&gt;&lt;&lt;set $map7 = setup.generateDirectionsMap( [51.51804997658025, -0.10158564106698934], [51.516887154679715, -0.09771500182371771] )&gt;&gt;
-
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="UMC21" tags="" position="450,2275" size="100,100">&lt;&lt;set $passage to &quot;UMC21&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_21&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC21map&quot;&gt;&gt;&lt;&lt;set $map7 = setup.generateDirectionsMap( [51.51804997658025, -0.10158564106698934], [51.516887154679715, -0.09771500182371771] )&gt;&gt;
 &lt;main&gt;
+&lt;&lt;type 50ms&gt;&gt;Hmm.
 
-Hmm.
-
-Well. Let me know when you’re outside Postman’s Park.
-
+Well. Let me know when you’re outside Postman’s Park.&lt;&lt;/type&gt;&gt;
 $map7
+&lt;&lt;button &quot;We&#39;re here.&quot;&gt;&gt;
+  &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC21map&quot;&gt;&gt;
+&lt;&lt;/button&gt;&gt;
+
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="UMC21map" tags="" position="450,2275" size="100,100">&lt;&lt;set $passage to &quot;UMC21map&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC22&quot;&gt;&gt;&lt;&lt;set $map7 = setup.generateDirectionsMap( [51.51849447814232, -0.10115599968176144], [51.516671009670844, -0.09847064369107725] )&gt;&gt;
+&lt;main&gt;
+Exit the park and circle to the other side to find Little Britain. You’ll see the Tutor style archway of St Barthlomews and further along a small with sign with a green bicycle.
+Head down this road until you have to turn. Take a Right. 
+Just ahead you’ll see a crossing and a gateway to a garden on the other side of the road. That is Postman’s Park.
 
 &lt;&lt;button &quot;We&#39;re here.&quot;&gt;&gt;
   &lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC22&quot;&gt;&gt;
 &lt;&lt;/button&gt;&gt;
 
+$map7
+
+
+
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="UMC22" tags="" position="450,2400" size="100,100">&lt;&lt;set $passage to &quot;UMC22&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_22&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;end&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="UMC22" tags="" position="450,2400" size="100,100">&lt;&lt;set $passage to &quot;UMC22&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_22&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-23&quot;&gt;&gt;
 
 &lt;main&gt;
-MOLL
-Hey. Rule number 4 of being a criminal in the City...sometimes, you can stop and smell the roses. Take in your surroundings properly, make sure you can spot your nearest exit route in case the lawmen come calling...but enjoy yourself, too.
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  
+&lt;&lt;timed 0s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;Hey. Rule number four of being a criminal in the city: 
 
-I’ve thought about it, and...I think I’d want to be remembered as someone who lived truthfully. Who did the best she could with what she had. Who was loyal, and good to her friends, and helped those who needed it, and took from those who didn’t. 
+Sometimes you can stop and smell the roses! 
+Take in your surroundings properly. Make sure you can spot your nearest exit route in case the law men come calling, but enjoy yourself too.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 55ms&gt;&gt;I&#39;ve thought about it, and I think I want to be remembered as someone who lived truthfully, who did the best she could with what she had. 
 
-You know, I’ve nothing to be ashamed of. Nothing at all. They can write what they want. I know who I am.
+Who was loyal and good to her friends and helped those who needed it and took from those who didn&#39;t.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 32s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 53ms&gt;&gt;You know, I have nothing to be ashamed of. Nothing at all. 
 
-What would you want to be remembered for? In two, three, five hundred years? Maybe think about it. Walk around this place for a little while. Take it in. Talk to your friends, your family. There’s no rush. The air is shimmering now. It’s time for me to go. But you can take your time.
+They can write what they want. I know who I am.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 43s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 53ms&gt;&gt;What would you want to be remembered for? In 2, 3, 5 hundred years. 
 
-&lt;&lt;timed 3s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
+Maybe think about that. Maybe think about it.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;    
+&lt;&lt;timed 53s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 70ms&gt;&gt;Walk around this place for a little while. Take it in. 
+
+Talk to your friends, your family. There&#39;s no rush. 
+
+The air is shimmering now. It&#39;s time for me to go. 
+
+But you can take your time.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+
+
+
+&lt;&lt;timed 80s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-23&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="end" tags="" position="100,850" size="100,100">&lt;&lt;set $passage to &quot;end&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;set $endmap = setup.generateDirectionsMap( [51.516887154679715, -0.09771500182371771], [51.516887154679715, -0.09771500182371771] )&gt;&gt;
-
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="SRS-23" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;SRS-23&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-24&quot;&gt;&gt;
+/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_32&quot; play&gt;&gt; */
 &lt;main&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+Moll poses an excellent question: what would you like to be remembered for? 
 
+Maybe you can answer that question now, or maybe you’d rather ponder it for a while.
 
-$endmap
+Now, head into the centre of Postman&#39;s Park, and I&#39;ll hand you over to an associate of mine. 
 
+Keep your headphones on, or if you need spares, ask the dragons under the Gazebo.
+
+You’ll need to show them this &lt;&lt;button &quot;key&quot;&gt;&gt;&lt;&lt;goto &quot;SRS-24&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;.
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footerend&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="footersimple" tags="" position="100,475" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="27" name="footerlost" tags="" position="100,600" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="28" name="footerend" tags="" position="100,725" size="100,100">&lt;footer&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="SRS-24" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;SRS-24&quot;&gt;&gt;/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_33&quot; play&gt;&gt; */&lt;main&gt;
+&lt;div class=&quot;key-wrapper glowing&quot;&gt;&lt;img src=&quot;./assets/keys-34.png&quot;&gt;&lt;/div&gt;
+
+
+
+Start a new adventure...
+
+&lt;div class=&quot;adventure-wrapper&quot;&gt;&lt;h2 class=&quot;adventure-title&quot;&gt;Ghost Hunting with Brian&lt;/h2&gt;&lt;div class=&quot;adv-item&quot;&gt;&lt;div&gt;6 min walk away&lt;/div&gt;&lt;&lt;button &quot;Show Map&quot;&gt;&gt;&lt;&lt;goto &quot;UMC_25A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;adventure-wrapper&quot;&gt;&lt;h2 class=&quot;adventure-title&quot;&gt;The Smashing Rock Sisters&lt;/h2&gt;&lt;div class=&quot;adv-item&quot;&gt;&lt;div&gt;Family Focused
+5 min walk away&lt;/div&gt;&lt;&lt;button &quot;Show Map&quot;&gt;&gt;&lt;&lt;goto &quot;UMC_25B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="40" name="UMC_25A" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;UMC_25A&quot;&gt;&gt;&lt;&lt;set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.51698173499748, -0.092720160117932])&gt;&gt;&lt;main&gt;
+&lt;h2&gt;Ghost Hunting with Brian&lt;/h2&gt;
+$map
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footerend&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="UMC_25B" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;UMC_25B&quot;&gt;&gt;&lt;&lt;set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.5199856714077, -0.09708782798778638])&gt;&gt;&lt;main&gt;
+&lt;h2&gt;The Smashing Rock Sisters&lt;/h2&gt;
+$map
+
+&lt;/main&gt;
+&lt;&lt;include &quot;footerend&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="42" name="footersimple" tags="" position="100,475" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="43" name="footerlost" tags="" position="100,600" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Back&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="44" name="footerend" tags="" position="100,725" size="100,100">&lt;footer&gt;
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
 &lt;/footer&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
