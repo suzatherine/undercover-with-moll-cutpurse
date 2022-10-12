@@ -1467,7 +1467,7 @@ But you can take your time.<</type>><</replace>><</timed>>
 <<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.516800988162046, -0.09771286982617827])>><main>
 <h2>End Location</h2>
 $map
-<<button "More Info">><<set $prevpass to $passage>><<goto "UMC-23">><</button>>
+<<button "Next">><<set $prevpass to $passage>><<goto "UMC-23">><</button>>
 </main>
 <<include "footerlost">>
 
