@@ -564,6 +564,8 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
+<<cacheaudio "UMC_01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_01.mp3">>
+<<cacheaudio "UMC_04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC-04.mp3">>
 <<cacheaudio "UMC_05.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.1.mp3">>
 <<cacheaudio "UMC_05.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.2.mp3">>
 <<cacheaudio "UMC_06" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_06.mp3">>
@@ -586,7 +588,10 @@ setup.checkForRepeats = (array,element) => {
 <<cacheaudio "UMC_20B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_20B.mp3">>
 <<cacheaudio "UMC_21" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_21.mp3">>
 <<cacheaudio "UMC_22" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_22.mp3">>
-
+<<cacheaudio "UMC_23" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_23.mp3">>
+<<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_03.mp3">>
+<<cacheaudio "perfectgroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_perfectgroup.mp3">>
+<<cacheaudio "refergroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_refergroup.mp3">>
 
 <<waitforaudio>>
 
@@ -605,7 +610,7 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: lost {"position":"100,975","size":"100,100"}
-<<set $passage to "lost">>
+<<set $passage to "lost">><<audio ":all" stop>>
 <main>
 You have two options:
 
@@ -626,38 +631,53 @@ You have two options:
 
 :: UMC01 {"position":"449,226","size":"100,100"}
 <<set $passage to "UMC01">><<set $nextpassage to "UMC02B">>
-/* <<audio ":all" stop>><<audio "UMC01" play>> */
+<<audio ":all" stop>><<audio "UMC_01" play>>
 <main>
 <div id="mount"></div> 
-Felix, keeper of the Maze, and small dragon, here at your service.
+<<timed 2s>><<replace "#mount">>
+  Felix, keeper of the Maze, and small dragon, here at your service.
+  <</replace>>
+<</timed>>
+  <<timed 8s>><<replace "#mount">>
+  I'm opening up the City to you, a City you've never experienced before, and its secrets too. 
+  
+  For the City is full of treasure. 
+  <</replace>>
+<</timed>>
+  <<timed 16s>><<replace "#mount">> Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+  <</replace>>
+<</timed>>
 
+<<timed 24s>><<replace "#mount">>You're now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I've been alive. 
+ <</replace>>
+<</timed>>
 
-I’m opening up the City to you, a City you’ve never experienced before, and its secrets too. For the City is full of treasure. Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+<<timed 38s>><<replace "#mount">>You've opened up door #5 into the maze of adventures. 
 
-You’re now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I’ve been alive. 
+You'll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+ <</replace>>
+<</timed>>
 
-You’ve opened up door #5 into the maze of adventures. 
+<<timed 47s>><<replace "#mount">>If you follow them all the way along their adventure, I'll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
+ <</replace>>
+<</timed>>
 
-
-You’ll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
-
-If you follow them all the way along their adventure, I’ll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
-
-What kind of amazing experience? Well, it’s a surprise. Otherwise this wouldn’t be an adventure.
-
-Now are you playing this adventure solo or with a group?
+<<timed 57s>><<replace "#mount">>What kind of amazing experience? Well, it's a surprise. Otherwise this wouldn't be an adventure.
 
  
 <div class="menu-wrapper">
   <<button "Solo">><<set $prevpass to $passage>><<goto "UMC02A">><</button>>
   
   <<button "Group">><<set $prevpass to $passage>><<goto "UMC02B">><</button>></div>
+
+   <</replace>>
+<</timed>>
 </main>
 <<include "footer">>
 
 :: UMC02A {"position":"448,476","size":"100,100"}
 <<set $passage to "UMC02A">><<set $nextpassage to "UMC03">>
-/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<<audio ":all" stop>><<audio "refergroup" play>>
 <main>
 <div id="mount"></div> 
  The adventure may sometimes refer to a group of people but don’t worry, you by yourself are plenty for a group.
@@ -668,7 +688,7 @@ Now are you playing this adventure solo or with a group?
 
 :: UMC02B {"position":"448,476","size":"100,100"}
 <<set $passage to "UMC02B">><<set $nextpassage to "UMC03">>
-/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<<audio ":all" stop>><<audio "perfectgroup" play>>
 <main>
 <div id="mount"></div> 
  This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync.  
@@ -681,7 +701,7 @@ Now are you playing this adventure solo or with a group?
 
 :: UMC03 {"position":"448,476","size":"100,100"}
 <<set $passage to "UMC03">><<set $nextpassage to "UMC04">>
-/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<<audio ":all" stop>><<audio "03" play>>
 <main>
 <div id="mount"></div> 
 You can always use the arrows or the replay button if you need to hear or read anything again. 
@@ -699,7 +719,7 @@ Are you ready?
 <<include "footer">>
 
 :: UMC04 {"position":"448,476","size":"100,100"}
-<<set $passage to "UMC04">><<set $nextpassage to "UMC05">><<audio ":all" stop>><main>
+<<set $passage to "UMC04">><<set $nextpassage to "UMC05">><<audio ":all" stop>><<audio "UMC_04" play>><main>
 My friend Moll will be here soon to guide you, connecting from the year 1603.
 
 Moll should be around here somewhere…
@@ -1480,8 +1500,7 @@ $map
 
 
 :: UMC-23 {"position":"520,2113","size":"100,100"}
-<<set $passage to "UMC-23">><<set $nextpassage to "UMC-24">><<audio ":all" stop>>
-/* <<audio ":all" stop>><<audio "SRS_32" play>> */
+<<set $passage to "UMC-23">><<set $nextpassage to "UMC-24">><<audio ":all" stop>><<audio ":all" stop>><<audio "UMC_23" play>>
 <main>
 <div id="mount"></div>
 Moll poses an excellent question: what would you like to be remembered for? 
@@ -1500,8 +1519,8 @@ You’ll need to show them this <<button "key">><<set $prevpass to $passage>><<g
 :: UMC-24 {"position":"520,2113","size":"100,100"}
 <<set $passage to "UMC-24">><<set $nextpassage to "UMC-24adventures">><<audio ":all" stop>><main>
 
-
 <div class="key-wrapper glowing"><img src="./assets/Postman_sPark.png"></div>
+
 <h2 class="endpoint">POSTMAN'S PARK</h2>
 </main>
 <<include "footerkey">>

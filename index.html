@@ -641,7 +641,9 @@ setup.checkForRepeats = (array,element) => {
  const arrayCopy = [...array];
  const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
  return duplicates.contains(element)
-}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;UMC_05.1&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.1.mp3&quot;&gt;&gt;
+}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;UMC_01&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_01.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;UMC_04&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC-04.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;UMC_05.1&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.1.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;UMC_05.2&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.2.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;UMC_06&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_06.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;UMC_07&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_07.mp3&quot;&gt;&gt;
@@ -663,14 +665,17 @@ setup.checkForRepeats = (array,element) => {
 &lt;&lt;cacheaudio &quot;UMC_20B&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_20B.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;UMC_21&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_21.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;UMC_22&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_22.mp3&quot;&gt;&gt;
-
+&lt;&lt;cacheaudio &quot;UMC_23&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_23.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;03&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_03.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;perfectgroup&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_perfectgroup.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;refergroup&quot; &quot;https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_refergroup.mp3&quot;&gt;&gt;
 
 &lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="" position="100,225" size="100,100">&lt;header&gt;Undercover with Moll Cutpurse&lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="" position="100,350" size="100,100">&lt;footer&gt;
 &lt;div class=&quot;nav-item back&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
 &lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
 &lt;div class=&quot;nav-item forward&quot;&gt;&lt;&lt;button &quot;&gt;&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpassage&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
-&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="lost" tags="" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="lost" tags="" position="100,975" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
 &lt;main&gt;
 You have two options:
 
@@ -684,35 +689,50 @@ You have two options:
 &lt;&lt;button &quot;start&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC01&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;/main&gt;</tw-passagedata><tw-passagedata pid="6" name="UMC01" tags="" position="449,226" size="100,100">&lt;&lt;set $passage to &quot;UMC01&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC02B&quot;&gt;&gt;
-/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC01&quot; play&gt;&gt; */
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_01&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
-Felix, keeper of the Maze, and small dragon, here at your service.
+&lt;&lt;timed 2s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+  Felix, keeper of the Maze, and small dragon, here at your service.
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 8s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+  I&#39;m opening up the City to you, a City you&#39;ve never experienced before, and its secrets too. 
+  
+  For the City is full of treasure. 
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+  &lt;&lt;timed 16s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt; Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+  &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
+&lt;&lt;timed 24s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;You&#39;re now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I&#39;ve been alive. 
+ &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-I’m opening up the City to you, a City you’ve never experienced before, and its secrets too. For the City is full of treasure. Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+&lt;&lt;timed 38s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;You&#39;ve opened up door #5 into the maze of adventures. 
 
-You’re now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I’ve been alive. 
+You&#39;ll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+ &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-You’ve opened up door #5 into the maze of adventures. 
+&lt;&lt;timed 47s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;If you follow them all the way along their adventure, I&#39;ll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
+ &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 
-
-You’ll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
-
-If you follow them all the way along their adventure, I’ll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
-
-What kind of amazing experience? Well, it’s a surprise. Otherwise this wouldn’t be an adventure.
-
-Now are you playing this adventure solo or with a group?
+&lt;&lt;timed 57s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;What kind of amazing experience? Well, it&#39;s a surprise. Otherwise this wouldn&#39;t be an adventure.
 
  
 &lt;div class=&quot;menu-wrapper&quot;&gt;
   &lt;&lt;button &quot;Solo&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC02A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
   
   &lt;&lt;button &quot;Group&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC02B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+
+   &lt;&lt;/replace&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="UMC02A" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC02A&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC03&quot;&gt;&gt;
-/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;EI_02A&quot; play&gt;&gt; */
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;refergroup&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
  The adventure may sometimes refer to a group of people but don’t worry, you by yourself are plenty for a group.
@@ -720,7 +740,7 @@ Now are you playing this adventure solo or with a group?
  
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="UMC02B" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC02B&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC03&quot;&gt;&gt;
-/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;EI_02A&quot; play&gt;&gt; */
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;perfectgroup&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
  This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync.  
@@ -730,7 +750,7 @@ Now are you playing this adventure solo or with a group?
  
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="UMC03" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC03&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC04&quot;&gt;&gt;
-/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;EI_02A&quot; play&gt;&gt; */
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;03&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt; 
 You can always use the arrows or the replay button if you need to hear or read anything again. 
@@ -745,7 +765,7 @@ Are you ready?
  
  
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="UMC04" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC04&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC05&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="UMC04" tags="" position="448,476" size="100,100">&lt;&lt;set $passage to &quot;UMC04&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC05&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_04&quot; play&gt;&gt;&lt;main&gt;
 My friend Moll will be here soon to guide you, connecting from the year 1603.
 
 Moll should be around here somewhere…
@@ -1417,8 +1437,7 @@ But you can take your time.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;
 $map
 &lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;UMC-23&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footerlost&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="UMC-23" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;UMC-23&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC-24&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
-/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_32&quot; play&gt;&gt; */
+&lt;&lt;include &quot;footerlost&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="UMC-23" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;UMC-23&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC-24&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;UMC_23&quot; play&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 Moll poses an excellent question: what would you like to be remembered for? 
@@ -1434,8 +1453,8 @@ You’ll need to show them this &lt;&lt;button &quot;key&quot;&gt;&gt;&lt;&lt;se
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="UMC-24" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;UMC-24&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;UMC-24adventures&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;main&gt;
 
-
 &lt;div class=&quot;key-wrapper glowing&quot;&gt;&lt;img src=&quot;./assets/Postman_sPark.png&quot;&gt;&lt;/div&gt;
+
 &lt;h2 class=&quot;endpoint&quot;&gt;POSTMAN&#39;S PARK&lt;/h2&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerkey&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="UMC-24adventures" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;UMC-24&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;main&gt;
