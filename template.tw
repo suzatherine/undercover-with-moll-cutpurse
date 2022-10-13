@@ -564,36 +564,35 @@ setup.checkForRepeats = (array,element) => {
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "UMC_05.1" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_05.1.mp3">>
-<<cacheaudio "UMC_05.2" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_05.2.mp3">>
-<<cacheaudio "UMC_06" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_06.mp3">>
-<<cacheaudio "UMC_07" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_07.mp3">>
-<<cacheaudio "UMC_08" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_08.mp3">>
-<<cacheaudio "UMC_09" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_09.mp3">>
-<<cacheaudio "UMC_10" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_10.mp3">>
-<<cacheaudio "UMC_11" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_11.mp3">>
-<<cacheaudio "UMC_12A" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_12A.mp3">>
-<<cacheaudio "UMC_12B" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_12B.mp3">>
-<<cacheaudio "UMC_13" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_13.mp3">>
-<<cacheaudio "UMC_14" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_14.mp3">>
-<<cacheaudio "UMC_15" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_15.mp3">>
-<<cacheaudio "UMC_16" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_16.mp3">>
-<<cacheaudio "UMC_17" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_17.mp3">>
-<<cacheaudio "UMC_17.5" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_17.5.mp3">>
-<<cacheaudio "UMC_18" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_18.mp3">>
-<<cacheaudio "UMC_19" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_19.mp3">>
-<<cacheaudio "UMC_20A" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_20A.mp3">>
-<<cacheaudio "UMC_20B" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_20B.mp3">>
-<<cacheaudio "UMC_21" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_21.mp3">>
-<<cacheaudio "UMC_22" "https://www.youhavefoundconey.net/tgksnd/UMC/UMC_22.mp3">>
+<<cacheaudio "UMC_05.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.1.mp3">>
+<<cacheaudio "UMC_05.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.2.mp3">>
+<<cacheaudio "UMC_06" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_06.mp3">>
+<<cacheaudio "UMC_07" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_07.mp3">>
+<<cacheaudio "UMC_08" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_08.mp3">>
+<<cacheaudio "UMC_09" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_09.mp3">>
+<<cacheaudio "UMC_10" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_10.mp3">>
+<<cacheaudio "UMC_11" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_11.mp3">>
+<<cacheaudio "UMC_12A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_12A.mp3">>
+<<cacheaudio "UMC_12B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_12B.mp3">>
+<<cacheaudio "UMC_13" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_13.mp3">>
+<<cacheaudio "UMC_14" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_14.mp3">>
+<<cacheaudio "UMC_15" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_15.mp3">>
+<<cacheaudio "UMC_16" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_16.mp3">>
+<<cacheaudio "UMC_17" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_17.mp3">>
+<<cacheaudio "UMC_17.5" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_17.5.mp3">>
+<<cacheaudio "UMC_18" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_18.mp3">>
+<<cacheaudio "UMC_19" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_19.mp3">>
+<<cacheaudio "UMC_20A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_20A.mp3">>
+<<cacheaudio "UMC_20B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_20B.mp3">>
+<<cacheaudio "UMC_21" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_21.mp3">>
+<<cacheaudio "UMC_22" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_22.mp3">>
 
 
 <<waitforaudio>>
 
 
 :: header {"position":"100,225","size":"100,100"}
-<header>Adventure Functionality /
-Undercover with Moll Cutpurse</header>
+<header>Undercover with Moll Cutpurse</header>
 
 
 :: footer {"position":"100,350","size":"100,100"}
@@ -618,10 +617,9 @@ You have two options:
 
 
 :: landing {"position":"450,50","size":"100,100"}
-<<set $passage to "landing">>
-
+<<set $passage to "landing">><<audio ":all" stop>>
 <main>
-
+<h2>Undercover with Moll Cutpurse</h2>
 <<button "start">><<set $prevpass to $passage>><<goto "UMC01">><</button>>
 
 </main>
