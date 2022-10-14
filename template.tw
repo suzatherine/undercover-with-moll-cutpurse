@@ -344,7 +344,6 @@ width: 100%;
 	border:0
 }
 }
-
 /* LANDING  */
 main.landing{
   display: flex;
@@ -380,8 +379,6 @@ main.landing{
 main.end > h2{
   margin-block-end: 0;
 }
-
-
 
 /* KEY  */
 .key-wrapper{
@@ -631,9 +628,6 @@ setup.checkForRepeats = (array,element) => {
 <<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_03.mp3">>
 <<cacheaudio "perfectgroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_perfectgroup.mp3">>
 <<cacheaudio "refergroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_refergroup.mp3">>
-<<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3">>
-
-
 
 <<waitforaudio>>
 
@@ -673,7 +667,8 @@ You have two options:
 
 </main>
 
-:: UMC01 {"position":"449,226","size":"100,100"}
+
+:: UMC01 {"position":"625,75","size":"100,100"}
 <<set $passage to "UMC01">><<set $nextpassage to "UMC02B">>
 <<audio ":all" stop>><<audio "UMC_01" play>>
 <main>
@@ -708,8 +703,7 @@ You'll be led presently through the streets of the City by a guide from one of i
 
 <<timed 57s>><<replace "#mount">>What kind of amazing experience? Well, it's a surprise. Otherwise this wouldn't be an adventure.
 
- Now are you playing this adventure solo or with a group?
-
+ 
 <div class="menu-wrapper">
   <<button "Solo">><<set $prevpass to $passage>><<goto "UMC02A">><</button>>
   
@@ -720,7 +714,8 @@ You'll be led presently through the streets of the City by a guide from one of i
 </main>
 <<include "footer">>
 
-:: UMC02A {"position":"448,476","size":"100,100"}
+
+:: UMC02A {"position":"750,25","size":"100,100"}
 <<set $passage to "UMC02A">><<set $nextpassage to "UMC03">>
 <<audio ":all" stop>><<audio "refergroup" play>>
 <main>
@@ -731,7 +726,8 @@ You'll be led presently through the streets of the City by a guide from one of i
 </main>
 <<include "footer">>
 
-:: UMC02B {"position":"448,476","size":"100,100"}
+
+:: UMC02B {"position":"750,150","size":"100,100"}
 <<set $passage to "UMC02B">><<set $nextpassage to "UMC03">>
 <<audio ":all" stop>><<audio "perfectgroup" play>>
 <main>
@@ -744,7 +740,8 @@ You'll be led presently through the streets of the City by a guide from one of i
 </main>
 <<include "footer">>
 
-:: UMC03 {"position":"448,476","size":"100,100"}
+
+:: UMC03 {"position":"875,75","size":"100,100"}
 <<set $passage to "UMC03">><<set $nextpassage to "UMC04">>
 <<audio ":all" stop>><<audio "03" play>>
 <main>
@@ -763,7 +760,8 @@ Are you ready?
 </main>
 <<include "footer">>
 
-:: UMC04 {"position":"448,476","size":"100,100"}
+
+:: UMC04 {"position":"1000,75","size":"100,100"}
 <<set $passage to "UMC04">><<set $nextpassage to "UMC05">><<audio ":all" stop>><<audio "UMC_04" play>><main>
 My friend Moll will be here soon to guide you, connecting from the year 1603.
 
@@ -777,8 +775,7 @@ Oh, that’s not Moll… who’s that?
 <<include "footer">>
 
 
-
-:: UMC05 {"position":"450,225","size":"100,100"}
+:: UMC05 {"position":"450,275","size":"100,100"}
 <<set $passage to "UMC05">><<audio ":all" stop>><<audio "UMC_05.1" play>><<set $nextpassage to "UMC-05map">>
 <main>
 <div id="mount"></div>
@@ -826,7 +823,7 @@ What were you talking to the constable for? You're not a sneak are you? Come to 
 <<include "footer">>
 
 
-:: UMC-05map {"position":"1400,400","size":"100,200"}
+:: UMC-05map {"position":"575,275","size":"100,100"}
 <<set $passage to "UMC-05map">><<audio ":all" stop>><<set $map1 = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.51489913970774, -0.10347005492166371])>><<set $nextpassage to "UMC-05.2">><main>
 
 Head up Limeburner Lane away from the main road, just enough to get out of ear shot.
@@ -838,7 +835,8 @@ $map1
 </main>
 <<include "footer">>
 
-:: UMC-05.2 {"position":"1400,400","size":"100,200"}
+
+:: UMC-05.2 {"position":"700,275","size":"100,100"}
 <<set $passage to "UMC-05.2">><<audio ":all" stop>><<set $nextpassage to "UMC06">><main>
 /* TODO NEEDS CAPTIONING */
 Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’m from. You look a little too clean and pristine to be from the 17th century, I reckon. Get your bearings quickly, cos I need your help. What did the Constable ask you?
@@ -853,7 +851,7 @@ Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’
 <<include "footer">>
 
 
-:: UMC06 {"position":"450,375","size":"100,100"}
+:: UMC06 {"position":"450,400","size":"100,100"}
 <<set $passage to "UMC06">><<audio ":all" stop>><<audio "UMC_06" play>><<set $nextpassage to "UMC07">>
 
 <main>
@@ -923,7 +921,8 @@ I shouldn't have to tell you that, but you'd be surprised at how many famous cri
 </main>
 <<include "footer">>
 
-:: UMC07map {"position":"450,525","size":"100,100"}
+
+:: UMC07map {"position":"575,525","size":"100,100"}
 <<set $passage to "UMC07map">><<audio ":all" stop>><<set $nextpassage to "UMC08">><<set $map2 = setup.generateDirectionsMap([51.51475789867116, -0.10344983059506083], [51.51551164528041, -0.10200042137345718])>>
 
 <main>
@@ -960,7 +959,8 @@ Called me indecent! Can you believe it? People spat me on the street for it.<</t
 </main>
 <<include "footer">>
 
-:: UMC08map {"position":"450,650","size":"100,100"}
+
+:: UMC08map {"position":"575,650","size":"100,100"}
 <<set $passage to "UMC08map">><<audio ":all" stop>><<set $nextpassage to "UMC09">><<set $map3 = setup.generateDirectionsMap([51.51551164528041, -0.10200042137345718], [51.516661119815495, -0.10164312514555553] )>>
 <main>
 From the direction you came, turn left uphill. 
@@ -1010,7 +1010,8 @@ Wishing my needle was a dagger.<</type>><</replace>><</timed>>
 </main>
 <<include "footer">>
 
-:: UMC09map {"position":"450,775","size":"100,100"}
+
+:: UMC09map {"position":"575,775","size":"100,100"}
 <<set $passage to "UMC09map">><<audio ":all" stop>><<set $nextpassage to "UMC10">><<set $map4 = setup.generateDirectionsMap([51.516661119815495, -0.10164312514555553], [51.51732515412257, -0.1026497257358336] )>>
 
 <main>
@@ -1030,7 +1031,7 @@ $map4
 
 
 :: UMC10 {"position":"450,900","size":"100,100"}
-<<set $passage to "UMC10">><<audio ":all" stop>><<audio "UMC_10" play>><<set $nextpassage to "UMC10map">>
+<<set $passage to "UMC10">><<audio ":all" stop>><<audio "UMC_10" play>><<set $nextpassage to "UMC11">>
 <main>
 <div id="mount"></div>
 <<timed 0s>><<replace "#mount">><<type 50ms>>Hang on a second. Something feels a bit funny here. <</type>><</replace>><</timed>>    
@@ -1070,25 +1071,11 @@ Right, come on you lot, head on to Smithfield Street.
 </main>
 <<include "footer">>
 
-:: UMC10map {"position":"450,900","size":"100,100"}
-<<set $passage to "UMC10map">><<audio ":all" stop>><<set $nextpassage to "UMC11">><<set $map5 = setup.generateDirectionsMap([51.51732515412257, -0.1026497257358336], [51.51757406544449, -0.1035285800709999] )>>
-<main>
-
-$map5
-<<button "I'm here">><<set $prevpass to $passage>><<goto "UMC11">><</button>>
-
-</main>
-<<include "footer">>
-
 
 :: UMC11 {"position":"450,1025","size":"100,100"}
-<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12A">><<set $map6 = setup.generateDirectionsMap( [51.51823523214685, -0.10303930182366541], [51.51850995393808, -0.1011746183572291] )>><main>$map6
-
-//From Cock Lane, take a right on Snow Hill, going around the building and turning just before the building under construction. And then a left again.  
+<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12B">><<set $map6 = setup.generateDirectionsMap( [51.517300, -0.103200], [51.51850995393808, -0.1011746183572291] )>><main>//From Cock Lane, take a right on Snow Hill, and then right again. (Going around the building)
 Follow along until you come open area you’ll spot a round garden. Find your way inside.//
-
-------
-
+$map6
 <div id="mount"></div>
   
 <<timed 0s>><<replace "#mount">><<type 48ms>> MOLL: Don't tell them what to do that's my job. 
@@ -1152,19 +1139,6 @@ Every day is a competition with Ann Duck. Right, this will be a good place for a
  </div> <</type>><</replace>><</timed>> 
 
 
-</main>
-<<include "footer">>
-
-:: UMC11map {"position":"450,1025","size":"100,100"}
-<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12B">><<set $map6 = setup.generateDirectionsMap( [51.51823523214685, -0.10303930182366541], [51.51850995393808, -0.1011746183572291] )>><main>
-<main>
-
-From Cock Lane, take a right on Snow Hill, going around the building and turning just before the building under construction. And then a left again.  
-Follow along until you come open area you’ll spot a round garden. Find your way inside.
-
-$map6
-
-<<button "I'm here">><<set $prevpass to $passage>><<goto "UMC12A">><</button>>
 </main>
 <<include "footer">>
 
@@ -1307,7 +1281,7 @@ Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Repo
 M: I don't believe we've had the pleasure of meeting. I'm Thomas Middleton, and this is my writing partner, Thomas Decker. 
 
 D: Charmed. <</type>><</replace>><</timed>>   
-<<timed 12s>><<replace "#mount">><<type 53ms>>M:We're playwrights you'll see. 
+<<timed 12s>><<replace "#mount">><<type 53ms>>M:We're playwrights you see. 
 
 We're writing a play called The Roaring Girl. It's based on her life.
 
@@ -1480,22 +1454,18 @@ Well. Let me know when you’re outside Postman’s Park.<</type>>
 </main>
 <<include "footer">>
 
-:: UMC21map {"position":"450,2275","size":"100,100"}
+
+:: UMC21map {"position":"575,2275","size":"100,100"}
 <<set $passage to "UMC21map">><<audio ":all" stop>><<set $nextpassage to "UMC22">><<set $map7 = setup.generateDirectionsMap( [51.51849447814232, -0.10115599968176144], [51.516671009670844, -0.09847064369107725] )>>
 <main>
-Exit the park and circle to the other side to find Little Britain. You’ll see the Tutor style archway of St Barthlomews and further along a small with sign with a green bicycle.
-Head down this road until you have to turn. Take a Right. 
+Exit the park and circle to the other side to find Little Britain. You’ll see the Tutor style archway of St Barthlomews.
+Head down this road past the red door until you have to turn. Take a Right. 
 Just ahead you’ll see a crossing and a gateway to a garden on the other side of the road. That is Postman’s Park.
 $map7 
 
 <<button "We're here.">>
   <<set $prevpass to $passage>><<goto "UMC22">>
 <</button>>
-
-$map7
-
-
-
 
 </main>
 <<include "footer">>
@@ -1535,7 +1505,8 @@ But you can take your time.<</type>><</replace>><</timed>>
 </main>
 <<include "footer">>
 
-:: end {"position":"520,2113","size":"100,100"}
+
+:: end {"position":"1000,2100","size":"100,100"}
 <<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.516800988162046, -0.09771286982617827])>>
 <main class="end"><h2>End location</h2>
 Postman's Park
@@ -1550,7 +1521,7 @@ $map
 <<include "footerkey">>
 
 
-:: UMC-23 {"position":"520,2113","size":"100,100"}
+:: UMC-23 {"position":"850,2150","size":"100,100"}
 <<set $passage to "UMC-23">><<set $nextpassage to "UMC-24">><<audio ":all" stop>><<audio ":all" stop>><<audio "UMC_23" play>>
 <main>
 <div id="mount"></div>
@@ -1567,7 +1538,8 @@ You’ll need to show them this <<button "key">><<set $prevpass to $passage>><<g
 </main>
 <<include "footer">>
 
-:: UMC-24 {"position":"520,2113","size":"100,100"}
+
+:: UMC-24 {"position":"750,2300","size":"100,100"}
 <<set $passage to "UMC-24">><<set $nextpassage to "UMC-24adventures">><<audio ":all" stop>><main>
 
 <div class="key-wrapper glowing"><img src="./assets/Postman_sPark.png"></div>
@@ -1576,7 +1548,8 @@ You’ll need to show them this <<button "key">><<set $prevpass to $passage>><<g
 </main>
 <<include "footerkey">>
 
-:: UMC-24adventures {"position":"520,2113","size":"100,100"}
+
+:: UMC-24adventures {"position":"650,2125","size":"100,100"}
 <<set $passage to "UMC-24adventures">><<audio ":all" stop>><main>
 <h3>Start a new adventure...</h3><div class="choices">
   <div class="adventure-wrapper"><h2 class="adventure-title">Ghost Hunting with Brian</h2><div class="adv-item"><div>6 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "UMC_25A">><</button>></div></div>
@@ -1588,7 +1561,8 @@ You’ll need to show them this <<button "key">><<set $prevpass to $passage>><<g
 </main>
 <<include "footerkey">>
 
-:: UMC_25A {"position":"520,2113","size":"100,100"}
+
+:: UMC_25A {"position":"650,1875","size":"100,100"}
 <<set $passage to "UMC_25A">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.51698173499748, -0.092720160117932])>><main>
 <h2>Ghost Hunting with Brian</h2>
 $map
@@ -1596,7 +1570,8 @@ $map
 </main>
 <<include "footerkey">>
 
-:: UMC_25B {"position":"520,2113","size":"100,100"}
+
+:: UMC_25B {"position":"750,2000","size":"100,100"}
 <<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.5199856714077, -0.09708782798778638])>><main>
 <h2>The Smashing Rock Sisters</h2>
 $map
@@ -1613,7 +1588,6 @@ $map
 <footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
 
 
-
 :: footerend {"position":"100,725","size":"100,100"}
 <footer>
 <div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
@@ -1622,4 +1596,6 @@ $map
 
 :: footerkey {"position":"100,729","size":"100,100"}
 <footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "Show map">><<set $prevpass to $passage>><<goto "end">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "UMC-24">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "UMC-24adventures">><</button>></div></div></footer>
+
+
 

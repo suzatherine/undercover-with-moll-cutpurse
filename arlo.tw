@@ -1,0 +1,1601 @@
+:: StoryTitle
+Undercover with Moll Cutpurse
+
+
+:: StoryData
+{
+	"ifid": "8D5AB38D-AC44-498C-840D-1FD8110678BB",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "landing",
+	"zoom": 0.6
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+@font-face {
+  font-family: "Big John";
+  src: url("./assets/fonts/bigjohn.otf") format("opentype");
+}
+/* GENERICS */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* Mostly equivalates to 10px but allows users accessibility zoom settings to work*/
+  /* font-size: 10px; */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-size: 10px;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Try to keep your margins going in one direction to avoid margin collapase or grounding. I switch all the top margins off to avoid this issue. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+blockquote,
+address,
+article,
+aside,
+details,
+dialogue,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+header,
+hr,
+main,
+nav,
+pre,
+section,
+table,
+p {
+  margin-top: 0;
+  margin-block-start: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* You MUST make sure that links stand out from nomal text though...*/
+}
+
+
+img {
+  /* This means that it can be less than 100% of the width of its parent IF the image is INTRINSICALLY smaller */
+  max-width: 100%;
+
+  height: auto;
+  /* 'auto' is the initial value for height BUT for images (and other elements which have an intrinic height) that is not the case. To make an image responsive you set one dimension (usually width) to [max-]width: 100%; and the other to 'auto' to ensure it keeps aspect ratio. 'auto' basically tells the browser to decide. */
+  vertical-align: middle;
+  /* minor vertical centering. Works for images IF there is a baseline (i.e. they are displayed inline or inline-block) */
+}
+
+/* Because we us <ul>s for lists that we don't always want bulletted. */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* To make actual bulletted lists */
+ul.typographic {
+  list-style: initial;
+  padding-inline-start: 20px;
+}
+
+/* stops icons being the target of JS click events */
+a.btn *,
+button * {
+  pointer-events: null;
+}
+
+/* For 'accessibility text'. If your button only has an image inside it that isn't good for accessibility. Put a span inside there and give it this class and put some descriptive text for what the button does into the span. */
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: auto;
+  -webkit-clip-path: auto;
+  white-space: normal;
+}
+
+/* GET RID OF TWINE STYLES */
+#story{
+  margin:0
+}
+
+#passages {
+	max-width: 100%;
+
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+button{
+    background-color: transparent;
+    border: #fff 1px solid;
+    border-radius: 3px;
+}
+
+button:hover{
+	background-color:#ea9e25;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+a {
+  color:#ea9e25;;
+}
+
+a:active {
+  background-color: #ea9e25;;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+#story {
+	margin: 0
+}
+
+/* GENERAL STYLES */
+body{
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Space Grotesk";
+  color:#fff;
+  /* color:#000; */
+  overflow:scroll;
+  background:#188081;
+  /* padding: 1.5rem */
+  display:flex;
+  flex-direction: column
+}
+
+header{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+    padding: 2rem
+}
+main{
+   padding: 2rem;
+   margin-block-end: 10rem
+}
+
+input[type=text]{
+  border: 1px solid #fff
+}
+/* FOOTER  */
+
+footer{
+   display:flex;
+  justify-content: space-between;
+align-items: end;
+  position:fixed;
+  bottom: 0;
+  padding: 2rem;
+  width: 100%;
+background: #188081;
+}
+
+nav{
+  display:flex;
+    justify-content: space-between;
+}
+
+.nav-wrapper{
+display:flex;
+  flex-direction:column;
+align-items: flex-start
+}
+
+.nav-wrapper:last-child{
+align-items: flex-end
+}
+
+.nav-item{
+  margin-block-end: 0.5rem;
+  width:100%;
+  display:flex
+}
+
+.nav-wrapper.end > .nav-item{
+justify-content: flex-end;
+}
+
+.nav-item.replay, .nav-item.end{
+justify-content: center
+}
+.nav-item.replay, .nav-item.forward{
+justify-content: end
+}
+
+.nav-item.replay, .nav-item.back{
+justify-content: start
+}
+
+.nav-item.forward > button, 
+.nav-item.back > button{
+  font-size:2rem
+}
+footer > button:first-child,  {
+  font-size:2rem
+}
+
+.nav-item > button{
+ font-size: 1.3rem
+}
+
+.menu-wrapper{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-wrapper > button{
+margin-inline-end: 10px;
+margin-block-end: 10px
+}
+
+
+textarea{
+  min-width: 60vw
+}
+
+.wordcontainer{
+  display:flex;
+  flex-direction: row;
+}
+
+.letter-item > input[type=text]{
+    min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+.letter-item > .correct-letter{
+  min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+
+
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+/* MAP */
+	.map{
+width: 100%;
+    height: 60vh;
+    border: 0;
+    margin: auto;
+    }
+
+
+.directions-card {
+    display: none!important
+}
+
+@media screen and (min-width: 450px) {
+.map{
+	max-width:60vw;
+	height:50vh;
+	border:0
+}
+}
+/* LANDING  */
+main.landing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh
+}
+
+.landing > h2 {
+  font-family: "Big John";
+  text-align:center;
+  margin-block-end: 0;
+}
+
+.landing > a {
+  display:flex;    
+  justify-content: center;
+  
+}
+
+.landing > a:active{
+  background-color: transparent;
+
+}
+
+.landing > a > img {
+  width: 80%;
+  max-width: 300px;
+}
+
+/* END */
+main.end > h2{
+  margin-block-end: 0;
+}
+
+/* KEY  */
+.key-wrapper{
+  width:fit-content;
+  display:flex;
+  justify-content:center;
+  padding: 2rem;
+  margin:auto
+}
+
+
+.key-wrapper > img{
+    width:100px;
+    transform:rotate(7deg)
+}
+
+.adventure-wrapper{
+border: solid 1px white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.adv-item{
+display: flex;
+   justify-content: space-between;
+    align-items: end;
+}
+
+.adventure-title{
+  margin-block-end:0;
+  text-align:center
+}
+
+.endpoint {
+  font-family: "Big John";
+  font-size:3rem;
+  text-align:center
+}
+
+.glowing {
+  /* width: 100px;
+  height: 100px; */
+  border-radius:50%;
+  background-color: transparent;
+  -webkit-animation: glowing 3s ease-in-out infinite alternate;
+  -moz-animation: glowing 3s ease-in-out infinite alternate;
+  animation: glowing 3s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glowing {
+  from {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f0f, 0 0 40px #0ff, 0 0 50px #DAA520, 0 0 60px #DAA520, 0 0 70px #DAA520;
+  }
+  to {
+    box-shadow: 0 0 20px #fff, 0 0 30px #FAFAD2, 0 0 40px #FAFAD2, 0 0 50px #FAFAD2, 0 0 60px #FAFAD2, 0 0 70px #FAFAD26, 0 0 80px #FAFAD2;
+  }
+}
+
+@media screen and (min-width: 450px) {
+.choices{
+  display:flex;
+  justify-content: space-between;
+  
+}
+
+.adventure-wrapper{
+  padding: 2rem
+}
+
+}
+
+/* SPECIFICS */
+
+.dropdown-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.wrong {
+  color:#f6cbc0;
+}
+
+.question{
+  border: 1px solid #fff;
+    padding: 10px;
+}
+
+input[type=text], select{
+  border: 1px solid #fff
+}
+
+input[type=text]{
+  min-width: 60%
+}
+
+h2.title{
+  font-size:2.5rem
+}
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+// TYPEWRITER FN
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+// MAKE MAP FUNCTION
+
+setup.generateDirectionsMap = function (origin, dest){
+const iFrame = document.createElement("iframe")
+iFrame.classList.add("map")
+iFrame.setAttribute("loading", "lazy")
+iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
+// iFrame.setAttribute("allowfullscreen")
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
+const mount = document.getElementById("mapMount")
+console.log(iFrame)
+return iFrame
+// this.mapMount.appendChild(iFrame)
+}
+
+// MAKE MAP WITH WAYPOINTS FUNCTION
+
+setup.generateDirectionsMapWP = function (origin, dest, wayp){
+const iFrame = document.createElement("iframe")
+iFrame.classList.add("map")
+iFrame.setAttribute("loading", "lazy")
+iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
+// iFrame.setAttribute("allowfullscreen")
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
+const mount = document.getElementById("mapMount")
+console.log(iFrame)
+return iFrame
+// this.mapMount.appendChild(iFrame)
+}
+
+// <<set $map = setup.generateDirectionsMap([], [])>>
+
+//Get random 5 letter word
+
+setup.generate5LetterCode = () => {
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let word = ""
+for (let i =0 ; i < 5 ; i++){
+word += alphabet[Math.round((alphabet.length-1)*Math.random())];
+}
+  return word;
+}
+
+//Check if an array contains multiple instances of an element
+
+setup.checkForRepeats = (array,element) => {
+ const arrayCopy = [...array];
+ const duplicates = arrayCopy.filter((item, index) => index !== arrayCopy.indexOf(item));
+ return duplicates.contains(element)
+}
+
+
+:: StoryInit {"position":"100,100","size":"100,100"}
+<<cacheaudio "UMC_01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_01.mp3">>
+<<cacheaudio "UMC_04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC-04.mp3">>
+<<cacheaudio "UMC_05.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.1.mp3">>
+<<cacheaudio "UMC_05.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_05.2.mp3">>
+<<cacheaudio "UMC_06" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_06.mp3">>
+<<cacheaudio "UMC_07" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_07.mp3">>
+<<cacheaudio "UMC_08" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_08.mp3">>
+<<cacheaudio "UMC_09" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_09.mp3">>
+<<cacheaudio "UMC_10" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_10.mp3">>
+<<cacheaudio "UMC_11" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_11.mp3">>
+<<cacheaudio "UMC_12A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_12A.mp3">>
+<<cacheaudio "UMC_12B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_12B.mp3">>
+<<cacheaudio "UMC_13" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_13.mp3">>
+<<cacheaudio "UMC_14" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_14.mp3">>
+<<cacheaudio "UMC_15" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_15.mp3">>
+<<cacheaudio "UMC_16" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_16.mp3">>
+<<cacheaudio "UMC_17" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_17.mp3">>
+<<cacheaudio "UMC_17.5" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_17.5.mp3">>
+<<cacheaudio "UMC_18" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_18.mp3">>
+<<cacheaudio "UMC_19" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_19.mp3">>
+<<cacheaudio "UMC_20A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_20A.mp3">>
+<<cacheaudio "UMC_20B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_20B.mp3">>
+<<cacheaudio "UMC_21" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_21.mp3">>
+<<cacheaudio "UMC_22" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_22.mp3">>
+<<cacheaudio "UMC_23" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC-23.mp3">>
+<<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_03.mp3">>
+<<cacheaudio "perfectgroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_perfectgroup.mp3">>
+<<cacheaudio "refergroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_refergroup.mp3">>
+
+<<waitforaudio>>
+
+
+:: header {"position":"100,225","size":"100,100"}
+<header>Undercover with Moll Cutpurse</header>
+
+
+:: footer {"position":"100,350","size":"100,100"}
+<footer>
+<div class="nav-item back"><<button "<">><<goto $prevpass>><</button>></div>
+<div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div>
+<div class="nav-item"><<button "Take me to the end">><<goto "lost">><</button>></div>
+<div class="nav-item forward"><<button ">">><<set $prevpass to $passage>><<goto $nextpassage>><</button>></div>
+</footer>
+
+
+:: lost {"position":"100,975","size":"100,100"}
+<<set $passage to "lost">><<audio ":all" stop>>
+<main>
+You have two options:
+
+<<button "Begin the adventure again">><<goto "landing">><</button>>
+
+<<button "Take me straight to the end location!">><<goto "end">><</button>>
+</main>
+<<include "footerlost">>
+
+
+:: landing {"position":"450,50","size":"100,100"}
+<<set $passage to "landing">><<audio ":all" stop>>
+<main class="landing">
+<h2>Undercover with Moll Cutpurse</h2>
+ <<link "<img src='./assets/dragon2.gif'>">><<set $prevpass to $passage>><<goto "UMC01">><</link>>
+
+<<button "start">><<set $prevpass to $passage>><<goto "UMC01">><</button>>
+
+</main>
+
+
+:: UMC01 {"position":"625,75","size":"100,100"}
+<<set $passage to "UMC01">><<set $nextpassage to "UMC02B">>
+<<audio ":all" stop>><<audio "UMC_01" play>>
+<main>
+<div id="mount"></div> 
+<<timed 2s>><<replace "#mount">>
+  Felix, keeper of the Maze, and small dragon, here at your service.
+  <</replace>>
+<</timed>>
+  <<timed 8s>><<replace "#mount">>
+  I'm opening up the City to you, a City you've never experienced before, and its secrets too. 
+  
+  For the City is full of treasure. 
+  <</replace>>
+<</timed>>
+  <<timed 16s>><<replace "#mount">> Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+  <</replace>>
+<</timed>>
+
+<<timed 24s>><<replace "#mount">>You're now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I've been alive. 
+ <</replace>>
+<</timed>>
+
+<<timed 38s>><<replace "#mount">>You've opened up door #5 into the maze of adventures. 
+
+You'll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+ <</replace>>
+<</timed>>
+
+<<timed 47s>><<replace "#mount">>If you follow them all the way along their adventure, I'll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
+ <</replace>>
+<</timed>>
+
+<<timed 57s>><<replace "#mount">>What kind of amazing experience? Well, it's a surprise. Otherwise this wouldn't be an adventure.
+
+ 
+<div class="menu-wrapper">
+  <<button "Solo">><<set $prevpass to $passage>><<goto "UMC02A">><</button>>
+  
+  <<button "Group">><<set $prevpass to $passage>><<goto "UMC02B">><</button>></div>
+
+   <</replace>>
+<</timed>>
+</main>
+<<include "footer">>
+
+
+:: UMC02A {"position":"750,25","size":"100,100"}
+<<set $passage to "UMC02A">><<set $nextpassage to "UMC03">>
+<<audio ":all" stop>><<audio "refergroup" play>>
+<main>
+<div id="mount"></div> 
+ The adventure may sometimes refer to a group of people but don’t worry, you by yourself are plenty for a group.
+<<button "Next">><<set $prevpass to $passage>><<goto "UMC03">><</button>>
+ 
+</main>
+<<include "footer">>
+
+
+:: UMC02B {"position":"750,150","size":"100,100"}
+<<set $passage to "UMC02B">><<set $nextpassage to "UMC03">>
+<<audio ":all" stop>><<audio "perfectgroup" play>>
+<main>
+<div id="mount"></div> 
+ This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync.  
+
+<<button "Next">><<set $prevpass to $passage>><<goto "UMC03">><</button>>
+ 
+ 
+</main>
+<<include "footer">>
+
+
+:: UMC03 {"position":"875,75","size":"100,100"}
+<<set $passage to "UMC03">><<set $nextpassage to "UMC04">>
+<<audio ":all" stop>><<audio "03" play>>
+<main>
+<div id="mount"></div> 
+You can always use the arrows or the replay button if you need to hear or read anything again. 
+
+I’ll provide maps when needed.
+
+And the "Take me to the end" button will skip the adventure and show you how to get to the surprise at the end.
+
+Are you ready?
+
+<<button "Yes!">><<set $prevpass to $passage>><<goto "UMC04">><</button>>
+ 
+ 
+</main>
+<<include "footer">>
+
+
+:: UMC04 {"position":"1000,75","size":"100,100"}
+<<set $passage to "UMC04">><<set $nextpassage to "UMC05">><<audio ":all" stop>><<audio "UMC_04" play>><main>
+My friend Moll will be here soon to guide you, connecting from the year 1603.
+
+Moll should be around here somewhere…
+
+Oh, that’s not Moll… who’s that?
+
+<<timed 8s>><<set $prevpass to $passage>><<goto "UMC05">><</timed>>
+
+</main>
+<<include "footer">>
+
+
+:: UMC05 {"position":"450,275","size":"100,100"}
+<<set $passage to "UMC05">><<audio ":all" stop>><<audio "UMC_05.1" play>><<set $nextpassage to "UMC-05map">>
+<main>
+<div id="mount"></div>
+<<timed 0.5s>><<replace "#mount">><<type 50ms>>[connecting...]<</type>><</replace>><</timed>>   
+<<timed 3.5s>><<replace "#mount">><<type 50ms>>[connecting...]<</type>><</replace>><</timed>>  
+<<timed 7s>><<replace "#mount">><<type 50ms>>[connecting...]<</type>><</replace>><</timed>>  
+<<timed 13s>><<replace "#mount">><<type 50ms>>Oi! You! 
+
+What are you doing?<</type>><</replace>><</timed>>   
+<<timed 17s>><<replace "#mount">><<type 50ms>>Yeah, you! I'm talking to you, with that no good look on your face! 
+
+You don't look like you're from around here. And there's nothing I don't like more than something I don't recognize. 
+
+Scram!<</type>><</replace>><</timed>>   
+<<timed 35s>><<replace "#mount">><<type 50ms>>Wait, wait! Actually hang on a second. 
+
+Maybe you can do me a favor.<</type>><</replace>><</timed>>   
+<<timed 45s>><<replace "#mount">><<type 55ms>>I'm the constable around these parts, see, and I've been tasked with sniffing out troublemakers. Like yourself. No offence! Or not much! 
+
+But since you're standing around like a spare part maybe you can help me out.<</type>><</replace>><</timed>>    
+<<timed 60s>><<replace "#mount">><<type 55ms>>I'm looking for someone. A criminal, yeah. 
+
+Goes by the name of Moll Cutpurse. 
+
+I'll be honest with you, she's a freak -dresses up in men's clothes, robs them even smokes a bloody pipe for God's sake.<</type>><</replace>><</timed>>   
+<<timed 80s>><<replace "#mount">><<type 57ms>>What's that? A fight? Christ. 
+
+Listen, if you see her, send her my way, all right. She's a pain in my arse, to be honest. 
+
+And it would do the city a whole bunch of good to have her behind bars, once and for all.<</type>><</replace>><</timed>>    
+<<timed 95s>><<replace "#mount">><<type 50ms>>I'll compensate you nicely if you know what I mean. 
+
+Or maybe I just won't send you to the nick? Haven't decided yet!<</type>><</replace>><</timed>>   
+<<timed 106s>><<replace "#mount">><<type 50ms>>Hey! Bobby, stop that! Put down the cleaver<</type>><</replace>><</timed>> 
+<<timed 112s>><<replace "#mount">><<type 50ms>>Woman: Psst psst, hey! Over here. 
+
+What were you talking to the constable for? You're not a sneak are you? Come to Limeburner Lane. Quickly!
+  
+ <<button "Show map">><<set $prevpass to $passage>><<goto "UMC-05map">><</button>>
+ <</type>><</replace>><</timed>> 
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC-05map {"position":"575,275","size":"100,100"}
+<<set $passage to "UMC-05map">><<audio ":all" stop>><<set $map1 = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.51489913970774, -0.10347005492166371])>><<set $nextpassage to "UMC-05.2">><main>
+
+Head up Limeburner Lane away from the main road, just enough to get out of ear shot.
+
+<<button "We're here">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
+
+$map1
+
+</main>
+<<include "footer">>
+
+
+:: UMC-05.2 {"position":"700,275","size":"100,100"}
+<<set $passage to "UMC-05.2">><<audio ":all" stop>><<set $nextpassage to "UMC06">><main>
+/* TODO NEEDS CAPTIONING */
+Good. Alright. You’re not from here, are you? By here, I mean 1610, where I’m from. You look a little too clean and pristine to be from the 17th century, I reckon. Get your bearings quickly, cos I need your help. What did the Constable ask you?
+
+<div class= "menu-wrapper"> 
+  <<button "He wanted me to help him catch a criminal.">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
+
+  <<button "He was acting kinda weird.">><<set $prevpass to $passage>><<goto "UMC06">><</button>>
+ </div>
+
+</main>
+<<include "footer">>
+
+
+:: UMC06 {"position":"450,400","size":"100,100"}
+<<set $passage to "UMC06">><<audio ":all" stop>><<audio "UMC_06" play>><<set $nextpassage to "UMC07">>
+
+<main>
+<div id="mount"></div>
+
+<<timed 0s>><<replace "#mount">><<type 50ms>>Hmm, he and I go way back. 
+
+We've been doing this dance for years, ever since I was a nipper. 
+
+You've caught on, haven't you?<</type>><</replace>><</timed>>    
+<<timed 9s>><<replace "#mount">><<type 50ms>>I'm Moll Cutpurse. 
+
+I can tell you're the kind of person who likes to walk on the wild side. I can see it in your eyes. That little glint. You can't fool me! 
+
+I'm bringing you onto my team. Welcome!<</type>><</replace>><</timed>>    
+<<timed 24s>><<replace "#mount">><<type 50ms>>First things first, we've got to get you a new name. 
+
+A pseudonym, if you will. You think Moll Cutpurse is my real name? Nah - it's actually Mary Frithat. 
+
+Can you imagine?<</type>><</replace>><</timed>>    
+<<timed 41s>><<replace "#mount">><<type 50ms>>Do I seem like a Mary? The answer is no, before you say anything you might regret. 
+
+Pseudonyms are important for criminals. They stop the constables from being able to track you down so easily. 
+
+So what's yours?<</type>><</replace>><</timed>>    
+<<timed 57s>><<replace "#mount">><<type 50ms>>If you shorten your first name, and then use a verb for the first half of your surname, and some kind of word for money for the second half, then that will be that. 
+
+So something like Soph Grabcoin or Al Takecash. Tell me when you've come up with them.<</type>><</replace>><</timed>> 
+
+<<timed 75s>><<replace "#mount">><<button "We've all come up with names.">><<set $prevpass to $passage>><<goto "UMC07">><</button>><</replace>><</timed>>
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC07 {"position":"450,525","size":"100,100"}
+<<set $passage to "UMC07">><<audio ":all" stop>><<audio "UMC_07" play>><<set $nextpassage to "UMC07map">>
+
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 60ms>>You done? Excellent! Let's hear them.  
+
+Say them loud, proudly! What a merry band of ne'er do wells. 
+
+Now come on. Let's get moving.<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 50ms>>Rule number one: never stand in the same place for too long, draws attention to yourself. 
+
+That's what's got you in trouble with the constable in the first place.<</type>><</replace>><</timed>>    
+<<timed 26s>><<replace "#mount">><<type 50ms>>Here's rule number two: 
+
+Whenever we cross a main road, I'm going to need you to move quickly, but carefully. I don't want you getting mown down.<</type>><</replace>><</timed>>    
+<<timed 36s>><<replace "#mount">><<type 50ms>>Look both ways before you cross. 
+
+I shouldn't have to tell you that, but you'd be surprised at how many famous criminals seem to be lacking in basic safety skills!<</type>><</replace>><</timed>>    
+<<timed 46s>><<replace "#mount">><<type 50ms>>We can slow down once we get onto the side streets. Let's get onto Old Bailey. Find the central Criminal Court for me would you?
+
+<<button "Show map">><<set $prevpass to $passage>><<goto "UMC07map">><</button>> <</type>><</replace>><</timed>>
+
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC07map {"position":"575,525","size":"100,100"}
+<<set $passage to "UMC07map">><<audio ":all" stop>><<set $nextpassage to "UMC08">><<set $map2 = setup.generateDirectionsMap([51.51475789867116, -0.10344983059506083], [51.51551164528041, -0.10200042137345718])>>
+
+<main>
+Continue up Limeburner Ln. It will curve to meet Old Bailey Street and directly in front of you, the Central Criminal Court.
+$map2
+<<button "We're at Old Bailey.">><<set $prevpass to $passage>><<goto "UMC08">><</button>>
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC08 {"position":"450,650","size":"100,100"}
+<<set $passage to "UMC08">><<audio ":all" stop>><<audio "UMC_08" play>><<set $nextpassage to "UMC08map">>
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 57ms>>Look at that. Pah! You know, I was brought to one of these places. 
+
+Not this one. Wasn't this fancy schmancy. I was tried though, you know, in a court of law?<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 53ms>>You know why they brought me in? For wearing men's clothes? 
+
+Called me indecent! Can you believe it? People spat me on the street for it.<</type>><</replace>><</timed>>    
+<<timed 27s>><<replace "#mount">><<type 50ms>>In the end, they made me stand at St. Paul's Cross and wear a white sheet while the priests gave a sermon, but I didn't care much, got a good breeze around the nether regions!<</type>><</replace>><</timed>>    
+<<timed 37s>><<replace "#mount">><<type 50ms>>Come on. I don't want to hang around here for too long. Smell of the law gives me the creeps. Let's head up Giltspur Street. Remember, be quick and careful on main roads.
+
+
+<<button "Show map">><<set $prevpass to $passage>><<goto "UMC08map">><</button>><</type>>
+
+<</replace>><</timed>> 
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC08map {"position":"575,650","size":"100,100"}
+<<set $passage to "UMC08map">><<audio ":all" stop>><<set $nextpassage to "UMC09">><<set $map3 = setup.generateDirectionsMap([51.51551164528041, -0.10200042137345718], [51.516661119815495, -0.10164312514555553] )>>
+<main>
+From the direction you came, turn left uphill. 
+After you cross the main road, the street will change name to Guiltspur Street.
+$map3
+
+<<button "I'm here">><<set $prevpass to $passage>><<goto "UMC09">><</button>>
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC09 {"position":"450,775","size":"100,100"}
+<<set $passage to "UMC09map">><<audio ":all" stop>><<audio "UMC_09" play>><<set $nextpassage to "UMC09map">>
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 45ms>>Rule number three of becoming the best criminal in the city: 
+
+Stay out of sight as much as possible.<</type>><</replace>><</timed>>    
+<<timed 6s>><<replace "#mount">><<type 50ms>>That means moving out of the way of any crowds, sticking to the sides of the pavements, avoiding eye contact with big groups, that kind of thing. 
+
+Make sure you're doing that as you're walking.<</type>><</replace>><</timed>>    
+<<timed 18s>><<replace "#mount">><<type 50ms>>Now, what was I saying? 
+
+Oh, right. The thing is, those law men were trying to tell me it was unnatural to wear men's clothes, and smoke a pipe, and drink in taverns, or whatever else. 
+
+Unwomanly or whatever.<</type>><</replace>><</timed>>   
+<<timed 32s>><<replace "#mount">><<type 55ms>> But it didn't feel unnatural to me. 
+
+It just felt - i dunno, I just feel comfortable in men's stuff. Always have. 
+
+When I was a kid, I'll cut the hem off my dresses. So I could move better.<</type>><</replace>><</timed>>    
+<<timed 47s>><<replace "#mount">><<type 50ms>>Just didn't feel good in all that fabric. Gets inthe way. 
+
+I can't run, jump, climb. I was always trying to go and play with the boys, because the girls didn't like me much.<</type>><</replace>><</timed>>    
+<<timed 59s>><<replace "#mount">><<type 48ms>>Every time my aunt tried to get me to sit down and sew, I'd be off like a racehorse. 
+
+Running and tumbling. The boys didn't want me near them though.<</type>><</replace>><</timed>>    
+<<timed 67s>><<replace "#mount">><<type 50ms>>Even when I'd be locked inside with my threading needle, I'd watch them out the window. 
+
+Wishing my needle was a dagger.<</type>><</replace>><</timed>>    
+<<timed 76s>><<replace "#mount">><<type 50ms>>Here turn on to Cock Lane when you get a chance. Don't laugh. Oh - well, you can laugh.<</type>>
+<<button "Show map">><<set $prevpass to $passage>><<goto "UMC09map">><</button>>
+<</replace>><</timed>> 
+
+</main>
+<<include "footer">>
+
+
+:: UMC09map {"position":"575,775","size":"100,100"}
+<<set $passage to "UMC09map">><<audio ":all" stop>><<set $nextpassage to "UMC10">><<set $map4 = setup.generateDirectionsMap([51.516661119815495, -0.10164312514555553], [51.51732515412257, -0.1026497257358336] )>>
+
+<main>
+On the left hand side of the road you’ll find Cock Lane. 
+You’ll see on the corner the Golden Boy of Pye corner. Put there in memory of the sins of the city. 
+
+<<button "Ok, we're here">><<set $prevpass to $passage>><<goto "UMC10">><</button>>
+
+$map4
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC10 {"position":"450,900","size":"100,100"}
+<<set $passage to "UMC10">><<audio ":all" stop>><<audio "UMC_10" play>><<set $nextpassage to "UMC11">>
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Hang on a second. Something feels a bit funny here. <</type>><</replace>><</timed>>    
+ 
+<<timed 7s>><<replace "#mount">><<type 50ms>>ANN: Moll? Is that you? 
+
+MOLL: Ann Duck! As I live and breathe! This is what I meant about time going funny around these parts.<</type>><</replace>><</timed>>    
+<<timed 16s>><<replace "#mount">><<type 57ms>>M: This is Ann Duck, notable criminal from 1742. 
+
+ANN: Notable! Is that any way to describe me? How about, the most notorious, most feared, most violent criminal of the last century?<</type>><</replace>><</timed>>    
+<<timed 37s>><<replace "#mount">><<type 55ms>>M: hmm there's already someone occupying that title. 
+
+A: Who? You my love? Oh don't make me laugh! Little Miss Pickpocket? 
+
+M: Don't call me that! 
+
+A: Who's this lot?<</type>><</replace>><</timed>>    
+<<timed 52s>><<replace "#mount">><<type 53ms>>M: Bunch of reprobates I found hanging around Limeburner Lane. 
+I'm showing them the ropes! 
+
+ANN: First rule of criminality stay out of sight. 
+
+MOLL: I've already told them that one.<</type>><</replace>><</timed>>    
+<<timed 64s>><<replace "#mount">><<type 54ms>>A: Well, they might not be the brightest bunch. 
+Look, you lot, if you're gonna make it in this city, you got to be able to spot others of your ilk.<</type>><</replace>><</timed>>    
+<<timed 76s>><<replace "#mount">><<type 55ms>>A: What I want you to do is this - in your little groups, you need to come up with a hand gesture. 
+Nothing rude, mind, that's too obvious. 
+Just something small.<</type>><</replace>><</timed>>    
+<<timed 90s>><<replace "#mount">><<type 55ms>>A: Maybe you're tipping your cap to someone, or you're tapping your palm on the back of your hand. 
+Whatever it is, you're gonna do it to anyone you see on our way to Smithfield Rotunda Garden.<</type>><</replace>><</timed>>    
+<<timed 106s>><<replace "#mount">><<type 57ms>>A:If they acknowledge you, great they're part of your gang. 
+If not, ain't no bother. But make sure you keep count of who's acknowledging you and who isn't. 
+Right, come on you lot, head on to Smithfield Street.
+<<button "Show map">><<set $prevpass to $passage>><<goto "UMC10map">><</button>><</type>><</replace>><</timed>> 
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC11 {"position":"450,1025","size":"100,100"}
+<<set $passage to "UMC11">><<audio ":all" stop>><<audio "UMC_11" play>><<set $nextpassage to "UMC12B">><<set $map6 = setup.generateDirectionsMap( [51.517300, -0.103200], [51.51850995393808, -0.1011746183572291] )>><main>//From Cock Lane, take a right on Snow Hill, and then right again. (Going around the building)
+Follow along until you come open area you’ll spot a round garden. Find your way inside.//
+$map6
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 48ms>> MOLL: Don't tell them what to do that's my job. 
+
+You need to find Snow Hill and head up turning right onto Smithfield Street.<</type>><</replace>><</timed>>   
+<<timed 10s>><<replace "#mount">><<type 58ms>>ANN: Towards the Smithfield Rotunda. Got it? 
+Go on then. Make sure you're doing your hand signals!<</type>><</replace>><</timed>>   
+<<timed 24s>><<replace "#mount">><<type 58ms>>M: What are you doing here anyway? 
+
+ANN: Hmm dunno. Something felt a bit funny. 
+I had a feeling you were up to no good. 
+And wherever there's mischief I've got to follow.<</type>><</replace>><</timed>>    
+<<timed 38s>><<replace "#mount">><<type 52ms>>A: What are you doing Moll? It's been a while. 
+Still cutting men's purse strings? Small fry but someone's got to do it, I suppose. 
+
+M: Made a good amount last week. I'll have you know.<</type>><</replace>><</timed>>   
+<<timed 49s>><<replace "#mount">><<type 59ms>>A: Don't be so small time! You're a glorified pickpocket at best. 
+
+And you're a fence! Even worse. People do their work through you, but you don't get your hands dirty.<</type>><</replace>><</timed>>    
+<<timed 63s>><<replace "#mount">><<type 57ms>>A: Me? People are actually afraid of me. 
+
+Last week, I nearly cut a lad's finger off because he wouldn't give me any of his gold. 
+
+Week before, I beat a man with glass bottles until he cried for his mother.<</type>><</replace>><</timed>>   
+<<timed 80s>><<replace "#mount">><<type 58ms>>M: You'll get in trouble one day Ann Duck, mark my words. 
+
+A: Nonsense! I've been tried 19 times and they still ain't got nothing on me. 
+You need to hang around the ports Moll, that's where the good stuff is.<</type>><</replace>><</timed>>    
+<<timed 96s>><<replace "#mount">><<type 54ms>>M: Yeah, I know, but I'm not like you, Ann! I don't want to beat anyone up. 
+Not unless I have to. 
+Not unless they're comin' for me. 
+I like to keep it quiet. 
+Steal away into the night. A ghost on the streets.<</type>><</replace>><</timed>>   
+<<timed 110s>><<replace "#mount">><<type 56ms>>A: Ah you don't get it, Moll! Never have! 
+
+This lot - the ones who swan around the ports in their furs and their horses with their sleek coats... they don't care about us. 
+
+They already rob us every single day!<</type>><</replace>><</timed>>   
+<<timed 126s>><<replace "#mount">><<type 52ms>>A: Wouldn't piss on us if we were on fire. 
+
+Would step over our bodies and wrinkle their noses if they got our blood on their slippers. 
+
+We've got to make it work for us, Moll!<</type>><</replace>><</timed>>    
+<<timed 139s>><<replace "#mount">><<type 55ms>>A: What's the issue if there's a bit of violence here or there? 
+
+There's nothing I've done that they wouldn't do to us. 
+
+Only difference is they get their hired thugs to do it.<</type>><</replace>><</timed>>    
+<<timed 153s>><<replace "#mount">><<type 56ms>>A: Here, we're nearly at Smithfield Rotunda Garden and I've got to go. 
+
+Word is there's a fancy carriage coming down from Farringdon. 
+
+See you, Moll. And you lot - don't get into any trouble! Or not much anyway.<</type>><</replace>><</timed>>   
+<<timed 172s>><<replace "#mount">><<type 70ms>>M: Bye, Ann! Thank god she's gone. 
+
+Every day is a competition with Ann Duck. Right, this will be a good place for a rest. Well. What are your tallies? How many other gang members did you spot?
+<div class= "menu-wrapper">
+  <<button "0-1">><<set $prevpass to $passage>><<goto "UMC12A">><</button>>
+  <<button "2">><<set $prevpass to $passage>><<goto "UMC12B">><</button>>
+  <<button "3 or more">><<set $prevpass to $passage>><<goto "UMC12B">><</button>>
+ </div> <</type>><</replace>><</timed>> 
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC12A {"position":"375,1150","size":"100,100"}
+<<set $passage to "UMC12A">><<audio ":all" stop>><<audio "UMC_12A" play>><<set $nextpassage to "UMC13">>
+
+<main>
+<<type 50ms>> Ah, so we’re the only criminals round these parts. Good to know. We’ve got everything to choose from. <</type>>
+
+
+<<timed 9s>><<set $prevpass to $passage>><<goto "UMC13">><</timed>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC12B {"position":"525,1150","size":"100,100"}
+<<set $passage to "UMC12B">><<audio ":all" stop>><<audio "UMC_12B" play>><<set $nextpassage to "UMC13">>
+
+<main>
+<<type 50ms>> Hmm, so we’ve got some allies in the area. We’ll have to share any spoils we find.<</type>>
+
+
+<<timed 8s>><<set $prevpass to $passage>><<goto "UMC13">><</timed>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC13 {"position":"450,1275","size":"100,100"}
+<<set $passage to "UMC13">><<audio ":all" stop>><<audio "UMC_13" play>><<set $nextpassage to "UMC14">>
+
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Let's pause here for a second. 
+
+Sit down if you like, catch your breath. 
+
+Ah, peaceful, isn't it?<</type>><</replace>><</timed>>    
+<<timed 8s>><<replace "#mount">><<type 50ms>>Nice to see a bit of green around here. 
+
+Don't think we had this place when I was knocking about. Lucky you.<</type>><</replace>><</timed>>    
+<<timed 16s>><<replace "#mount">><<type 50ms>>Hang about, who's this? Two men? 
+
+They look a bit fancy, don't they? 
+
+Look, I can't be recognized, so you'll need to eavesdrop on them for me. Act natural, whatever that means to you.<</type>><</replace>><</timed>>    
+<<timed 29s>><<replace "#mount">><<type 50ms>>1: Apparently she hangs around here. If we're lucky, maybe she'll cut our purse strings. 
+
+2: Wouldn't that be good? First hand experience!<</type>><</replace>><</timed>>    
+<<timed 38s>><<replace "#mount">><<type 50ms>>1: You know, I'm still struggling with the ending. Surely she should be married off! 
+
+2: Moll Cutpurse, married off? Never! She wouldn't allow it. It would be a betrayal!<</type>><</replace>><</timed>>   
+<<timed 51s>><<replace "#mount">><<type 50ms>>1: But the audience will be in uproar! 
+
+2: Don't be so old fashioned. As long as we have one wedding in there we'll be safe.<</type>><</replace>><</timed>>   
+<<timed 59s>><<replace "#mount">><<type 50ms>>MOLL: Hey I can't hear. What are they talking about?
+
+<div class= "menu-wrapper">
+<<button "You, I think">><<set $prevpass to $passage>><<goto "UMC14">><</button>>
+
+<<button "Some pickpocket I’ve never heard of.">><<set $prevpass to $passage>><<goto "UMC14">><</button>>
+</div><</type>><</replace>><</timed>> 
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC14 {"position":"450,1400","size":"100,100"}
+<<set $passage to "UMC14">><<audio ":all" stop>><<audio "UMC_14" play>><<set $nextpassage to "UMC15">>
+
+<main>
+<<type 50ms>>
+Interrupt them! Go on, quick. I can see a lawman coming, I’ve got to run. Report back to me after they’re gone!
+<</type>>
+
+<<timed 8s>>
+<div class= "menu-wrapper">
+<<button "Excuse me...?">><<set $prevpass to $passage>><<goto "UMC15">><</button>>
+
+<<button "Hey! You two.">><<set $prevpass to $passage>><<goto "UMC15">><</button>>
+</div><</timed>>
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC15 {"position":"450,1525","size":"100,100"}
+<<set $passage to "UMC15">><<audio ":all" stop>><<audio "UMC_15" play>><<set $nextpassage to "UMC16">>
+
+<main>
+<div id="mount"></div>
+<<type 50ms>> MIDDLETON: Oh. Hello. Can I help you? <</type>>
+
+<<timed 4.5s>>
+<<button "Were you talking about Moll Cutpurse?">><<set $prevpass to $passage>><<goto "UMC16">><</button>><</timed>>
+
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC16 {"position":"450,1650","size":"100,100"}
+<<set $passage to "UMC16">><<audio ":all" stop>><<audio "UMC_16" play>><<set $nextpassage to "UMC17">>
+
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 58ms>>D: Why? do you know her?
+  
+M: I don't believe we've had the pleasure of meeting. I'm Thomas Middleton, and this is my writing partner, Thomas Decker. 
+
+D: Charmed. <</type>><</replace>><</timed>>   
+<<timed 12s>><<replace "#mount">><<type 53ms>>M:We're playwrights you see. 
+
+We're writing a play called The Roaring Girl. It's based on her life.
+
+She's a rather famous pickpocket around the city. I take it you know her?
+
+<div class= "menu-wrapper">
+<<button "Well...">><<set $prevpass to $passage>><<goto "UMC17">><</button>>
+
+<<button "It's a long story.">><<set $prevpass to $passage>><<goto "UMC17">><</button>>
+</div><</type>><</replace>><</timed>> 
+
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC17 {"position":"450,1775","size":"100,100"}
+<<set $passage to "UMC17">><<audio ":all" stop>><<audio "UMC_17" play>><<set $nextpassage to "UMC18">>
+
+<main>
+<div id="mount"></div>
+
+<<timed 0s>><<replace "#mount">><<type 50ms>>D: I'm sure
+
+M: Obviously she's most famous, or should I say infamous, for cross-dressing. Dressing up like a man. <</type>><</replace>><</timed>>  
+<<timed 10s>><<replace "#mount">><<type 50ms>>D: Somewhat unnatural, I feel. But who are we to judge?<</type>>
+<<button "What are you going to say about her?">><<replace "#mount">><<audio ":all" stop>><<audio "UMC_17.5" play>>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>M: Well, fiction's goal is not to pass judgment, necessarily. 
+
+Of course, sometimes we need to offer moral guidance to our audiences, but it would be erroneous to suggest that Moll is some strange unwell woman.<</type>><</replace>><</timed>>    
+<<timed 15s>><<replace "#mount">><<type 50ms>>Though I do hope, wherever she is, that she will consider taking a life of honesty and goodness, as opposed to petty thievery. 
+
+Something more befitting of a lady perhaps.
+
+<div class= "menu-wrapper">
+  <<button "But you said she isn’t a lady.">><<set $prevpass to $passage>><<goto "UMC18">><</button>>
+
+  <<button "I thought you weren’t supposed to pass judgement.">><<set $prevpass to $passage>><<goto "UMC18">><</button>>
+</div>
+<</type>><</replace>><</timed>> 
+
+<</replace>><</button>>
+<</replace>><</timed>>
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC18 {"position":"450,1900","size":"100,100"}
+<<set $passage to "UMC18">><<audio ":all" stop>><<audio "UMC_18" play>><<set $nextpassage to "UMC19">>
+
+<main>
+<div id="mount"></div>
+  
+<<timed 2s>><<replace "#mount">><<type 55ms>>M: Anyway, I do hope you'll come and see it. 
+
+And maybe you can bring your friend, Moll Cutpurse. 
+
+We'd welcome her critiques with open arms. If she buys a ticket, of course.<</type>><</replace>><</timed>>    
+<<timed 18s>><<replace "#mount">><<type 60ms>>MOLL: Are they gone? Looks like I lost that law-man. 
+
+Come on, let's get a move on. 
+
+Go down Little Britain. Past the William Wallace Memorial. 
+
+So, go on then. What were they saying about me?
+
+<<button "They’re writing a play about you.">><<set $prevpass to $passage>><<goto "UMC19">><</button>>
+
+<<button "You’re going to be famous.">><<set $prevpass to $passage>><<goto "UMC19">><</button>><</type>><</replace>><</timed>> 
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC19 {"position":"450,2025","size":"100,100"}
+<<set $passage to "UMC19">><<audio ":all" stop>><<audio "UMC_19" play>><<set $nextpassage to "UMC20">>
+
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Huh? They're writing about me? 
+
+Wow. I wonder! People will put on that play in a hundred years I bet. 
+
+More - two hundred! Three hundred!<</type>><</replace>><</timed>>    
+<<timed 13s>><<replace "#mount">><<type 50ms>>I wonder if they'll put in that story about the time I rode from Charing Cross to Shoreditch dressed as a man? 
+
+Blowing a trumpet and holding a banner and nearly got torn to death by a mob.<</type>><</replace>><</timed>>    
+<<timed 24s>><<replace "#mount">><<type 50ms>>That was pretty dramatic, if you ask me. What else did they say?
+
+<<button "They said you were a petty thief.">>
+  <<set $whatdidtheysay to "thief">>
+  <<set $prevpass to $passage>><<goto "UMC20">>
+<</button>>
+<<button "They called you unnatural.">>
+  <<set $whatdidtheysay to "unnatural">>
+  <<set $prevpass to $passage>><<goto "UMC20">>
+<</button>><</type>><</replace>><</timed>> 
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC20 {"position":"450,2150","size":"100,100"}
+<<set $passage to "UMC20">><<set $nextpassage to "UMC21">>
+
+<main>
+<div id="mount"></div>
+<<timed 0.2s>><<replace "#mount">>
+<<if $whatdidtheysay is "thief">>
+<<audio ":all" stop>><<audio "UMC_20A" play>>
+Hmm...well, they’re technically not wrong.
+<<else>>
+<<audio ":all" stop>><<audio "UMC_20B" play>>
+Unnatural?
+<</if>><</replace>>
+<</timed>>
+ 
+<<timed 3s>><<replace "#mount">><<type 57ms>>Well, that’s just what they think. I don’t care. 
+
+Though I s’pose...people will watch the play. 
+
+Hundreds of people. And then if it goes well, people in the future will watch it too. D’you think they’ll all think the same of me?
+
+<div class= "menu-wrapper">
+<<button "No.">>
+  <<set $prevpass to $passage>><<goto "UMC21">>
+<</button>>
+
+<<button "Of course not.">>
+  <<set $prevpass to $passage>><<goto "UMC21">>
+<</button>></div><</type>><</replace>><</timed>>
+
+
+
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC21 {"position":"450,2275","size":"100,100"}
+<<set $passage to "UMC21">><<audio ":all" stop>><<audio "UMC_21" play>><<set $nextpassage to "UMC21map">>
+<main>
+<<type 50ms>>Hmm.
+
+Well. Let me know when you’re outside Postman’s Park.<</type>>
+
+<<button "Show map">>
+  <<set $prevpass to $passage>><<goto "UMC21map">>
+<</button>>
+
+
+</main>
+<<include "footer">>
+
+
+:: UMC21map {"position":"575,2275","size":"100,100"}
+<<set $passage to "UMC21map">><<audio ":all" stop>><<set $nextpassage to "UMC22">><<set $map7 = setup.generateDirectionsMap( [51.51849447814232, -0.10115599968176144], [51.516671009670844, -0.09847064369107725] )>>
+<main>
+Exit the park and circle to the other side to find Little Britain. You’ll see the Tutor style archway of St Barthlomews.
+Head down this road past the red door until you have to turn. Take a Right. 
+Just ahead you’ll see a crossing and a gateway to a garden on the other side of the road. That is Postman’s Park.
+$map7 
+
+<<button "We're here.">>
+  <<set $prevpass to $passage>><<goto "UMC22">>
+<</button>>
+
+</main>
+<<include "footer">>
+
+
+:: UMC22 {"position":"450,2400","size":"100,100"}
+<<set $passage to "UMC22">><<audio ":all" stop>><<audio "UMC_22" play>><<set $nextpassage to "UMC-23">>
+
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 55ms>>Hey. Rule number four of being a criminal in the city: 
+
+Sometimes you can stop and smell the roses! 
+Take in your surroundings properly. Make sure you can spot your nearest exit route in case the law men come calling, but enjoy yourself too.<</type>><</replace>><</timed>>    
+<<timed 18s>><<replace "#mount">><<type 55ms>>I've thought about it, and I think I want to be remembered as someone who lived truthfully, who did the best she could with what she had. 
+
+Who was loyal and good to her friends and helped those who needed it and took from those who didn't.<</type>><</replace>><</timed>>    
+<<timed 32s>><<replace "#mount">><<type 53ms>>You know, I have nothing to be ashamed of. Nothing at all. 
+
+They can write what they want. I know who I am.<</type>><</replace>><</timed>>    
+<<timed 43s>><<replace "#mount">><<type 53ms>>What would you want to be remembered for? In 2, 3, 5 hundred years. 
+
+Maybe think about that. Maybe think about it.<</type>><</replace>><</timed>>    
+<<timed 53s>><<replace "#mount">><<type 70ms>>Walk around this place for a little while. Take it in. 
+
+Talk to your friends, your family. There's no rush. 
+
+The air is shimmering now. It's time for me to go. 
+
+But you can take your time.<</type>><</replace>><</timed>> 
+
+
+
+<<timed 80s>><<set $prevpass to $passage>><<goto "UMC-23">><</timed>>
+
+</main>
+<<include "footer">>
+
+
+:: end {"position":"1000,2100","size":"100,100"}
+<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.516800988162046, -0.09771286982617827])>>
+<main class="end"><h2>End location</h2>
+Postman's Park
+King Edward Street
+EC1A 7BT
+
+<<button "Next">><<set $prevpass to $passage>><<goto "UMC-23">><</button>>
+
+$map
+
+</main>
+<<include "footerkey">>
+
+
+:: UMC-23 {"position":"850,2150","size":"100,100"}
+<<set $passage to "UMC-23">><<set $nextpassage to "UMC-24">><<audio ":all" stop>><<audio ":all" stop>><<audio "UMC_23" play>>
+<main>
+<div id="mount"></div>
+Moll poses an excellent question: what would you like to be remembered for? 
+
+Maybe you can answer that question now, or maybe you’d rather ponder it for a while.
+
+Now, head into the centre of Postman's Park, and I'll hand you over to an associate of mine. 
+
+Keep your headphones on, or if you need spares, ask the dragons under the Gazebo.
+
+You’ll need to show them this <<button "key">><<set $prevpass to $passage>><<goto "UMC-24">><</button>>
+
+</main>
+<<include "footer">>
+
+
+:: UMC-24 {"position":"750,2300","size":"100,100"}
+<<set $passage to "UMC-24">><<set $nextpassage to "UMC-24adventures">><<audio ":all" stop>><main>
+
+<div class="key-wrapper glowing"><img src="./assets/Postman_sPark.png"></div>
+
+<h2 class="endpoint">POSTMAN'S PARK</h2>
+</main>
+<<include "footerkey">>
+
+
+:: UMC-24adventures {"position":"650,2125","size":"100,100"}
+<<set $passage to "UMC-24adventures">><<audio ":all" stop>><main>
+<h3>Start a new adventure...</h3><div class="choices">
+  <div class="adventure-wrapper"><h2 class="adventure-title">Ghost Hunting with Brian</h2><div class="adv-item"><div>6 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "UMC_25A">><</button>></div></div>
+  
+  <div class="adventure-wrapper"><h2 class="adventure-title">The Smashing Rock Sisters</h2><div class="adv-item"><div>Family Focused
+  5 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "UMC_25B">><</button>></div></div>
+</div>
+
+</main>
+<<include "footerkey">>
+
+
+:: UMC_25A {"position":"650,1875","size":"100,100"}
+<<set $passage to "UMC_25A">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.51698173499748, -0.092720160117932])>><main>
+<h2>Ghost Hunting with Brian</h2>
+$map
+
+</main>
+<<include "footerkey">>
+
+
+:: UMC_25B {"position":"750,2000","size":"100,100"}
+<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.516671009670844, -0.09847064369107725], [51.5199856714077, -0.09708782798778638])>><main>
+<h2>The Smashing Rock Sisters</h2>
+$map
+
+</main>
+<<include "footerkey">>
+
+
+:: footersimple {"position":"100,475","size":"100,100"}
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div></div><div class="nav-wrapper"><div class="nav-item"><<button "Take me to the end">><<goto "lost">><</button>></div></div></footer>
+
+
+:: footerlost {"position":"100,600","size":"100,100"}
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
+
+
+:: footerend {"position":"100,725","size":"100,100"}
+<footer>
+<div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
+</footer>
+
+
+:: footerkey {"position":"100,729","size":"100,100"}
+<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "Show map">><<set $prevpass to $passage>><<goto "end">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "UMC-24">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "UMC-24adventures">><</button>></div></div></footer>
+
+
+
