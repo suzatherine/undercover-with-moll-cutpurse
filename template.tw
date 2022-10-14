@@ -345,6 +345,44 @@ width: 100%;
 }
 }
 
+/* LANDING  */
+main.landing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh
+}
+
+.landing > h2 {
+  font-family: "Big John";
+  text-align:center;
+  margin-block-end: 0;
+}
+
+.landing > a {
+  display:flex;    
+  justify-content: center;
+  
+}
+
+.landing > a:active{
+  background-color: transparent;
+
+}
+
+.landing > a > img {
+  width: 80%;
+  max-width: 300px;
+}
+
+/* END */
+main.end > h2{
+  margin-block-end: 0;
+}
+
+
+
 /* KEY  */
 .key-wrapper{
   width:fit-content;
@@ -356,7 +394,8 @@ width: 100%;
 
 
 .key-wrapper > img{
-    width:100px
+    width:100px;
+    transform:rotate(7deg)
 }
 
 .adventure-wrapper{
@@ -588,10 +627,13 @@ setup.checkForRepeats = (array,element) => {
 <<cacheaudio "UMC_20B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_20B.mp3">>
 <<cacheaudio "UMC_21" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_21.mp3">>
 <<cacheaudio "UMC_22" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_22.mp3">>
-<<cacheaudio "UMC_23" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC_23.mp3">>
+<<cacheaudio "UMC_23" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/UMC/UMC-23.mp3">>
 <<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_03.mp3">>
 <<cacheaudio "perfectgroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_perfectgroup.mp3">>
 <<cacheaudio "refergroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_02_refergroup.mp3">>
+<<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3">>
+
+
 
 <<waitforaudio>>
 
@@ -623,8 +665,10 @@ You have two options:
 
 :: landing {"position":"450,50","size":"100,100"}
 <<set $passage to "landing">><<audio ":all" stop>>
-<main>
+<main class="landing">
 <h2>Undercover with Moll Cutpurse</h2>
+ <<link "<img src='./assets/dragon2.gif'>">><<set $prevpass to $passage>><<goto "UMC01">><</link>>
+
 <<button "start">><<set $prevpass to $passage>><<goto "UMC01">><</button>>
 
 </main>
@@ -664,7 +708,8 @@ You'll be led presently through the streets of the City by a guide from one of i
 
 <<timed 57s>><<replace "#mount">>What kind of amazing experience? Well, it's a surprise. Otherwise this wouldn't be an adventure.
 
- 
+ Now are you playing this adventure solo or with a group?
+
 <div class="menu-wrapper">
   <<button "Solo">><<set $prevpass to $passage>><<goto "UMC02A">><</button>>
   
@@ -1491,12 +1536,18 @@ But you can take your time.<</type>><</replace>><</timed>>
 <<include "footer">>
 
 :: end {"position":"520,2113","size":"100,100"}
-<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.516800988162046, -0.09771286982617827])>><main>
-<h2>End Location</h2>
-$map
+<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.514329977600525, -0.10333073183958844], [51.516800988162046, -0.09771286982617827])>>
+<main class="end"><h2>End location</h2>
+Postman's Park
+King Edward Street
+EC1A 7BT
+
 <<button "Next">><<set $prevpass to $passage>><<goto "UMC-23">><</button>>
+
+$map
+
 </main>
-<<include "footerlost">>
+<<include "footerkey">>
 
 
 :: UMC-23 {"position":"520,2113","size":"100,100"}
@@ -1526,7 +1577,7 @@ You’ll need to show them this <<button "key">><<set $prevpass to $passage>><<g
 <<include "footerkey">>
 
 :: UMC-24adventures {"position":"520,2113","size":"100,100"}
-<<set $passage to "UMC-24">><<audio ":all" stop>><main>
+<<set $passage to "UMC-24adventures">><<audio ":all" stop>><main>
 <h3>Start a new adventure...</h3><div class="choices">
   <div class="adventure-wrapper"><h2 class="adventure-title">Ghost Hunting with Brian</h2><div class="adv-item"><div>6 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "UMC_25A">><</button>></div></div>
   
@@ -1570,5 +1621,5 @@ $map
 
 
 :: footerkey {"position":"100,729","size":"100,100"}
-<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "UMC-24">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "UMC-24adventures">><</button>></div></div></footer>
+<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "Show map">><<set $prevpass to $passage>><<goto "end">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "UMC-24">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "UMC-24adventures">><</button>></div></div></footer>
 
