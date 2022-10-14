@@ -769,7 +769,7 @@ Moll should be around here somewhere…
 
 Oh, that’s not Moll… who’s that?
 
-<<timed 8s>><<set $prevpass to $passage>><<goto "UMC05">><</timed>>
+<<timed 21s>><<set $prevpass to $passage>><<goto "UMC05">><</timed>>
 
 </main>
 <<include "footer">>
